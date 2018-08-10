@@ -1,0 +1,27 @@
+To run Cassandra in the foreground with highest debugging levels the following steps should be followed:
+
+1. Edit conf/log4j-server.properties:
+	Log4j.rootLogger=DEBUG, stdout, R
+	
+2. Start the instance using f:
+	$ bin/Cassandra -f
+
+
+
+Cluster Configuration:
+
+1. SSH into all nodes and change the following things in the cassandra.yaml file found in /etc/cassandra/conf/ folder
+
+2. cluster_name: 'cmpe295A' ; seeds: ip1, ip2, ip3, ip4,ip5
+
+3. listen_address: ip1 ; rpc_address: ip1
+
+4. IP addresses are the private IP addresses assigned to the ec2 (we use private ip as they do not change unless ec2 is terminated)
+
+5. listen_address and rpc_address will change to ips of the corresponding ec2.
+
+6. start the cassandra service in each node using the command:
+	a. ‘sudo service cassandra start’
+
+7. check the cluster status using the following command
+	b. ‘nodetool status’
