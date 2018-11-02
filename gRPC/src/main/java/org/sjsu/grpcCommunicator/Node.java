@@ -37,17 +37,19 @@ public class Node {
     int is_Cluster_head ;
     String state;
 
+    MongoClient mongo = new MongoClient("localhost", 27017);
+    DB db = mongo.getDB("cmpe295Project");
+
+    // get a single collection
+    DBCollection collection = db.getCollection("spanningtree");
+
     public Node(int node_id){
         this.id = String.valueOf(node_id);
         NodeIdsList nodeIdsList = new NodeIdsList();
 
         try {
 
-            MongoClient mongo = new MongoClient("localhost", 27017);
-            DB db = mongo.getDB("cmpe295Project");
 
-            // get a single collection
-            DBCollection collection = db.getCollection("spanningtree");
             BasicDBObject query = new BasicDBObject();
             query.put("node_id", this.id);
 
@@ -85,7 +87,7 @@ public class Node {
             best_node_cluster_head_Id=cluster_head_Id;
 
             neighbor_ID = new ArrayList<String>();
-            //get_Neighbors();
+            get_Neighbors();
 
             initial_node_child_length= child_list_Id.size();
             shift_Node_Sum=0;
@@ -106,6 +108,34 @@ public class Node {
     }
 
 
+    public void get_Neighbors(){
+        String rack_row= rack_location.split(",")[0];
+        String rack_column= rack_location.split(",")[0];
+        List<String> my_Neighbors_Rack = new ArrayList<String>();
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+
+        for(String el: my_Neighbors_Rack){
+            try{
+                BasicDBObject query = new BasicDBObject();
+                query.put("rack_location",el );
+
+                DBObject document = collection.findOne(query);;
+                if(document!=null)
+                  this.neighbor_ID.add((String) document.get("parent_Id"));
+
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
+
+    }
 
 
 }
