@@ -12,6 +12,9 @@
   <properties>
     <compileSource>1.8</compileSource>
   </properties>
+
+
+
   
   
   <dependencies>
@@ -27,6 +30,18 @@
       <artifactId>grpc-all</artifactId>
       <version>0.9.0</version>
     </dependency>
+
+	  <dependency>
+	  <groupId>log4j</groupId>
+	  <artifactId>log4j</artifactId>
+	  <version>1.2.17</version>
+     </dependency>
+
+	  <dependency>
+		  <groupId>org.mongodb</groupId>
+		  <artifactId>mongo-java-driver</artifactId>
+		  <version>3.8.2</version>
+	  </dependency>
     
   </dependencies>
 
@@ -56,6 +71,14 @@
 	<version>1.4.0.Final</version>
       </extension>
     </extensions>
+
+	  <resources>
+		  <resource>
+			  <directory>src/resources</directory>
+		  </resource>
+	  </resources>
+
+
     <plugins>
       <plugin>
 	<groupId>com.google.protobuf.tools</groupId>
