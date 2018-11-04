@@ -72,6 +72,19 @@ public class CommunicatorClient {
     }
   }
 
+  /** Say hello to server. */
+  public void getNodeSize(int size, String id) {
+    try {
+      logger.info("size is : " + size + " node is : "+ id);
+      MySize request = MySize.newBuilder().setSize(size).build();
+      AccomodateChild response = blockingStub.size(request);
+      logger.info("Greeting: " + response.getMessage());
+    } catch (RuntimeException e) {
+      logger.log(Level.WARNING, "RPC failed", e);
+      return;
+    }
+  }
+
   /**
    * Greet server. If provided, the first element of {@code args} is the name to use in the
    * greeting.
@@ -85,6 +98,7 @@ public class CommunicatorClient {
         user = args[0]; /* Use the arg as the name to greet if provided */
       }
       client.greet(user);
+      client.getNodeSize(3, "1");
     } finally {
       client.shutdown();
     }

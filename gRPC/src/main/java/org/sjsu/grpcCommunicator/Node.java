@@ -105,8 +105,192 @@ public class Node {
 
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getParent_Id() {
+        return parent_Id;
+    }
 
+    public void setParent_Id(String parent_Id) {
+        this.parent_Id = parent_Id;
+    }
+
+    public String getIp_address() {
+        return ip_address;
+    }
+
+    public void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
+    }
+
+    public List<String> getChild_list_Id() {
+        return child_list_Id;
+    }
+
+    public void setChild_list_Id(List<String> child_list_Id) {
+        this.child_list_Id = child_list_Id;
+    }
+
+    public int getDist() {
+        return dist;
+    }
+
+    public void setDist(int dist) {
+        this.dist = dist;
+    }
+
+    public String getCluster_head_Id() {
+        return cluster_head_Id;
+    }
+
+    public void setCluster_head_Id(String cluster_head_Id) {
+        this.cluster_head_Id = cluster_head_Id;
+    }
+
+    public int getHop_count() {
+        return hop_count;
+    }
+
+    public void setHop_count(int hop_count) {
+        this.hop_count = hop_count;
+    }
+
+    public String getRack_location() {
+        return rack_location;
+    }
+
+    public void setRack_location(String rack_location) {
+        this.rack_location = rack_location;
+    }
+
+    public List<Integer> getSub_tree_list() {
+        return sub_tree_list;
+    }
+
+    public void setSub_tree_list(List<Integer> sub_tree_list) {
+        this.sub_tree_list = sub_tree_list;
+    }
+
+    public List<Integer> getNeighbour_list() {
+        return neighbour_list;
+    }
+
+    public void setNeighbour_list(List<Integer> neighbour_list) {
+        this.neighbour_list = neighbour_list;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getChild_request_counter() {
+        return child_request_counter;
+    }
+
+    public void setChild_request_counter(int child_request_counter) {
+        this.child_request_counter = child_request_counter;
+    }
+
+    public int getInitial_node_child_length() {
+        return initial_node_child_length;
+    }
+
+    public void setInitial_node_child_length(int initial_node_child_length) {
+        this.initial_node_child_length = initial_node_child_length;
+    }
+
+    public String getBest_node_id() {
+        return best_node_id;
+    }
+
+    public void setBest_node_id(String best_node_id) {
+        this.best_node_id = best_node_id;
+    }
+
+    public int getBest_node_hop_count() {
+        return best_node_hop_count;
+    }
+
+    public void setBest_node_hop_count(int best_node_hop_count) {
+        this.best_node_hop_count = best_node_hop_count;
+    }
+
+    public String getBest_node_cluster_head_Id() {
+        return best_node_cluster_head_Id;
+    }
+
+    public void setBest_node_cluster_head_Id(String best_node_cluster_head_Id) {
+        this.best_node_cluster_head_Id = best_node_cluster_head_Id;
+    }
+
+    public List<String> getNeighbor_ID() {
+        return neighbor_ID;
+    }
+
+    public void setNeighbor_ID(List<String> neighbor_ID) {
+        this.neighbor_ID = neighbor_ID;
+    }
+
+    public String getShift_Node_Id() {
+        return shift_Node_Id;
+    }
+
+    public void setShift_Node_Id(String shift_Node_Id) {
+        this.shift_Node_Id = shift_Node_Id;
+    }
+
+    public int getShift_Node_Sum() {
+        return shift_Node_Sum;
+    }
+
+    public void setShift_Node_Sum(int shift_Node_Sum) {
+        this.shift_Node_Sum = shift_Node_Sum;
+    }
+
+    public int getShift_Node_Cluster() {
+        return shift_Node_Cluster;
+    }
+
+    public void setShift_Node_Cluster(int shift_Node_Cluster) {
+        this.shift_Node_Cluster = shift_Node_Cluster;
+    }
+
+    public int getIs_Cluster_head() {
+        return is_Cluster_head;
+    }
+
+    public void setIs_Cluster_head(int is_Cluster_head) {
+        this.is_Cluster_head = is_Cluster_head;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+//    public void sendSizeToParent() {
+//            logger.info("size sent to parent node");
+//    }
 }
 
