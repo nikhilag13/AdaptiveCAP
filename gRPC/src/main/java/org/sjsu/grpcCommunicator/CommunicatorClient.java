@@ -35,8 +35,12 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import com.mongodb.*;
+import org.apache.log4j.Logger;
+import java.util.*;
+import java.lang.*;
 
 /**
  * A simple client that requests a greeting from the {@link CommunicatorServer}.
@@ -44,8 +48,11 @@ import java.util.logging.Logger;
 public class CommunicatorClient {
   private static final Logger logger = Logger.getLogger(CommunicatorClient.class.getName());
 
-  private final ManagedChannel channel;
-  private final CommunicatorGrpc.CommunicatorBlockingStub blockingStub;
+  private ManagedChannel channel;
+  private CommunicatorGrpc.CommunicatorBlockingStub blockingStub;
+
+  MongoClient mongoClient = new MongoClient("localhost", 27017);
+  DB database = mongoClient.getDB("cmpe295Project");
 
   /** Construct client connecting to HelloWorld server at {@code host:port}. */
   public CommunicatorClient(String host, int port) {
@@ -67,23 +74,104 @@ public class CommunicatorClient {
       HelloResponse response = blockingStub.sayHello(request);
       logger.info("Greeting: " + response.getMessage());
     } catch (RuntimeException e) {
-      logger.log(Level.WARNING, "RPC failed", e);
+      //logger.log(Level.WARNING, "RPC failed", e);
+      logger.error("RPC failed", e);
       return;
     }
   }
 
   /** Say hello to server. */
-  public void getNodeSize(int size, String id) {
+//  public void getNodeSize(int size, String id) {
+//    try {
+//      logger.info("size is : " + size + " node is : "+ id);
+//      MySize request = MySize.newBuilder().setSize(size).build();
+//      AccomodateChild response = blockingStub.size(request);
+//      logger.info("Greeting: " + response.getMessage());
+//    } catch (RuntimeException e) {
+//      logger.log(Level.WARNING, "RPC failed", e);
+//      return;
+//    }
+//  }
+
+  /** Start stage one clustering. **/
+  public void startStageOneCluster(Node node, String ipAddress) {
+    String[] strArr = ipAddress.split(":");
+    String host = strArr[0];
+    int port = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+    //CommunicatorClient(nid, port);//port num?
     try {
-      logger.info("size is : " + size + " node is : "+ id);
-      MySize request = MySize.newBuilder().setSize(size).build();
-      AccomodateChild response = blockingStub.size(request);
-      logger.info("Greeting: " + response.getMessage());
+      sendSize(node, blockingStub);
+
     } catch (RuntimeException e) {
-      logger.log(Level.WARNING, "RPC failed", e);
-      return;
+      logger.error("Node:{} - {}".format(node.getId(), e));
+      logger.error(e);
+
+    } finally {
+
+      channel.shutdown();
+//      blockingStub = "None";
+//      channel = "None";
+      Runtime.getRuntime().gc();
     }
   }
+
+
+  public void sendSize(Node node, CommunicatorGrpc.CommunicatorBlockingStub blockingStub ) {
+
+    System.out.println(node.getSize());
+    logger.info("Node: %s - Starting function sendSize" +(node.getId()));
+    MySize request = MySize.newBuilder().setSize(node.getSize()).build();
+    AccomodateChild response = blockingStub.size(request);
+    String sizeRPC = response.getMessage();
+    logger.info("Node:" + node.getId() + " - Successfully sent the size message of size" + node.getSize() + " to parentId:" + node.getParent_Id());
+    logger.info("Node:" + node.getParent_Id() + "- Responded to Size RPC with reply:" + sizeRPC);
+
+    DBCollection collection = database.getCollection("spanningtree");
+
+    BasicDBObject query = new BasicDBObject();
+    query.put("nodeId", node.getId());
+
+    if (sizeRPC == "Prune") {
+      logger.info("Node:" + node.getId() + " - Got Prune");
+      // Become a clusterhead and send Cluster RPC to children
+      node.setCluster_head_Id(node.getId());
+      node.setParent_Id("None");
+      // Set I am the cluster
+      node.setIs_Cluster_head(1);
+      node.setState("free");
+      try {
+
+        BasicDBObject newDocument = new BasicDBObject();
+        newDocument.put("'isClusterhead'", node.getIs_Cluster_head());
+        newDocument.put("'parentId'", node.getParent_Id());
+        newDocument.put("'clusterheadId'", node.getCluster_head_Id());
+        newDocument.put("'hopcount'", node.getHop_count());
+        newDocument.put("'size'", node.getSize());
+        newDocument.put("'state'", node.getState());
+
+        BasicDBObject updateObject = new BasicDBObject();
+        updateObject.put("$set", newDocument);
+
+        collection.update(query, updateObject);
+
+      } catch (RuntimeException e) {
+        logger.error("Node:" + node.getId() + "- not able to update db");
+        logger.error(e);
+      }
+      //sendCluster(node);
+    }
+    else {
+      logger.info("Node:" + node.getId() + "Didn't get Prune");
+      //Do nothing if the child is accepted into the current cluster
+      //Might need to add cluster ID to the central lookup #Later
+    }
+  }
+
+
 
   /**
    * Greet server. If provided, the first element of {@code args} is the name to use in the
@@ -98,7 +186,7 @@ public class CommunicatorClient {
         user = args[0]; /* Use the arg as the name to greet if provided */
       }
       client.greet(user);
-      client.getNodeSize(3, "1");
+//      client.getNodeSize(3, "1");
     } finally {
       client.shutdown();
     }
