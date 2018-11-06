@@ -37,6 +37,8 @@ public class Node {
     int is_Cluster_head ;
     String state;
 
+    NodeIdsList nodeIdsList;
+
     MongoClient mongo = new MongoClient("localhost", 27017);
     DB db = mongo.getDB("cmpe295Project");
 
@@ -45,7 +47,7 @@ public class Node {
 
     public Node(int node_id){
         this.id = String.valueOf(node_id);
-        NodeIdsList nodeIdsList = new NodeIdsList();
+         this.nodeIdsList = new NodeIdsList();
 
         try {
 
@@ -129,6 +131,8 @@ public class Node {
                 DBObject document = collection.findOne(query);;
                 if(document!=null)
                   this.neighbor_ID.add((String) document.get("parent_Id"));
+                else
+                    logger.info("Node: "+id+"- No node with rackLocation:"+el+" found!");
 
             }catch(Exception e){
                 System.out.println(e);
@@ -136,6 +140,39 @@ public class Node {
         }
 
     }
+
+
+
+  public void send_size_to_parent(){
+        if(this.parent_Id!=null){
+            //client.phaseOneClusterStart(this,nodeIdsList.nodeIdsList.get(this.parent_Id));
+        }else{
+            logger.info("Node: %s - Setting myself as clusterhead as no parent found! "+id);
+            this.is_Cluster_head=1;
+            this.cluster_head_Id= id;
+            this.state = "free";
+            try{
+                logger.info("Node: %s - Updating DB with size,hopcount variables "+id);
+                BasicDBObject newDocument = new BasicDBObject();
+                newDocument.put("is_Cluster_head", this.is_Cluster_head);
+                newDocument.put("cluster_head_Id", this.cluster_head_Id);
+                newDocument.put("parent_Id", null);
+                newDocument.put("size", this.size);
+                newDocument.put("hop_count", this.hop_count);
+                newDocument.put("state", this.state);
+
+                BasicDBObject searchQuery = new BasicDBObject().append("nodeId", this.id);
+
+                collection.update(searchQuery, newDocument);
+                logger.info("Node: %s - Successfully DB with size,hopcount variables");
+            }catch(Exception e){
+                logger.error("Some Error occurred in sendSizeToParent()");
+               System.out.println(e);
+            }
+            //client.send_Cluster(this);
+        }
+  }
+
 
 
 }
