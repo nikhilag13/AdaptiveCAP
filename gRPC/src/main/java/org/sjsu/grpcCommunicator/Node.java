@@ -37,22 +37,26 @@ public class Node {
     int is_Cluster_head ;
     String state;
 
+    NodeIdsList nodeIdsList;
+
+    MongoClient mongo = new MongoClient("localhost", 27017);
+    DB db = mongo.getDB("cmpe295Project");
+
+    // get a single collection
+    DBCollection collection = db.getCollection("spanningtree");
+
     public Node(int node_id){
         this.id = String.valueOf(node_id);
-        NodeIdsList nodeIdsList = new NodeIdsList();
+         this.nodeIdsList = new NodeIdsList();
 
         try {
 
-            MongoClient mongo = new MongoClient("localhost", 27017);
-            DB db = mongo.getDB("cmpe295Project");
 
-            // get a single collection
-            DBCollection collection = db.getCollection("spanningtree");
             BasicDBObject query = new BasicDBObject();
             query.put("node_id", this.id);
 
             DBObject document = collection.findOne(query);
-            ip_address =nodeIdsList.nodeIdsList.get(node_id);
+            ip_address =nodeIdsList.getNodeIdsList().get(node_id);
             parent_Id = (String) document.get("parent_Id");
             child_list_Id = new ArrayList<String>();
             BasicDBList list = (BasicDBList)document.get("child_list_Id");
@@ -85,7 +89,7 @@ public class Node {
             best_node_cluster_head_Id=cluster_head_Id;
 
             neighbor_ID = new ArrayList<String>();
-            //get_Neighbors();
+            get_Neighbors();
 
             initial_node_child_length= child_list_Id.size();
             shift_Node_Sum=0;
@@ -125,13 +129,70 @@ public class Node {
         return ip_address;
     }
 
-    public void setIp_address(String ip_address) {
-        this.ip_address = ip_address;
+    public void get_Neighbors(){
+        String rack_row= rack_location.split(",")[0];
+        String rack_column= rack_location.split(",")[0];
+        List<String> my_Neighbors_Rack = new ArrayList<String>();
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+
+        for(String el: my_Neighbors_Rack){
+            try{
+                BasicDBObject query = new BasicDBObject();
+                query.put("rack_location",el );
+
+                DBObject document = collection.findOne(query);;
+                if(document!=null)
+                  this.neighbor_ID.add((String) document.get("parent_Id"));
+                else
+                    logger.info("Node: "+id+"- No node with rackLocation:"+el+" found!");
+
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
+
     }
 
-    public List<String> getChild_list_Id() {
-        return child_list_Id;
-    }
+
+
+  public void send_size_to_parent(){
+        if(this.parent_Id!=null){
+            //client.phaseOneClusterStart(this,nodeIdsList.nodeIdsList.get(this.parent_Id));
+        }else{
+            logger.info("Node: %s - Setting myself as clusterhead as no parent found! "+id);
+            this.is_Cluster_head=1;
+            this.cluster_head_Id= id;
+            this.state = "free";
+            try{
+                logger.info("Node: %s - Updating DB with size,hopcount variables "+id);
+                BasicDBObject newDocument = new BasicDBObject();
+                newDocument.put("is_Cluster_head", this.is_Cluster_head);
+                newDocument.put("cluster_head_Id", this.cluster_head_Id);
+                newDocument.put("parent_Id", null);
+                newDocument.put("size", this.size);
+                newDocument.put("hop_count", this.hop_count);
+                newDocument.put("state", this.state);
+
+                BasicDBObject searchQuery = new BasicDBObject().append("nodeId", this.id);
+
+                collection.update(searchQuery, newDocument);
+                logger.info("Node: %s - Successfully DB with size,hopcount variables");
+            }catch(Exception e){
+                logger.error("Some Error occurred in sendSizeToParent()");
+               System.out.println(e);
+            }
+            //client.send_Cluster(this);
+        }
+  }
+
+
 
     public void setChild_list_Id(List<String> child_list_Id) {
         this.child_list_Id = child_list_Id;
