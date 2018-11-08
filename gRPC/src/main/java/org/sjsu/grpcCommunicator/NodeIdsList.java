@@ -3,7 +3,7 @@ package org.sjsu.grpcCommunicator;
 import java.util.HashMap;
 
 public class NodeIdsList {
-    public HashMap<String, String> nodeIdsList = new HashMap<String,String>();
+    private HashMap<String, String> nodeIdsList = new HashMap<String,String>();
 
      public  NodeIdsList(){
          nodeIdsList.put("1","localhost:50050");
@@ -28,4 +28,8 @@ public class NodeIdsList {
          nodeIdsList.put("20","localhost:50069");
          nodeIdsList.put("21","localhost:50070");
      }
+
+    public HashMap<String, String> getNodeIdsList() {
+        return nodeIdsList;
+    }
 }
