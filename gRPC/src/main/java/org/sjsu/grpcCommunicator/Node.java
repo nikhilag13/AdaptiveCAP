@@ -129,6 +129,14 @@ public class Node {
         return ip_address;
     }
 
+    public void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
+    }
+
+    public List<String> getChild_list_Id() {
+        return child_list_Id;
+    }
+
     public void get_Neighbors(){
         String rack_row= rack_location.split(",")[0];
         String rack_column= rack_location.split(",")[0];
