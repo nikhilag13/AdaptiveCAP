@@ -35,7 +35,14 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
+
+import com.mongodb.*;
+import org.apache.log4j.Logger;
+import java.util.*;
+
+import static java.lang.Thread.sleep;
+
 
 /**
  * Server that manages startup/shutdown of a {@code Greeter} server.
@@ -46,6 +53,14 @@ public class CommunicatorServer {
   /* The port on which the server should run */
   private int port = 50051;
   private Server server;
+  private Node node;
+
+  MongoClient mongoClient = new MongoClient("localhost", 27017);
+  DB database = mongoClient.getDB("cmpe295Project");
+
+//  CommunicatorServer(Node node){
+//    this.node = node;
+//  }
 
   private void start() throws Exception {
     server = ServerBuilder.forPort(port)
@@ -79,6 +94,36 @@ public class CommunicatorServer {
     }
   }
 
+  public static void serve(Node node){
+    logger.info("Node: %s - Creating GRPC Server " +(node.getId()));
+
+    try {
+      logger.info("Node %s - Created GRPC Server"+(node.getId()));
+      final CommunicatorServer server = new CommunicatorServer();
+      server.node= node;
+      server.start();
+//      server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
+      logger.info("Node %s - Starting GRPC Server" + (node.getId()));
+      server.blockUntilShutdown();
+    }
+    catch(Exception e){
+      logger.error(e);
+    }
+    try {
+      while (true) {
+        logger.info("Node: %s - GRPC Server started successfully. Entering forever listening mode...\n" + (node.id));
+        System.out.println("Inside Forever while...");
+        sleep(30);
+      }
+//        except KeyboardInterrupt:
+//    server.stop(0)
+      } catch (InterruptedException e1) {
+      e1.printStackTrace();
+      logger.error(e1);
+    }
+  }
+
+
   /**
    * Main launches the server from the command line.
    */
@@ -86,9 +131,11 @@ public class CommunicatorServer {
     final CommunicatorServer server = new CommunicatorServer();
     server.start();
     server.blockUntilShutdown();
+
   }
 
   private class CommunicatorServiceImpl implements CommunicatorGrpc.Communicator {
+
 
     @Override
     public void sayHello(HelloRequest req, StreamObserver<HelloResponse> responseObserver) {
@@ -96,5 +143,106 @@ public class CommunicatorServer {
       responseObserver.onNext(reply);
       responseObserver.onCompleted();
     }
+
+      @Override
+      public void size(MySize req, StreamObserver<AccomodateChild> responseObserver) {
+          int childSize = req.getSize();
+          int THRESHOLD_S = 150; //keep in it different file
+
+          node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
+
+          DBCollection collection = database.getCollection("spanningtree");
+
+          BasicDBObject query = new BasicDBObject();
+          query.put("nodeId", node.id);
+
+          try {
+              if (node.getSize() + childSize > THRESHOLD_S) {
+                  node.setChild_request_counter(node.getChild_request_counter()+1);
+//
+                  // Move removing the child above sendSizeToParent as parent might send cluster but child needs to be removed
+                  // Case of Node 0 and Node 1 (12 node cluster)
+                  try {
+
+                      BasicDBObject newDocument = new BasicDBObject();
+                      newDocument.put("'child_list_Id'", node.getChild_list_Id());
+
+                      BasicDBObject updateObject = new BasicDBObject();
+                      updateObject.put("$set", newDocument);
+
+                      collection.update(query, updateObject);
+
+                  } catch (Exception e) {
+                      logger.error("***");
+                      logger.error("ERROR OCCURRED WHILE KICKING CHILDREN");
+//                logger.error("Node id: %s was kicking child %s from childList" + (node.id, req.nodeId));
+                      logger.error(e); //prints exception in the logger
+                      logger.error("***");
+                  }
+
+                  logger.info("Node: " + node.id + " - Removed child " + req.getNodeId() + " from childList");
+                  logger.info("Node: " + (node.getId()) + " - Sending Prune after checking if all children responded or not");
+                  if (node.getChild_request_counter() == node.getInitial_node_child_length()) {
+                      logger.info("Node: %s - All children responded. Sending size to parent" + (node.getId()));
+
+                      /** below line is running method sendSizetoparent as background thread,
+                       while the rest of the application continues it’s work.**/
+
+//                    Thread thread1 = new Thread(new Runnable() {
+//
+//                        public void run() {
+//                            node.sendSizeToParent(); //will be implemented in Node class
+//                        }
+//                    }).start();
+                    }
+                  logger.info("Node: " + node.id + "  - Sending Prune to childId: " + req.getNodeId());
+                  AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Prune ").build();
+                  responseObserver.onNext(reply);
+                  responseObserver.onCompleted();
+              } else {
+                  logger.info("Node: "+(node.id)+" - Sending Accept to childId: "+req.getNodeId()+" after checking if all children responded or not");
+                  node.setSize(node.getSize() + childSize);
+                  try {
+
+                      BasicDBObject newDocument = new BasicDBObject();
+                      newDocument.put("size", node.getSize());
+
+                      BasicDBObject updateObject = new BasicDBObject();
+                      updateObject.put("$set", newDocument);
+
+                      collection.update(query, updateObject);
+
+                  } catch (Exception e) {
+                      logger.error("***");
+                      logger.error("ERROR OCCURRED WHILE Accepting size Node " + (node.id));
+                      logger.error(e);
+//                logger.error(traceback.format_exc())
+                      logger.error("***");
+                  }
+
+                  logger.info("Node " + node.id + ": - New size: " + node.getSize());
+                  node.setChild_request_counter(node.getChild_request_counter() + 1);
+
+                  if ((node.getChild_list_Id() != null) &&
+                          (node.getChild_request_counter() == node.getInitial_node_child_length())) {
+                      logger.info("Node: " + node.getId() + "  - All children responded. Sending size to parent");
+
+//                    Thread thread2 = new Thread(new Runnable() {
+//
+//                        public void run() { node.sendSizeToParent(); //will be implemented in Node class
+//                        }
+//                    }).start();
+
+                      logger.info("Node: " + node.getId() + " Sending accept to childId: " + req.getNodeId());
+                      AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Accepted ").build();
+                      responseObserver.onNext(reply);
+                      responseObserver.onCompleted();
+
+                  }
+              }
+          } catch (Exception e) {
+              logger.error("***");
+          }
+      }
   }
 }
