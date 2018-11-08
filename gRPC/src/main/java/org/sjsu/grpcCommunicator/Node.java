@@ -137,6 +137,8 @@ public class Node {
         return child_list_Id;
     }
 
+
+
     public void get_Neighbors(){
         String rack_row= rack_location.split(",")[0];
         String rack_column= rack_location.split(",")[0];
@@ -361,5 +363,19 @@ public class Node {
 //    public void sendSizeToParent() {
 //            logger.info("size sent to parent node");
 //    }
+
+    public void start_phase_one_clustering(){
+        logger.info("Node: %s - Starting Phase One Clustering "+ this.id);
+        if(this.child_list_Id==null || this.child_list_Id.size()==0){
+            logger.info("Node: %s - Calling phaseOneClusterStart with parentId: "+this.id+" "+this.parent_Id);
+            //client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));
+            System.out.println("Node: %s - Sent size() message to parent: %s" +this.id+" "+this.parent_Id);
+            logger.info("Node: %s - Sent size() message to parent: " +this.id+" "+this.parent_Id)
+        }else{
+            logger.info("Node: %s - I am a parent not leaf "+ this.id);
+        }
+
+    }
 }
+
 

@@ -7,6 +7,8 @@ import java.util.*;
 public class InitScript {
     final static Logger logger = Logger.getLogger(InitScript.class.getName());
 
+    final static InsertSpanningTree spanningtreepopulate = new InsertSpanningTree();
+
     public static void main(String[] args){
         cleanDB();
         buildDB();
@@ -34,7 +36,7 @@ public class InitScript {
     public static void buildDB() {
         logger.info("Creating New DB");
         //make file to populate a tree
-//        spanningtreepopulate.populateTree()
+        spanningtreepopulate.insertNodes();
     }
 
     public static void spawnNode(int id) {
