@@ -56,7 +56,7 @@ public class Node {
             query.put("node_id", this.id);
 
             DBObject document = collection.findOne(query);
-            ip_address =nodeIdsList.nodeIdsList.get(node_id);
+            ip_address =nodeIdsList.getNodeIdsList().get(node_id);
             parent_Id = (String) document.get("parent_Id");
             child_list_Id = new ArrayList<String>();
             BasicDBList list = (BasicDBList)document.get("child_list_Id");
