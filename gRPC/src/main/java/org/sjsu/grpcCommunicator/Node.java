@@ -79,11 +79,15 @@ public class Node {
                     child_list_Id.add((String) el);
                 }
             }
-            if((document.get("dist")!=null){
+            if((document.get("dist")!=null)){
                 dist =(int) document.get("dist");
             }
-            cluster_head_Id=(String)document.get("cluster_head_Id");
+
+            if((document.get("cluster_head_Id")!=null)){
+                cluster_head_Id =(String) document.get("dist");
+            }
             hop_count=0;
+
             rack_location= (String)document.get("rack_location");
 
             sub_tree_list = new ArrayList<Integer>();
