@@ -18,8 +18,8 @@ public class Node {
     String cluster_head_Id;
     int hop_count;
     String rack_location;
-    List<Integer> sub_tree_list;
-    List<Integer> neighbour_list;
+    List<String> sub_tree_list;
+    List<String> neighbour_list;
     int weight;
     int size;
     int child_request_counter;
@@ -84,25 +84,25 @@ public class Node {
             }
 
             if((document.get("cluster_head_Id")!=null)){
-                cluster_head_Id =(String) document.get("dist");
+                cluster_head_Id =(String) document.get("cluster_head_Id");
             }
             hop_count=0;
 
             rack_location= (String)document.get("rack_location");
 
-            sub_tree_list = new ArrayList<Integer>();
+            sub_tree_list = new ArrayList<String>();
             BasicDBList list1 = (BasicDBList)document.get("sub_tree_list");
             if(list1!=null) {
                 for (Object el : list1) {
-                    sub_tree_list.add((int) el);
+                    sub_tree_list.add((String) el);
                 }
             }
 
-            neighbour_list = new ArrayList<Integer>();
+            neighbour_list = new ArrayList<String>();
             BasicDBList list2 = (BasicDBList)document.get("sub_tree_list");
             if(list2!=null) {
                 for (Object el : list2) {
-                    neighbour_list.add((int) el);
+                    neighbour_list.add((String) el);
                 }
             }
 
@@ -123,7 +123,10 @@ public class Node {
             shift_Node_Cluster=0;
             shift_Node_Id=null;
 
-            is_Cluster_head=(int) document.get("is_Cluster_head");
+            if((document.get("is_Cluster_head")!=null)){
+                is_Cluster_head =(int) document.get("is_Cluster_head");
+            }
+
             state=(String) document.get("state");
             logger.info(" Starting Phase One Clustering in constructor "+ this.id);
             start_phase_one_clustering();
@@ -274,19 +277,19 @@ public class Node {
         this.rack_location = rack_location;
     }
 
-    public List<Integer> getSub_tree_list() {
+    public List<String> getSub_tree_list() {
         return sub_tree_list;
     }
 
-    public void setSub_tree_list(List<Integer> sub_tree_list) {
+    public void setSub_tree_list(List<String> sub_tree_list) {
         this.sub_tree_list = sub_tree_list;
     }
 
-    public List<Integer> getNeighbour_list() {
+    public List<String> getNeighbour_list() {
         return neighbour_list;
     }
 
-    public void setNeighbour_list(List<Integer> neighbour_list) {
+    public void setNeighbour_list(List<String> neighbour_list) {
         this.neighbour_list = neighbour_list;
     }
 
