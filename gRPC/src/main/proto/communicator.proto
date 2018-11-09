@@ -42,6 +42,8 @@ service Communicator {
 
   rpc Size (MySize) returns (AccomodateChild){}
 
+  rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
+
 }
 
 // The request message containing the user's name.
@@ -61,4 +63,14 @@ message AccomodateChild{
 message MySize{
   int32 size = 1;
   string nodeId = 2;
+}
+
+
+message JoinClusterResponse{
+    string joinClusterResponse = 1;
+}
+message JoinClusterRequest{
+    string clusterHeadName = 1;
+    int32 hopcount = 2;
+
 }

@@ -55,12 +55,12 @@ public class CommunicatorClient {
   DB database = mongoClient.getDB("cmpe295Project");
 
   /** Construct client connecting to HelloWorld server at {@code host:port}. */
-  public CommunicatorClient(String host, int port) {
-    channel = ManagedChannelBuilder.forAddress(host, port)
-        .usePlaintext(true)
-        .build();
-    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
-  }
+//  public CommunicatorClient(String host, int port) {
+//    channel = ManagedChannelBuilder.forAddress(host, port)
+//        .usePlaintext(true)
+//        .build();
+//    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+//  }
 
   public void shutdown() throws InterruptedException {
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
@@ -146,10 +146,10 @@ public class CommunicatorClient {
       try {
 
         BasicDBObject newDocument = new BasicDBObject();
-        newDocument.put("'isClusterhead'", node.getIs_Cluster_head());
-        newDocument.put("'parentId'", node.getParent_Id());
-        newDocument.put("'clusterheadId'", node.getCluster_head_Id());
-        newDocument.put("'hopcount'", node.getHop_count());
+        newDocument.put("'is_Cluster_head'", node.getIs_Cluster_head());
+        newDocument.put("'parent_Id'", node.getParent_Id());
+        newDocument.put("'cluster_head_Id'", node.getCluster_head_Id());
+        newDocument.put("'hop_count'", node.getHop_count());
         newDocument.put("'size'", node.getSize());
         newDocument.put("'state'", node.getState());
 
@@ -171,6 +171,49 @@ public class CommunicatorClient {
     }
   }
 
+  public void sendCluster(Node node){
+
+    // newClusterId = "C"+str(node.id)
+    //newClusterId = str(node.id)
+    int hopCount=1;
+    if(node.getChild_list_Id()== null){
+
+      //print("Node: %s - I am clusterhead with no children"%(node.id))
+      //logger.info("Node: %s - I am clusterhead with no children"%(node.id))
+      return;
+    }
+    List<String> childList= node.getChild_list_Id();
+
+    for(String child: childList){
+      String childIP = node.getIPfromId(child);
+      String[] strArr = childIP.split(":");
+      String host = strArr[0];
+      int port = Integer.valueOf(strArr[1]);
+      channel = ManagedChannelBuilder.forAddress(host, port)
+              .usePlaintext(true)
+              .build();
+      blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+
+      try {
+        //logger.info("Node: %s - Sending cluster message to child id: %s" %(str(node.id),str(child)))
+        JoinClusterRequest request = JoinClusterRequest.newBuilder().setClusterHeadName(node.getId()).build();
+        request.newBuilder().setHopcount(hopCount).build();
+        JoinClusterResponse  response =  blockingStub.joinCluster(request);
+//        clusterRPC = stub.JoinCluster(phase1_pb2.JoinClusterRequest(clusterHeadName=newClusterId,hopcount=hopCount));
+        // print("Node: {} - Got Response: {} after sending cluster message to child id: {}".format(str(node.id),clusterRPC,str(child)))
+        //logger.info("Node: {} - Got Response: {} after sending cluster message to child id: {}".format(str(node.id),clusterRPC,str(child)))
+
+      } catch (RuntimeException e) {
+        //logger.error("Node:{} - {}".format(node.id, e))
+        //logger.error(traceback.format_exc())
+
+      } finally {
+        channel.shutdown();
+        Runtime.getRuntime().gc();
+      }
+    }
+  }
+
 
 
   /**
@@ -178,7 +221,7 @@ public class CommunicatorClient {
    * greeting.
    */
   public static void main(String[] args) throws Exception {
-    CommunicatorClient client = new CommunicatorClient("localhost", 50051);
+    CommunicatorClient client = new CommunicatorClient();
     try {
       /* Access a service running on the local machine on port 50051 */
       String user = "world";

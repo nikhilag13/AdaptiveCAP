@@ -144,6 +144,56 @@ public class CommunicatorServer {
       responseObserver.onCompleted();
     }
 
+      public void joinCluster(JoinClusterRequest request,StreamObserver<JoinClusterResponse> responseObserver){
+
+          //logger.debug("Node:%s - Server got Cluster message"%(self.node.id))
+          String clusterName = request.getClusterHeadName();
+          int hopCount = request.getHopcount();
+
+
+
+          DBCollection collection = database.getCollection("spanningtree");
+
+          BasicDBObject query = new BasicDBObject();
+          query.put("nodeId", node.getId());
+
+          try {
+
+              BasicDBObject newDocument = new BasicDBObject();
+              newDocument.put("'hop_count'",hopCount);
+              newDocument.put("'cluster_head_Id'", clusterName);
+              newDocument.put("'size'", node.getSize());
+              newDocument.put("'is_Cluster_head'", 0);
+              newDocument.put("'state'", "active");
+
+              BasicDBObject updateObject = new BasicDBObject();
+              updateObject.put("$set", newDocument);
+
+              collection.update(query, updateObject);
+
+
+          }catch (Exception e){
+              logger.error(e);
+
+              //    print("Node: %s is now joining Clusterleader Node: %s"%(str(self.node.id),str(clusterName)))
+              //   logger.info("Node: %s - Now joining Clusterleader Node: %s"%(str(self.node.id),str(clusterName)))
+              //   logger.info("Node: %s - current hop count: %s"%(str(self.node.id),self.node.hopcount))
+          }
+
+          if(node.getChild_list_Id() != null) {
+              //logger.info("Node:%s - Children Found! Starting ClusterheadId Propagation" % (self.node.id))
+              //thread3 = threading.Thread(target = self.node.propogateClusterheadInfo, args = (clusterName, hopCount))
+              //thread3.start()
+              //#time.sleep(2)
+          }else{
+              // logger.info("Node: %s - NO children found!"%(self.node.id))
+          }
+          JoinClusterResponse reply = JoinClusterResponse.newBuilder().setJoinClusterResponse("joined").build();
+          responseObserver.onNext(reply);
+          responseObserver.onCompleted();
+//          return JoinClusterResponse(joinClusterResponse="Joined");
+      }
+
       @Override
       public void size(MySize req, StreamObserver<AccomodateChild> responseObserver) {
           int childSize = req.getSize();

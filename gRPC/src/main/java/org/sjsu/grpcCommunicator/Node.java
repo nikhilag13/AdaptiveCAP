@@ -37,17 +37,18 @@ public class Node {
     int is_Cluster_head ;
     String state;
 
-    NodeIdsList nodeIdsList;
+    NodeIdsList nodeIdsList =new NodeIdsList();
 
     MongoClient mongo = new MongoClient("localhost", 27017);
     DB db = mongo.getDB("cmpe295Project");
 
     // get a single collection
     DBCollection collection = db.getCollection("spanningtree");
+    WeightMatrix weigthMatrix = new WeightMatrix();
+    CommunicatorClient client = new CommunicatorClient();
 
     public Node(int node_id){
         this.id = String.valueOf(node_id);
-         this.nodeIdsList = new NodeIdsList();
 
         try {
 
@@ -80,7 +81,7 @@ public class Node {
                 neighbour_list.add((int) el);
             }
 
-            //weight = weightMatrix.getWeight(id)
+            weight = weigthMatrix.getWeight(id);
             size= weight;
             child_request_counter=0;
             initial_node_child_length=0;
@@ -137,6 +138,11 @@ public class Node {
         return child_list_Id;
     }
 
+    public String getIPfromId(String id){
+        HashMap<String, String> list =  nodeIdsList.getNodeIdsList();
+        return list.get(id);
+    }
+
 
 
     public void get_Neighbors(){
@@ -174,7 +180,7 @@ public class Node {
 
   public void send_size_to_parent(){
         if(this.parent_Id!=null){
-            //client.phaseOneClusterStart(this,nodeIdsList.nodeIdsList.get(this.parent_Id));
+            client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));
         }else{
             logger.info("Node: %s - Setting myself as clusterhead as no parent found! "+id);
             this.is_Cluster_head=1;
@@ -198,7 +204,7 @@ public class Node {
                 logger.error("Some Error occurred in sendSizeToParent()");
                System.out.println(e);
             }
-            //client.send_Cluster(this);
+            client.sendCluster(this);
         }
   }
 
@@ -368,9 +374,9 @@ public class Node {
         logger.info("Node: %s - Starting Phase One Clustering "+ this.id);
         if(this.child_list_Id==null || this.child_list_Id.size()==0){
             logger.info("Node: %s - Calling phaseOneClusterStart with parentId: "+this.id+" "+this.parent_Id);
-            //client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));
+            client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));
             System.out.println("Node: %s - Sent size() message to parent: %s" +this.id+" "+this.parent_Id);
-            logger.info("Node: %s - Sent size() message to parent: " +this.id+" "+this.parent_Id)
+            logger.info("Node: %s - Sent size() message to parent: " +this.id+" "+this.parent_Id);
         }else{
             logger.info("Node: %s - I am a parent not leaf "+ this.id);
         }
