@@ -55,6 +55,8 @@ public class CommunicatorServer {
   private Server server;
   private Node node;
 
+
+
   MongoClient mongoClient = new MongoClient("localhost", 27017);
   DB database = mongoClient.getDB("cmpe295Project");
 
@@ -63,7 +65,7 @@ public class CommunicatorServer {
 //  }
 
   private void start() throws Exception {
-    server = ServerBuilder.forPort(port)
+    server = ServerBuilder.forPort(this.port)
         .addService(CommunicatorGrpc.bindService(new CommunicatorServiceImpl()))
         .build()
         .start();
@@ -99,10 +101,13 @@ public class CommunicatorServer {
 
     try {
       logger.info("Node %s - Created GRPC Server"+(node.getId()));
+      NodeIdsList nodeIdsList = new NodeIdsList();
       final CommunicatorServer server = new CommunicatorServer();
       server.node= node;
+      server.port = Integer.parseInt(nodeIdsList.getNodeIdsList().get(node.getId()).split(":")[1]);
+
       server.start();
-//      server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
+     // server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
       logger.info("Node %s - Starting GRPC Server" + (node.getId()));
       server.blockUntilShutdown();
     }
@@ -111,7 +116,7 @@ public class CommunicatorServer {
     }
     try {
       while (true) {
-        logger.info("Node: %s - GRPC Server started successfully. Entering forever listening mode...\n" + (node.id));
+        logger.info("Node: %s - GRPC Server started successfully. Entering forever listening mode..." + (node.id));
         System.out.println("Inside Forever while...");
         sleep(30);
       }

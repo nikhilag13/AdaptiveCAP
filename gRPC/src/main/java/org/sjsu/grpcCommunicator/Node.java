@@ -1,6 +1,7 @@
 package org.sjsu.grpcCommunicator;
 
 import com.mongodb.*;
+import org.apache.http.util.ExceptionUtils;
 import org.apache.log4j.Logger;
 import java.util.*;
 
@@ -36,6 +37,9 @@ public class Node {
 
     int is_Cluster_head ;
     String state;
+    {
+        System.out.println("Node Object Created ");
+    }
 
     NodeIdsList nodeIdsList =new NodeIdsList();
 
@@ -47,38 +51,55 @@ public class Node {
     WeightMatrix weigthMatrix = new WeightMatrix();
     CommunicatorClient client = new CommunicatorClient();
 
+    public Node(){
+
+    }
+
     public Node(int node_id){
         this.id = String.valueOf(node_id);
 
         try {
 
-
+            System.out.println("Constructor "+ this.id);
+            logger.info("Constructor "+ this.id);
             BasicDBObject query = new BasicDBObject();
             query.put("node_id", this.id);
 
             DBObject document = collection.findOne(query);
+            logger.info("Constructor 1"+ this.id);
+
             ip_address =nodeIdsList.getNodeIdsList().get(node_id);
             parent_Id = (String) document.get("parent_Id");
+
+            logger.info("Constructor 2 parent"+ parent_Id);
             child_list_Id = new ArrayList<String>();
             BasicDBList list = (BasicDBList)document.get("child_list_Id");
-            for(Object el: list) {
-                child_list_Id.add((String) el);
+            if(list!=null) {
+                for (Object el : list) {
+                    child_list_Id.add((String) el);
+                }
             }
-            dist =(int)document.get("dist");
+            if((document.get("dist")!=null){
+                dist =(int) document.get("dist");
+            }
             cluster_head_Id=(String)document.get("cluster_head_Id");
             hop_count=0;
             rack_location= (String)document.get("rack_location");
 
             sub_tree_list = new ArrayList<Integer>();
-            list = (BasicDBList)document.get("sub_tree_list");
-            for(Object el: list) {
-                sub_tree_list.add((int) el);
+            BasicDBList list1 = (BasicDBList)document.get("sub_tree_list");
+            if(list1!=null) {
+                for (Object el : list1) {
+                    sub_tree_list.add((int) el);
+                }
             }
 
             neighbour_list = new ArrayList<Integer>();
-            list = (BasicDBList)document.get("sub_tree_list");
-            for(Object el: list) {
-                neighbour_list.add((int) el);
+            BasicDBList list2 = (BasicDBList)document.get("sub_tree_list");
+            if(list2!=null) {
+                for (Object el : list2) {
+                    neighbour_list.add((int) el);
+                }
             }
 
             weight = weigthMatrix.getWeight(id);
@@ -90,6 +111,7 @@ public class Node {
             best_node_cluster_head_Id=cluster_head_Id;
 
             neighbor_ID = new ArrayList<String>();
+            logger.info("constructor get_Neighbors "+ this.id);
             get_Neighbors();
 
             initial_node_child_length= child_list_Id.size();
@@ -99,12 +121,13 @@ public class Node {
 
             is_Cluster_head=(int) document.get("is_Cluster_head");
             state=(String) document.get("state");
-
-
+            logger.info(" Starting Phase One Clustering in constructor "+ this.id);
+            start_phase_one_clustering();
 
 
         }catch (Exception e){
-            System.out.println(e);
+           e.printStackTrace();
+            logger.error("Error:::",e);
         }
 
 
@@ -146,6 +169,7 @@ public class Node {
 
 
     public void get_Neighbors(){
+        logger.info(" get_Neighbors "+ this.id);
         String rack_row= rack_location.split(",")[0];
         String rack_column= rack_location.split(",")[0];
         List<String> my_Neighbors_Rack = new ArrayList<String>();
@@ -371,6 +395,7 @@ public class Node {
 //    }
 
     public void start_phase_one_clustering(){
+        System.out.println("Node: %s - Starting Phase One Clustering "+ this.id);
         logger.info("Node: %s - Starting Phase One Clustering "+ this.id);
         if(this.child_list_Id==null || this.child_list_Id.size()==0){
             logger.info("Node: %s - Calling phaseOneClusterStart with parentId: "+this.id+" "+this.parent_Id);

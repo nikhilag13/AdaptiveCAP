@@ -17,6 +17,8 @@ public class InitScript {
 
 
         public void run() {
+            System.out.println("Run method "+String.valueOf(id));
+            logger.info("Run method "+String.valueOf(id));
             spawnNode(id);
         }
     }
@@ -35,8 +37,8 @@ public class InitScript {
         InitScript initScript = new InitScript();
         initScript.cleanDB();
         initScript.buildDB();
-       // initScript.spawn();
-        initScript.spawnNode(0);
+         initScript.spawn();
+       // initScript.spawnNode(0);
 
 
 
@@ -62,10 +64,12 @@ public class InitScript {
     public  void buildDB() {
         logger.info("Creating New DB");
         //make file to populate a tree
-//        spanningtreepopulate.populateTree()
+        InsertSpanningTree.insertNodes();
     }
 
     public  void spawnNode( int id) {
+        System.out.println("Spwanning new node "+String.valueOf(id));
+        logger.info("Spwanning new node "+String.valueOf(id));
         Node node = new Node(id);
         CommunicatorServer cms = new CommunicatorServer();
         cms.serve(node);
