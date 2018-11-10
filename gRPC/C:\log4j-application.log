@@ -1,2 +1,699 @@
 2018-11-03 23:10:17 INFO  CommunicatorServer:70 - Server started, listening on 50051
 2018-11-04 18:36:18 INFO  CommunicatorServer:70 - Server started, listening on 50051
+2018-11-09 14:11:04 INFO  InitScript:56 - Cleaning DB if it exists
+2018-11-09 14:11:04 INFO  InitScript:65 - Creating New DB
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 0
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 0
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 3
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 3
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 2
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 2
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 1
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 1
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 4
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 4
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 7
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 7
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 6
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 6
+2018-11-09 14:11:04 INFO  InitScript:21 - Run method 5
+2018-11-09 14:11:04 INFO  InitScript:72 - Spwanning new node 5
+2018-11-09 14:11:04 INFO  Node:64 - Constructor 4
+2018-11-09 14:11:04 INFO  Node:64 - Constructor 6
+2018-11-09 14:11:04 INFO  Node:64 - Constructor 1
+2018-11-09 14:11:04 INFO  Node:64 - Constructor 0
+2018-11-09 14:11:04 INFO  Node:64 - Constructor 5
+2018-11-09 14:11:05 INFO  Node:64 - Constructor 3
+2018-11-09 14:11:05 INFO  Node:64 - Constructor 7
+2018-11-09 14:11:05 INFO  Node:64 - Constructor 2
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 17
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent6
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 12
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 7
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 7
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 14
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 4
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 4
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 10
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parentnull
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 0
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 11
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 1
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 1
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 2
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 2
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 16
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 6
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 6
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 0
+2018-11-09 14:11:05 INFO  Node:201 - Node: 7- No node with rackLocation:3,2 found!
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 13
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 3
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 3
+2018-11-09 14:11:05 INFO  Node:69 - Constructor 15
+2018-11-09 14:11:05 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 14:11:05 INFO  Node:118 - constructor get_Neighbors 5
+2018-11-09 14:11:05 INFO  Node:179 -  get_Neighbors 5
+2018-11-09 14:11:05 INFO  Node:201 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 2- No node with rackLocation:-1,0 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 7- No node with rackLocation:2,3 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 6- No node with rackLocation:2,3 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 1- No node with rackLocation:0,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 2- No node with rackLocation:0,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 7- No node with rackLocation:3,3 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 6- No node with rackLocation:3,3 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 1- No node with rackLocation:-1,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 2- No node with rackLocation:-1,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 4- No node with rackLocation:0,2 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 4
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 4
+2018-11-09 14:11:05 INFO  Node:413 - Node: %s - I am a parent not leaf 4
+2018-11-09 14:11:05 INFO  Node:201 - Node: 2- No node with rackLocation:1,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 1- No node with rackLocation:1,-1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-09 14:11:05 INFO  Node:201 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 2
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 2
+2018-11-09 14:11:05 INFO  Node:413 - Node: %s - I am a parent not leaf 2
+2018-11-09 14:11:05 INFO  Node:201 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 1
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 1
+2018-11-09 14:11:05 INFO  Node:413 - Node: %s - I am a parent not leaf 1
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 2
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server2
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 4
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server4
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 1
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server1
+2018-11-09 14:11:05 INFO  Node:201 - Node: 6- No node with rackLocation:1,3 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 6
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 6
+2018-11-09 14:11:05 INFO  Node:413 - Node: %s - I am a parent not leaf 6
+2018-11-09 14:11:05 INFO  Node:201 - Node: 5- No node with rackLocation:0,2 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 5
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 6
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server6
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 5
+2018-11-09 14:11:05 INFO  Node:413 - Node: %s - I am a parent not leaf 5
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 5
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server5
+2018-11-09 14:11:05 INFO  Node:201 - Node: 7- No node with rackLocation:1,3 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 7
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 7
+2018-11-09 14:11:05 INFO  Node:408 - Node: %s - Calling phaseOneClusterStart with parentId: 7 6
+2018-11-09 14:11:05 INFO  Node:201 - Node: 3- No node with rackLocation:0,2 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 3
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 3
+2018-11-09 14:11:05 INFO  Node:408 - Node: %s - Calling phaseOneClusterStart with parentId: 3 1
+2018-11-09 14:11:05 INFO  Node:201 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-09 14:11:05 INFO  Node:131 -  Starting Phase One Clustering in constructor 0
+2018-11-09 14:11:05 INFO  Node:406 - Node: %s - Starting Phase One Clustering 0
+2018-11-09 14:11:05 INFO  Node:413 - Node: %s - I am a parent not leaf 0
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 0
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server0
+2018-11-09 14:11:05 INFO  CommunicatorClient:126 - Node: %s - Starting function sendSize3
+2018-11-09 14:11:05 INFO  CommunicatorClient:126 - Node: %s - Starting function sendSize7
+2018-11-09 14:11:05 ERROR CommunicatorClient:110 - 3
+2018-11-09 14:11:05 ERROR CommunicatorClient:111 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 14:11:05 ERROR CommunicatorClient:110 - 7
+2018-11-09 14:11:05 ERROR CommunicatorClient:111 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 14:11:05 INFO  Node:411 - Node: %s - Sent size() message to parent: 7 6
+2018-11-09 14:11:05 INFO  Node:411 - Node: %s - Sent size() message to parent: 3 1
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 7
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server7
+2018-11-09 14:11:05 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 3
+2018-11-09 14:11:05 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server3
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50053
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server4
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50051
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50055
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50049
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50050
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50052
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server3
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50056
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server7
+2018-11-09 14:11:05 INFO  CommunicatorServer:72 - Server started, listening on 50054
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server5
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server2
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server1
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server0
+2018-11-09 14:11:05 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server6
+2018-11-09 14:24:40 INFO  InitScript:56 - Cleaning DB if it exists
+2018-11-09 14:24:40 INFO  InitScript:65 - Creating New DB
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 0
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 1
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 0
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 2
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 2
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 5
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 5
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 7
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 4
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 4
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 3
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 3
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 1
+2018-11-09 14:24:40 INFO  InitScript:72 - Spwanning new node 7
+2018-11-09 14:24:40 INFO  InitScript:21 - Run method 6
+2018-11-09 14:24:41 INFO  InitScript:72 - Spwanning new node 6
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 1
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 5
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 3
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 2
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 4
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 0
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 7
+2018-11-09 14:24:41 INFO  Node:64 - Constructor 6
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 10
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parentnull
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 0
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 0
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 12
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 2
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 2
+2018-11-09 14:24:41 INFO  Node:201 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 11
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 1
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 1
+2018-11-09 14:24:41 INFO  Node:201 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 2- No node with rackLocation:-1,0 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 14
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 4
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 4
+2018-11-09 14:24:41 INFO  Node:201 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 2- No node with rackLocation:0,-1 found!
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 15
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 5
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 5
+2018-11-09 14:24:41 INFO  Node:201 - Node: 2- No node with rackLocation:-1,-1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 1- No node with rackLocation:0,-1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 0
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 0
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[1, 2]
+2018-11-09 14:24:41 INFO  Node:414 - Node: %s - I am a parent not leaf 0
+2018-11-09 14:24:41 INFO  Node:201 - Node: 2- No node with rackLocation:1,-1 found!
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 13
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 3
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 3
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 0
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server0
+2018-11-09 14:24:41 INFO  Node:201 - Node: 1- No node with rackLocation:-1,-1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 2
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 2
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[4, 6]
+2018-11-09 14:24:41 INFO  Node:414 - Node: %s - I am a parent not leaf 2
+2018-11-09 14:24:41 INFO  Node:201 - Node: 1- No node with rackLocation:1,-1 found!
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 2
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server2
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 16
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 6
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 6
+2018-11-09 14:24:41 INFO  Node:201 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 1
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 1
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[3, 5]
+2018-11-09 14:24:41 INFO  Node:414 - Node: %s - I am a parent not leaf 1
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 1
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server1
+2018-11-09 14:24:41 INFO  Node:69 - Constructor 17
+2018-11-09 14:24:41 INFO  Node:74 - Constructor 2 parent6
+2018-11-09 14:24:41 INFO  Node:118 - constructor get_Neighbors 7
+2018-11-09 14:24:41 INFO  Node:179 -  get_Neighbors 7
+2018-11-09 14:24:41 INFO  Node:201 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 7- No node with rackLocation:3,2 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 6- No node with rackLocation:2,3 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 4- No node with rackLocation:0,2 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 4
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 4
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[9]
+2018-11-09 14:24:41 INFO  Node:414 - Node: %s - I am a parent not leaf 4
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 4
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server4
+2018-11-09 14:24:41 INFO  Node:201 - Node: 7- No node with rackLocation:2,3 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 5- No node with rackLocation:0,2 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 5
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 5
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[11]
+2018-11-09 14:24:41 INFO  Node:414 - Node: %s - I am a parent not leaf 5
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 5
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server5
+2018-11-09 14:24:41 INFO  Node:201 - Node: 6- No node with rackLocation:3,3 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 7- No node with rackLocation:3,3 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 3- No node with rackLocation:0,2 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 3
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 3
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[]
+2018-11-09 14:24:41 INFO  Node:409 - Node: %s - Calling phaseOneClusterStart with parentId: 3 1
+2018-11-09 14:24:41 INFO  Node:201 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-09 14:24:41 INFO  Node:201 - Node: 6- No node with rackLocation:1,3 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 6
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 6
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[7, 8]
+2018-11-09 14:24:41 INFO  Node:414 - Node: %s - I am a parent not leaf 6
+2018-11-09 14:24:41 INFO  Node:201 - Node: 7- No node with rackLocation:1,3 found!
+2018-11-09 14:24:41 INFO  Node:131 -  Starting Phase One Clustering in constructor 7
+2018-11-09 14:24:41 INFO  Node:406 - Node: %s - Starting Phase One Clustering 7
+2018-11-09 14:24:41 INFO  Node:407 - inside start phase one clustering in node[]
+2018-11-09 14:24:41 INFO  Node:409 - Node: %s - Calling phaseOneClusterStart with parentId: 7 6
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 6
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server6
+2018-11-09 14:24:41 INFO  CommunicatorClient:126 - Node: %s - Starting function sendSize3
+2018-11-09 14:24:41 INFO  CommunicatorClient:126 - Node: %s - Starting function sendSize7
+2018-11-09 14:24:41 ERROR CommunicatorClient:110 - 7
+2018-11-09 14:24:41 ERROR CommunicatorClient:111 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 14:24:41 ERROR CommunicatorClient:110 - 3
+2018-11-09 14:24:41 ERROR CommunicatorClient:111 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 14:24:41 INFO  Node:412 - Node: %s - Sent size() message to parent: 7 6
+2018-11-09 14:24:41 INFO  Node:412 - Node: %s - Sent size() message to parent: 3 1
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 7
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server7
+2018-11-09 14:24:41 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 3
+2018-11-09 14:24:41 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server3
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50055
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server6
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50050
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server1
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50054
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server5
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50049
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server0
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50051
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server2
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50052
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server3
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50056
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server7
+2018-11-09 14:24:41 INFO  CommunicatorServer:72 - Server started, listening on 50053
+2018-11-09 14:24:41 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server4
+2018-11-09 14:54:53 INFO  InitScript:56 - Cleaning DB if it exists
+2018-11-09 14:54:53 INFO  InitScript:65 - Creating New DB
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 0
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 1
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 0
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 2
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 2
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 1
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 4
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 3
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 3
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 4
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 5
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 5
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 7
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 7
+2018-11-09 14:54:53 INFO  InitScript:21 - Run method 6
+2018-11-09 14:54:53 INFO  InitScript:72 - Spwanning new node 6
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 5
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 6
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 0
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 4
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 7
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 2
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 1
+2018-11-09 14:54:53 INFO  Node:64 - Constructor 3
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 17
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 13
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 3
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 3
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 10
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent6
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 7
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 7
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parentnull
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 0
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 0
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 16
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 6
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 6
+2018-11-09 14:54:53 INFO  Node:201 - Node: 7- No node with rackLocation:3,2 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 7- No node with rackLocation:2,3 found!
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 11
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 1
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 1
+2018-11-09 14:54:53 INFO  Node:201 - Node: 6- No node with rackLocation:2,3 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 7- No node with rackLocation:3,3 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 6- No node with rackLocation:3,3 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 1- No node with rackLocation:0,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 3- No node with rackLocation:0,2 found!
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 3
+2018-11-09 14:54:53 INFO  Node:201 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 3
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[]
+2018-11-09 14:54:53 INFO  Node:409 - Node: %s - Calling phaseOneClusterStart with parentId: 3 1
+2018-11-09 14:54:53 INFO  CommunicatorClient:98 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50050
+2018-11-09 14:54:53 INFO  Node:201 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 0
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 0
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[1, 2]
+2018-11-09 14:54:53 INFO  Node:414 - Node: %s - I am a parent not leaf 0
+2018-11-09 14:54:53 INFO  Node:201 - Node: 1- No node with rackLocation:-1,-1 found!
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 12
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 0
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server0
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 2
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 2
+2018-11-09 14:54:53 INFO  Node:201 - Node: 6- No node with rackLocation:1,3 found!
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 6
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 6
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[7, 8]
+2018-11-09 14:54:53 INFO  Node:414 - Node: %s - I am a parent not leaf 6
+2018-11-09 14:54:53 INFO  Node:201 - Node: 7- No node with rackLocation:1,3 found!
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 7
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 7
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[]
+2018-11-09 14:54:53 INFO  Node:409 - Node: %s - Calling phaseOneClusterStart with parentId: 7 6
+2018-11-09 14:54:53 INFO  CommunicatorClient:98 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50055
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 6
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server6
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 15
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 5
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 5
+2018-11-09 14:54:53 INFO  Node:201 - Node: 1- No node with rackLocation:1,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 1
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 1
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[3, 5]
+2018-11-09 14:54:53 INFO  Node:414 - Node: %s - I am a parent not leaf 1
+2018-11-09 14:54:53 INFO  Node:201 - Node: 2- No node with rackLocation:-1,0 found!
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 1
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server1
+2018-11-09 14:54:53 INFO  Node:69 - Constructor 14
+2018-11-09 14:54:53 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 14:54:53 INFO  Node:118 - constructor get_Neighbors 4
+2018-11-09 14:54:53 INFO  Node:179 -  get_Neighbors 4
+2018-11-09 14:54:53 INFO  Node:201 - Node: 2- No node with rackLocation:0,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 2- No node with rackLocation:-1,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 2- No node with rackLocation:1,-1 found!
+2018-11-09 14:54:53 INFO  Node:201 - Node: 5- No node with rackLocation:0,2 found!
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 5
+2018-11-09 14:54:53 INFO  Node:201 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 5
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[11]
+2018-11-09 14:54:53 INFO  Node:414 - Node: %s - I am a parent not leaf 5
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 2
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 2
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[4, 6]
+2018-11-09 14:54:53 INFO  Node:201 - Node: 4- No node with rackLocation:0,2 found!
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 5
+2018-11-09 14:54:53 INFO  Node:131 -  Starting Phase One Clustering in constructor 4
+2018-11-09 14:54:53 INFO  Node:414 - Node: %s - I am a parent not leaf 2
+2018-11-09 14:54:53 INFO  Node:406 - Node: %s - Starting Phase One Clustering 4
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server5
+2018-11-09 14:54:53 INFO  Node:407 - inside start phase one clustering in node[9]
+2018-11-09 14:54:53 INFO  Node:414 - Node: %s - I am a parent not leaf 4
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 2
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 4
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server4
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server2
+2018-11-09 14:54:53 INFO  CommunicatorClient:127 - Node: %s - Starting function sendSize7
+2018-11-09 14:54:53 INFO  CommunicatorClient:127 - Node: %s - Starting function sendSize3
+2018-11-09 14:54:53 ERROR CommunicatorClient:111 - 3
+2018-11-09 14:54:53 ERROR CommunicatorClient:112 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 14:54:53 ERROR CommunicatorClient:111 - 7
+2018-11-09 14:54:53 ERROR CommunicatorClient:112 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 14:54:53 INFO  Node:412 - Node: %s - Sent size() message to parent: 3 1
+2018-11-09 14:54:53 INFO  Node:412 - Node: %s - Sent size() message to parent: 7 6
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 7
+2018-11-09 14:54:53 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 3
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server3
+2018-11-09 14:54:53 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server7
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50051
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server2
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50054
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server5
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50050
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50053
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50052
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server3
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server1
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50055
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server6
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50056
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server7
+2018-11-09 14:54:54 INFO  CommunicatorServer:72 - Server started, listening on 50049
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server4
+2018-11-09 14:54:54 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server0
+2018-11-09 15:19:50 INFO  CommunicatorServer:119 - Node: %s - GRPC Server started successfully. Entering forever listening mode...7
+2018-11-09 15:20:09 INFO  InitScript:56 - Cleaning DB if it exists
+2018-11-09 15:20:09 INFO  InitScript:65 - Creating New DB
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 0
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 0
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 2
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 2
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 1
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 1
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 3
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 3
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 4
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 4
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 5
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 5
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 6
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 6
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 2
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 0
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 1
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 3
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 4
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 6
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 5
+2018-11-09 15:20:10 INFO  InitScript:21 - Run method 7
+2018-11-09 15:20:10 INFO  InitScript:72 - Spwanning new node 7
+2018-11-09 15:20:10 INFO  Node:64 - Constructor 7
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 11
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 10
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parentnull
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 0
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 0
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 14
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 1
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 1
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 4
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 4
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 12
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent0
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 2
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 2
+2018-11-09 15:20:10 INFO  Node:201 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 15
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 5
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 5
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 17
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent6
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 7
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 7
+2018-11-09 15:20:10 INFO  Node:201 - Node: 7- No node with rackLocation:3,2 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 1- No node with rackLocation:0,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 2- No node with rackLocation:-1,0 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 7- No node with rackLocation:2,3 found!
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 16
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent2
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 6
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 6
+2018-11-09 15:20:10 INFO  Node:201 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 1- No node with rackLocation:-1,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 7- No node with rackLocation:3,3 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-09 15:20:10 INFO  Node:69 - Constructor 13
+2018-11-09 15:20:10 INFO  Node:74 - Constructor 2 parent1
+2018-11-09 15:20:10 INFO  Node:118 - constructor get_Neighbors 3
+2018-11-09 15:20:10 INFO  Node:179 -  get_Neighbors 3
+2018-11-09 15:20:10 INFO  Node:201 - Node: 1- No node with rackLocation:1,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 2- No node with rackLocation:0,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 1
+2018-11-09 15:20:10 INFO  Node:201 - Node: 4- No node with rackLocation:0,2 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 4
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 4
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[9]
+2018-11-09 15:20:10 INFO  Node:414 - Node: %s - I am a parent not leaf 4
+2018-11-09 15:20:10 INFO  Node:201 - Node: 2- No node with rackLocation:-1,-1 found!
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 1
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[3, 5]
+2018-11-09 15:20:10 INFO  Node:414 - Node: %s - I am a parent not leaf 1
+2018-11-09 15:20:10 INFO  Node:201 - Node: 7- No node with rackLocation:1,3 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 7
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 7
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[]
+2018-11-09 15:20:10 INFO  Node:409 - Node: %s - Calling phaseOneClusterStart with parentId: 7 6
+2018-11-09 15:20:10 INFO  CommunicatorClient:98 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50055
+2018-11-09 15:20:10 INFO  CommunicatorClient:101 - printing host localhost
+2018-11-09 15:20:10 INFO  CommunicatorClient:103 - printing port after splitting 50055
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 1
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server1
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 4
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server4
+2018-11-09 15:20:10 INFO  Node:201 - Node: 6- No node with rackLocation:2,3 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 0
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 0
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[1, 2]
+2018-11-09 15:20:10 INFO  Node:414 - Node: %s - I am a parent not leaf 0
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 0
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server0
+2018-11-09 15:20:10 INFO  Node:201 - Node: 2- No node with rackLocation:1,-1 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 2
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 2
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[4, 6]
+2018-11-09 15:20:10 INFO  Node:414 - Node: %s - I am a parent not leaf 2
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 2
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server2
+2018-11-09 15:20:10 INFO  CommunicatorClient:107 - printing channel io.grpc.internal.ManagedChannelImpl@6c338ad5
+2018-11-09 15:20:10 INFO  CommunicatorClient:109 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@68860e5e
+2018-11-09 15:20:10 INFO  CommunicatorClient:112 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@1ec2390a printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@68860e5e
+2018-11-09 15:20:10 INFO  CommunicatorClient:134 - Inside sendSize in client 43
+2018-11-09 15:20:10 INFO  CommunicatorClient:135 - Node: %s - Starting function sendSize7
+2018-11-09 15:20:10 INFO  Node:201 - Node: 6- No node with rackLocation:3,3 found!
+2018-11-09 15:20:10 INFO  Node:201 - Node: 5- No node with rackLocation:0,2 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 5
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 5
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[11]
+2018-11-09 15:20:10 INFO  Node:414 - Node: %s - I am a parent not leaf 5
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 5
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server5
+2018-11-09 15:20:10 INFO  Node:201 - Node: 3- No node with rackLocation:0,2 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 3
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 3
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[]
+2018-11-09 15:20:10 INFO  Node:409 - Node: %s - Calling phaseOneClusterStart with parentId: 3 1
+2018-11-09 15:20:10 INFO  Node:201 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-09 15:20:10 INFO  CommunicatorClient:98 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50050
+2018-11-09 15:20:10 INFO  CommunicatorClient:101 - printing host localhost
+2018-11-09 15:20:10 INFO  CommunicatorClient:103 - printing port after splitting 50050
+2018-11-09 15:20:10 INFO  Node:201 - Node: 6- No node with rackLocation:1,3 found!
+2018-11-09 15:20:10 INFO  Node:131 -  Starting Phase One Clustering in constructor 6
+2018-11-09 15:20:10 INFO  Node:406 - Node: %s - Starting Phase One Clustering 6
+2018-11-09 15:20:10 INFO  Node:407 - inside start phase one clustering in node[7, 8]
+2018-11-09 15:20:10 INFO  Node:414 - Node: %s - I am a parent not leaf 6
+2018-11-09 15:20:10 INFO  CommunicatorClient:107 - printing channel io.grpc.internal.ManagedChannelImpl@62859501
+2018-11-09 15:20:10 INFO  CommunicatorClient:109 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@27871735
+2018-11-09 15:20:10 INFO  CommunicatorClient:112 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@200eebc2 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@27871735
+2018-11-09 15:20:10 INFO  CommunicatorClient:134 - Inside sendSize in client 42
+2018-11-09 15:20:10 INFO  CommunicatorClient:135 - Node: %s - Starting function sendSize3
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 6
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server6
+2018-11-09 15:20:10 ERROR CommunicatorClient:117 - 7
+2018-11-09 15:20:10 ERROR CommunicatorClient:117 - 3
+2018-11-09 15:20:10 ERROR CommunicatorClient:118 - Printing node error 7
+io.grpc.StatusRuntimeException: UNAVAILABLE
+	at io.grpc.Status.asRuntimeException(Status.java:430)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:156)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:106)
+	at org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub.size(CommunicatorGrpc.java:163)
+	at org.sjsu.grpcCommunicator.CommunicatorClient.sendSize(CommunicatorClient.java:137)
+	at org.sjsu.grpcCommunicator.CommunicatorClient.startStageOneCluster(CommunicatorClient.java:113)
+	at org.sjsu.grpcCommunicator.Node.start_phase_one_clustering(Node.java:410)
+	at org.sjsu.grpcCommunicator.Node.<init>(Node.java:132)
+	at org.sjsu.grpcCommunicator.InitScript.spawnNode(InitScript.java:73)
+	at org.sjsu.grpcCommunicator.InitScript$myRunnable.run(InitScript.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at io.grpc.okhttp.OkHttpClientTransport$1.run(OkHttpClientTransport.java:350)
+	at io.grpc.internal.SerializingExecutor$TaskRunner.run(SerializingExecutor.java:154)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+2018-11-09 15:20:10 ERROR CommunicatorClient:119 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 15:20:10 ERROR CommunicatorClient:118 - Printing node error 3
+io.grpc.StatusRuntimeException: UNAVAILABLE
+	at io.grpc.Status.asRuntimeException(Status.java:430)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:156)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:106)
+	at org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub.size(CommunicatorGrpc.java:163)
+	at org.sjsu.grpcCommunicator.CommunicatorClient.sendSize(CommunicatorClient.java:137)
+	at org.sjsu.grpcCommunicator.CommunicatorClient.startStageOneCluster(CommunicatorClient.java:113)
+	at org.sjsu.grpcCommunicator.Node.start_phase_one_clustering(Node.java:410)
+	at org.sjsu.grpcCommunicator.Node.<init>(Node.java:132)
+	at org.sjsu.grpcCommunicator.InitScript.spawnNode(InitScript.java:73)
+	at org.sjsu.grpcCommunicator.InitScript$myRunnable.run(InitScript.java:22)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at io.grpc.okhttp.OkHttpClientTransport$1.run(OkHttpClientTransport.java:350)
+	at io.grpc.internal.SerializingExecutor$TaskRunner.run(SerializingExecutor.java:154)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	... 1 more
+2018-11-09 15:20:10 ERROR CommunicatorClient:119 - io.grpc.StatusRuntimeException: UNAVAILABLE
+2018-11-09 15:20:10 INFO  Node:412 - Node: %s - Sent size() message to parent: 3 1
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 3
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server3
+2018-11-09 15:20:10 INFO  Node:412 - Node: %s - Sent size() message to parent: 7 6
+2018-11-09 15:20:10 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 7
+2018-11-09 15:20:10 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server7
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50054
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server5
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50055
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50049
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server0
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50051
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server2
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50052
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server3
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50056
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server7
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50053
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server4
+2018-11-09 15:20:10 INFO  CommunicatorServer:72 - Server started, listening on 50050
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server6
+2018-11-09 15:20:10 INFO  CommunicatorServer:111 - Node %s - Starting GRPC Server1

@@ -404,6 +404,7 @@ public class Node {
     public void start_phase_one_clustering(){
         System.out.println("Node: %s - Starting Phase One Clustering "+ this.id);
         logger.info("Node: %s - Starting Phase One Clustering "+ this.id);
+        logger.info("inside start phase one clustering in node" +this.child_list_Id);
         if(this.child_list_Id==null || this.child_list_Id.size()==0){
             logger.info("Node: %s - Calling phaseOneClusterStart with parentId: "+this.id+" "+this.parent_Id);
             client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));

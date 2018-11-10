@@ -95,19 +95,27 @@ public class CommunicatorClient {
 
   /** Start stage one clustering. **/
   public void startStageOneCluster(Node node, String ipAddress) {
+    logger.info("startStageOneCluster in CommunicatorClient - printing ipAddress " +ipAddress);
     String[] strArr = ipAddress.split(":");
     String host = strArr[0];
+    logger.info("printing host " +host);
     int port = Integer.valueOf(strArr[1]);
+    logger.info("printing port after splitting " +port);
     channel = ManagedChannelBuilder.forAddress(host, port)
             .usePlaintext(true)
             .build();
+    logger.info("printing channel "+channel);
     blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+    logger.info("printing blockingStub "+blockingStub);
     //CommunicatorClient(nid, port);//port num?
     try {
+      logger.info("before calling sendSize in client and print node " +node+ " printing stub " +blockingStub );
       sendSize(node, blockingStub);
+      logger.info("after sendSize in client");
 
     } catch (RuntimeException e) {
       logger.error("Node:{} - {}".format(node.getId(), e));
+      logger.error("Printing node error " +node.getId(),e);
       logger.error(e);
 
     } finally {
@@ -123,10 +131,13 @@ public class CommunicatorClient {
   public void sendSize(Node node, CommunicatorGrpc.CommunicatorBlockingStub blockingStub ) {
 
     System.out.println(node.getSize());
+    logger.info("Inside sendSize in client " +node.getSize());
     logger.info("Node: %s - Starting function sendSize" +(node.getId()));
     MySize request = MySize.newBuilder().setSize(node.getSize()).build();
     AccomodateChild response = blockingStub.size(request);
+    logger.info("printing response "+response);
     String sizeRPC = response.getMessage();
+    logger.info("printing sizeRPC " +sizeRPC );
     logger.info("Node:" + node.getId() + " - Successfully sent the size message of size" + node.getSize() + " to parentId:" + node.getParent_Id());
     logger.info("Node:" + node.getParent_Id() + "- Responded to Size RPC with reply:" + sizeRPC);
 
