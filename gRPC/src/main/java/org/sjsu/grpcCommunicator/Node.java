@@ -218,21 +218,27 @@ public class Node {
         }else{
             logger.info("Node: %s - Setting myself as clusterhead as no parent found! "+id);
             this.is_Cluster_head=1;
-            this.cluster_head_Id= id;
+            this.cluster_head_Id= this.id;
             this.state = "free";
+            BasicDBObject query = new BasicDBObject();
+            query.put("node_id", this.id);
             try{
-                logger.info("Node: %s - Updating DB with size,hopcount variables "+id);
+                logger.info("Node: %s - Updating DB with size,hopcount variables "+id+" "+this.size);
                 BasicDBObject newDocument = new BasicDBObject();
                 newDocument.put("is_Cluster_head", this.is_Cluster_head);
                 newDocument.put("cluster_head_Id", this.cluster_head_Id);
                 newDocument.put("parent_Id", null);
                 newDocument.put("size", this.size);
-                newDocument.put("hop_count", this.hop_count);
+                newDocument.put("hop_count", 0);
                 newDocument.put("state", this.state);
 
-                BasicDBObject searchQuery = new BasicDBObject().append("nodeId", this.id);
 
-                collection.update(searchQuery, newDocument);
+
+                BasicDBObject updateObject = new BasicDBObject();
+                updateObject.put("$set", newDocument);
+
+                collection.update(query, updateObject);
+
                 logger.info("Node: %s - Successfully DB with size,hopcount variables");
             }catch(Exception e){
                 logger.error("Some Error occurred in sendSizeToParent()");
@@ -407,8 +413,8 @@ public class Node {
 
 
     public void propogate_Cluster_head_Info(String cluster_name, int hop_count){
-        if(this.child_list_Id==null || this.child_list_Id.size()==0) {
-         // client.propogate_Cluster_head_Info(cluster_name,hop_count);
+        if(this.child_list_Id!=null && this.child_list_Id.size()!=0) {
+          client.propogate_Cluster_head_Info(this,cluster_name,hop_count+1);
         }
 
     }

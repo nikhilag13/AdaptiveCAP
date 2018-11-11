@@ -127,6 +127,43 @@ public class CommunicatorClient {
     }
   }
 
+  public void propogate_Cluster_head_Info(Node node, String cluster_Name, int hop_count){
+    for(String child : node.getChild_list_Id()) {
+      String child_IP = node.getIPfromId(child);
+      String[] strArr = child_IP.split(":");
+      String host = strArr[0];
+      //logger.info("printing host " +host);
+      int port = Integer.valueOf(strArr[1]);
+      //logger.info("printing port after splitting " +port);
+
+      channel = ManagedChannelBuilder.forAddress(host, port)
+              .usePlaintext(true)
+              .build();
+      //logger.info("printing channel "+channel);
+      blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+      //logger.info("printing blockingStub "+blockingStub);
+      try {
+        logger.info("Node: %s - Sending propagate cluster message to child id: %s " + node.getId() + " " + child);
+
+        JoinClusterRequest request = JoinClusterRequest.newBuilder().setClusterHeadName(cluster_Name).setHopcount(hop_count).build();
+        JoinClusterResponse response = blockingStub.joinCluster(request);
+        String clusterRPC = response.getJoinClusterResponse();
+
+        System.out.println("Node: {} - Got Response: {} after sending cluster message to child id: {} " + node.getId() + " " + clusterRPC + " " + child);
+        logger.info("Node: {} - Got Response: {} after sending cluster message to child id: {} " + node.getId() + " " + clusterRPC + " " + child);
+
+      } catch (RuntimeException e) {
+        logger.error("Node:{} - {} " + node.getId());
+        logger.error(e);
+        //logger.error(traceback.format_exc())
+      } finally {
+        channel.shutdown();
+//      blockingStub = "None";
+//      channel = "None";
+        Runtime.getRuntime().gc();
+      }
+    }
+  }
 
   public void sendSize(Node node, CommunicatorGrpc.CommunicatorBlockingStub blockingStub ) {
 
@@ -151,7 +188,7 @@ public class CommunicatorClient {
       logger.info("Node:" + node.getId() + " - Got Prune");
       // Become a clusterhead and send Cluster RPC to children
       node.setCluster_head_Id(node.getId());
-      node.setParent_Id("None");
+      node.setParent_Id(null);
       // Set I am the cluster
       node.setIs_Cluster_head(1);
       node.setState("free");
