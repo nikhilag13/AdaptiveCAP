@@ -133,7 +133,8 @@ public class CommunicatorClient {
     System.out.println(node.getSize());
     logger.info("Inside sendSize in client " +node.getSize());
     logger.info("Node: %s - Starting function sendSize" +(node.getId()));
-    MySize request = MySize.newBuilder().setSize(node.getSize()).build();
+    MySize request = MySize.newBuilder().setSize(node.getSize()).setNodeId(node.getId()).build();
+    //MySize request = MySize.newBuilder().setSize(node.getSize()).build();
     AccomodateChild response = blockingStub.size(request);
     logger.info("printing response "+response);
     String sizeRPC = response.getMessage();
@@ -144,9 +145,9 @@ public class CommunicatorClient {
     DBCollection collection = database.getCollection("spanningtree");
 
     BasicDBObject query = new BasicDBObject();
-    query.put("nodeId", node.getId());
+    query.put("node_id", node.getId());
 
-    if (sizeRPC == "Prune") {
+    if (sizeRPC.equals("Prune")) {
       logger.info("Node:" + node.getId() + " - Got Prune");
       // Become a clusterhead and send Cluster RPC to children
       node.setCluster_head_Id(node.getId());
@@ -157,12 +158,14 @@ public class CommunicatorClient {
       try {
 
         BasicDBObject newDocument = new BasicDBObject();
-        newDocument.put("'is_Cluster_head'", node.getIs_Cluster_head());
-        newDocument.put("'parent_Id'", node.getParent_Id());
-        newDocument.put("'cluster_head_Id'", node.getCluster_head_Id());
-        newDocument.put("'hop_count'", node.getHop_count());
-        newDocument.put("'size'", node.getSize());
-        newDocument.put("'state'", node.getState());
+        newDocument.put("is_Cluster_head", node.getIs_Cluster_head());
+        newDocument.put("parent_Id", node.getParent_Id());
+        newDocument.put("cluster_head_Id", node.getCluster_head_Id());
+        newDocument.put("hop_count", node.getHop_count());
+        newDocument.put("size", node.getSize());
+        newDocument.put("state", node.getState());
+        logger.info("printing schema while updating db " +node.getState()+" "+String.valueOf(node.getIs_Cluster_head()) );
+
 
         BasicDBObject updateObject = new BasicDBObject();
         updateObject.put("$set", newDocument);
@@ -173,7 +176,7 @@ public class CommunicatorClient {
         logger.error("Node:" + node.getId() + "- not able to update db");
         logger.error(e);
       }
-      //sendCluster(node);
+      sendCluster(node);
     }
     else {
       logger.info("Node:" + node.getId() + "Didn't get Prune");
@@ -207,12 +210,9 @@ public class CommunicatorClient {
 
       try {
         //logger.info("Node: %s - Sending cluster message to child id: %s" %(str(node.id),str(child)))
-        JoinClusterRequest request = JoinClusterRequest.newBuilder().setClusterHeadName(node.getId()).build();
-        request.newBuilder().setHopcount(hopCount).build();
+        JoinClusterRequest request = JoinClusterRequest.newBuilder().setHopcount(hopCount).setClusterHeadName(node.getId()).build();
         JoinClusterResponse  response =  blockingStub.joinCluster(request);
-//        clusterRPC = stub.JoinCluster(phase1_pb2.JoinClusterRequest(clusterHeadName=newClusterId,hopcount=hopCount));
-        // print("Node: {} - Got Response: {} after sending cluster message to child id: {}".format(str(node.id),clusterRPC,str(child)))
-        //logger.info("Node: {} - Got Response: {} after sending cluster message to child id: {}".format(str(node.id),clusterRPC,str(child)))
+
 
       } catch (RuntimeException e) {
         //logger.error("Node:{} - {}".format(node.id, e))

@@ -109,6 +109,7 @@ public class CommunicatorServer {
       server.start();
      // server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
       logger.info("Node %s - Starting GRPC Server" + (node.getId()));
+      node.start_phase_one_clustering();
       server.blockUntilShutdown();
     }
     catch(Exception e){
@@ -151,7 +152,7 @@ public class CommunicatorServer {
 
       public void joinCluster(JoinClusterRequest request,StreamObserver<JoinClusterResponse> responseObserver){
 
-          //logger.debug("Node:%s - Server got Cluster message"%(self.node.id))
+          logger.info("Node:%s - Server got Cluster message "+ String.valueOf(request.getHopcount()));
           String clusterName = request.getClusterHeadName();
           int hopCount = request.getHopcount();
 
@@ -160,16 +161,16 @@ public class CommunicatorServer {
           DBCollection collection = database.getCollection("spanningtree");
 
           BasicDBObject query = new BasicDBObject();
-          query.put("nodeId", node.getId());
+          query.put("node_id", node.getId());
 
           try {
 
               BasicDBObject newDocument = new BasicDBObject();
-              newDocument.put("'hop_count'",hopCount);
-              newDocument.put("'cluster_head_Id'", clusterName);
-              newDocument.put("'size'", node.getSize());
-              newDocument.put("'is_Cluster_head'", 0);
-              newDocument.put("'state'", "active");
+              newDocument.put("hop_count",hopCount);
+              newDocument.put("cluster_head_Id", clusterName);
+              newDocument.put("size", node.getSize());
+              newDocument.put("is_Cluster_head", 0);
+              newDocument.put("state", "active");
 
               BasicDBObject updateObject = new BasicDBObject();
               updateObject.put("$set", newDocument);
@@ -209,7 +210,9 @@ public class CommunicatorServer {
           DBCollection collection = database.getCollection("spanningtree");
 
           BasicDBObject query = new BasicDBObject();
-          query.put("nodeId", node.id);
+          query.put("node_id", node.id);
+          logger.info("Node: %s - Current size: %s " +node.getId()+ " "+ node.getSize());
+          logger.info ("Node:%s - Child Node: %s has size %s" +node.getId()+ " "+ req.getNodeId()+" "+childSize);
 
           try {
               if (node.getSize() + childSize > THRESHOLD_S) {
@@ -220,7 +223,7 @@ public class CommunicatorServer {
                   try {
 
                       BasicDBObject newDocument = new BasicDBObject();
-                      newDocument.put("'child_list_Id'", node.getChild_list_Id());
+                      newDocument.put("child_list_Id", node.getChild_list_Id());
 
                       BasicDBObject updateObject = new BasicDBObject();
                       updateObject.put("$set", newDocument);
@@ -235,7 +238,7 @@ public class CommunicatorServer {
                       logger.error("***");
                   }
 
-                  logger.info("Node: " + node.id + " - Removed child " + req.getNodeId() + " from childList");
+                  logger.info("Node: " + node.id + " - Removed child " + req.getNodeId() + " from childList "+childSize+" "+node.getSize());
                   logger.info("Node: " + (node.getId()) + " - Sending Prune after checking if all children responded or not");
                   if (node.getChild_request_counter() == node.getInitial_node_child_length()) {
                       logger.info("Node: %s - All children responded. Sending size to parent" + (node.getId()));
@@ -249,13 +252,14 @@ public class CommunicatorServer {
 //                            node.sendSizeToParent(); //will be implemented in Node class
 //                        }
 //                    }).start();
+                      node.send_size_to_parent();
                     }
                   logger.info("Node: " + node.id + "  - Sending Prune to childId: " + req.getNodeId());
-                  AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Prune ").build();
+                  AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Prune").build();
                   responseObserver.onNext(reply);
                   responseObserver.onCompleted();
               } else {
-                  logger.info("Node: "+(node.id)+" - Sending Accept to childId: "+req.getNodeId()+" after checking if all children responded or not");
+                  logger.info("Node: "+(node.id)+" - Sending Accept to childId: "+req.getNodeId()+" after checking if all children responded or not "+childSize+" "+node.getSize());
                   node.setSize(node.getSize() + childSize);
                   try {
 
@@ -288,8 +292,10 @@ public class CommunicatorServer {
 //                        }
 //                    }).start();
 
+                      node.send_size_to_parent();
+
                       logger.info("Node: " + node.getId() + " Sending accept to childId: " + req.getNodeId());
-                      AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Accepted ").build();
+                      AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Accepted").build();
                       responseObserver.onNext(reply);
                       responseObserver.onCompleted();
 

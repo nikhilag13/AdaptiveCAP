@@ -129,7 +129,10 @@ public class Node {
 
             state=(String) document.get("state");
             logger.info(" Starting Phase One Clustering in constructor "+ this.id);
-            start_phase_one_clustering();
+
+
+           // start_phase_one_clustering();
+
 
 
         }catch (Exception e){
