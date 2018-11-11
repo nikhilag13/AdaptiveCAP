@@ -191,6 +191,7 @@ public class CommunicatorServer {
               //thread3 = threading.Thread(target = self.node.propogateClusterheadInfo, args = (clusterName, hopCount))
               //thread3.start()
               //#time.sleep(2)
+              node.propogate_Cluster_head_Info(clusterName,hopCount);
           }else{
               // logger.info("Node: %s - NO children found!"%(self.node.id))
           }

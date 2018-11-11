@@ -404,6 +404,16 @@ public class Node {
 //            logger.info("size sent to parent node");
 //    }
 
+
+
+    public void propogate_Cluster_head_Info(String cluster_name, int hop_count){
+        if(this.child_list_Id==null || this.child_list_Id.size()==0) {
+         // client.propogate_Cluster_head_Info(cluster_name,hop_count);
+        }
+
+    }
+
+
     public void start_phase_one_clustering(){
         System.out.println("Node: %s - Starting Phase One Clustering "+ this.id);
         logger.info("Node: %s - Starting Phase One Clustering "+ this.id);
