@@ -138,7 +138,7 @@ public class CommunicatorServer {
 
   }
 
-  private class CommunicatorServiceImpl implements CommunicatorGrpc.Communicator {
+  private  class CommunicatorServiceImpl implements CommunicatorGrpc.Communicator {
 
     public void setStateDB(){
         //update state of the node in db

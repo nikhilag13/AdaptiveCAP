@@ -90,10 +90,12 @@ service Communicator {
 message AccomodateChild{
   string message = 1;
 }
+
 message MySize{
   int32 size = 1;
   string nodeId = 2;
 }
+
 
 message JoinClusterResponse{
     string joinClusterResponse = 1;
@@ -245,3 +247,4 @@ message CheckEnergyDrainRequest{
 message CheckEnergyDrainResponse{
     int32 checkEnergyDrainResponse = 1;
 }
+

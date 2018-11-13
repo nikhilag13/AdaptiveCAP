@@ -66,19 +66,7 @@ public class CommunicatorClient {
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  /** Say hello to server. */
-  public void greet(String name) {
-    try {
-      logger.info("Will try to greet " + name + " ...");
-      HelloRequest request = HelloRequest.newBuilder().setName(name).build();
-      HelloResponse response = blockingStub.sayHello(request);
-      logger.info("Greeting: " + response.getMessage());
-    } catch (RuntimeException e) {
-      //logger.log(Level.WARNING, "RPC failed", e);
-      logger.error("RPC failed", e);
-      return;
-    }
-  }
+
 
   /** Say hello to server. */
 //  public void getNodeSize(int size, String id) {
@@ -259,18 +247,16 @@ public class CommunicatorClient {
 
   public void send_Cluster(Node node){
 
-    // newClusterId = "C"+str(node.id)
-    //newClusterId = str(node.id)
-    int hopCount=1;
-    if(node.getChild_list_Id()== null){
+    int hopCount = 1;
+    if (node.getChild_list_Id() == null) {
 
-      //print("Node: %s - I am clusterhead with no children"%(node.id))
-      //logger.info("Node: %s - I am clusterhead with no children"%(node.id))
+      System.out.println("Node: %s - I am clusterhead with no children" + node.getId());
+      logger.info("Node: %s - I am clusterhead with no children" + node.getId());
       return;
     }
-    List<String> childList= node.getChild_list_Id();
+    List<String> childList = node.getChild_list_Id();
 
-    for(String child: childList){
+    for (String child : childList) {
       String childIP = node.getIPfromId(child);
       String[] strArr = childIP.split(":");
       String host = strArr[0];
@@ -281,14 +267,13 @@ public class CommunicatorClient {
       blockingStub = CommunicatorGrpc.newBlockingStub(channel);
 
       try {
-        //logger.info("Node: %s - Sending cluster message to child id: %s" %(str(node.id),str(child)))
+          logger.info("Node: %s - Sending cluster message to child id: %s" + childIP);
         JoinClusterRequest request = JoinClusterRequest.newBuilder().setHopcount(hopCount).setClusterHeadName(node.getId()).build();
         JoinClusterResponse  response =  blockingStub.joinCluster(request);
         String clusterRPC = response.getJoinClusterResponse();
 
       } catch (RuntimeException e) {
-        //logger.error("Node:{} - {}".format(node.id, e))
-        //logger.error(traceback.format_exc())
+        logger.error("Node:{} - {}" + node.getId());
 
       } finally {
         channel.shutdown();
@@ -297,6 +282,36 @@ public class CommunicatorClient {
     }
   }
 
+  public void propagateNewClusterHeadToChildren(List<String> childIpList, String Id, String cluster_head_Id) {
+
+    // have to check corresponding call in Node later
+
+    for (String childIp : childIpList) {
+      String[] strArr = childIp.split(":");
+      String host = strArr[0];
+      int port = Integer.valueOf(strArr[1]);
+      channel = ManagedChannelBuilder.forAddress(host, port)
+              .usePlaintext(true)
+              .build();
+      blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+
+      try {
+
+        UpdateClusterheadRequest request = UpdateClusterheadRequest.newBuilder().setNewClusterheadId(cluster_head_Id).build();
+        UpdateClusterheadResponse response = blockingStub.updateClusterhead(request);
+        logger.info("Node: %s - Sent sendShiftNodeRequest about C:%s to clusterhead: " + Id + " " + cluster_head_Id);
+
+      } catch (RuntimeException e) {
+        logger.error("Error with Node  " + childIp);
+        logger.error(e);
+      } finally {
+        channel.shutdown();
+        Runtime.getRuntime().gc();
+      }
+
+    }
+
+  }
 
   /** Phase2 **/
   public void send_Shift_Node_Request(Node node, String best_Node_Cluster_Head_Id, String cluster_Head_Ip){
@@ -546,6 +561,175 @@ public class CommunicatorClient {
     }
   }
 
+  public void sendShiftCompleteToBothClusterHeads(String old_Cluster_headIp, String new_Cluster_headIp, String node_Id) {
+
+    String[] strArr = old_Cluster_headIp.split(":");
+    String host = strArr[0];
+    int port = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+
+    try {
+
+      SendShiftCompleteAck request = SendShiftCompleteAck.newBuilder().setId(node_Id).setSendShiftCompleteAck("Departed").build();
+      ClusterheadAckSendShift response = blockingStub.shiftComplete(request);
+      logger.info("Node: Got Response: {} after sending shiftComplete to old clusterhead ip: {} " + old_Cluster_headIp + " " + "Departed");
+
+
+    } catch (RuntimeException e) {
+      logger.error("Error with Node  " + old_Cluster_headIp);
+      logger.error(e);
+    } finally {
+      channel.shutdown();
+      Runtime.getRuntime().gc();
+    }
+
+    String[] strArr1 = new_Cluster_headIp.split(":");
+    String host1 = strArr[0];
+    int port1 = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host1, port1)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+
+    try {
+      SendShiftCompleteAck request = SendShiftCompleteAck.newBuilder().setId(node_Id).setSendShiftCompleteAck("Added").build();
+      ClusterheadAckSendShift response = blockingStub.shiftComplete(request);
+
+      logger.info("Node: %s - Sent sendShiftNodeRequest about to clusterhead: " + new_Cluster_headIp + " " + "Added");
+    } catch (RuntimeException e) {
+      logger.error("Error with Node  " + new_Cluster_headIp);
+      logger.error(e);
+    } finally {
+      channel.shutdown();
+      Runtime.getRuntime().gc();
+    }
+  }
+
+
+  public void removeChildIdFromParent(String node_Id, String parent_Ip) {
+    String[] strArr = parent_Ip.split(":");
+    String host = strArr[0];
+    int port = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+    try {
+
+      RemoveChildIdFromParentRequest request = RemoveChildIdFromParentRequest.newBuilder().setDepartingChildId(node_Id).build();
+      RemoveChildIdFromParentResponse response = blockingStub.removeChildIdFromParent(request);
+
+      logger.info("Node: %s - Got Response: {} after sending removeChildIdFromParent to (old) parent ip: {} " + parent_Ip);
+    } catch (RuntimeException e) {
+      logger.error("Error with Node  " + node_Id);
+      logger.error(e);
+    } finally {
+      channel.shutdown();
+      Runtime.getRuntime().gc();
+    }
+
+  }
+
+  public void sendShiftStart(String node_Id,String target_Node_Id,String  target_Node_Ip) {
+    String[] strArr = target_Node_Ip.split(":");
+    String host = strArr[0];
+    int port = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+    try {
+
+
+      ShiftStartRequest request = ShiftStartRequest.newBuilder().setTargetNodeId(target_Node_Id).build();
+      ShiftStartResponse response = blockingStub.shiftStart(request);
+      logger.info("Node: {} - Got Response: {} after sending shift start to Node id: {}"+node_Id+"  "+target_Node_Id);
+    }catch (RuntimeException e) {
+      logger.error("Error with Node  " + node_Id);
+      logger.error(e);
+    } finally {
+      channel.shutdown();
+      Runtime.getRuntime().gc();
+    }
+  }
+
+  public void sendShiftFinished(String node_Id,String target_Node_Ip){
+    String[] strArr = target_Node_Ip.split(":");
+    String host = strArr[0];
+    int port = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+          try {
+            ShiftFinishedRequest request = ShiftFinishedRequest.newBuilder().setClusterHeadId(node_Id).build();
+            ShiftFinishedResponse response = blockingStub.shiftFinished(request);
+            logger.info("Node: {} - Got Response: {} after sending ShiftFinished to Node ip: {}"+node_Id+"  "+target_Node_Ip);
+          }catch (RuntimeException e) {
+            logger.error("Error with Node  " + node_Id);
+            logger.error(e);
+          } finally {
+            channel.shutdown();
+            Runtime.getRuntime().gc();
+          }
+}
+
+  public void sendWakeUp(List<String> ipList,String node_Id) {
+    for(String childIp :ipList) {
+
+     String[] strArr = childIp.split(":");
+      String host = strArr[0];
+      int port = Integer.valueOf(strArr[1]);
+      channel = ManagedChannelBuilder.forAddress(host, port)
+              .usePlaintext(true)
+              .build();
+      blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+      try {
+        logger.info("Node: %s - Sending wakeup to child ip: %s" +childIp);
+        wakeUpRequest request = wakeUpRequest.newBuilder().setWakeywakey(node_Id).build();
+        wakeUpResponse response = blockingStub.wakeUp(request);
+        logger.info("Node: {} - Got Response: {} after sending wakeup to child ip: {}"+childIp);
+      }catch (RuntimeException e) {
+        logger.error("Error with Node  " + node_Id);
+        logger.error(e);
+      } finally {
+        channel.shutdown();
+        Runtime.getRuntime().gc();
+      }
+    }
+  }
+
+
+  public void sendHello(String node_Id,String id,String neighbour_Ip,String node_Cluster_head_Id,int node_Hopcount,String node_State) {
+    String[] strArr = neighbour_Ip.split(":");
+    String host = strArr[0];
+    int port = Integer.valueOf(strArr[1]);
+    channel = ManagedChannelBuilder.forAddress(host, port)
+            .usePlaintext(true)
+            .build();
+    blockingStub = CommunicatorGrpc.newBlockingStub(channel);
+    try {
+      logger.info("Node: "+node_Id+"- sendng hello to IP: {}"+ neighbour_Ip);
+      logger.info("Node: "+node_Id+"- Sending Hello to node: {}"+id);
+      logger.info("Node: "+node_Id+" - hopToSenderClusterhead: {}"+ node_Hopcount);
+      logger.info("Node: "+node_Id+"- senderState:"+node_State);
+      logger.info("Node: "+node_Id+"- senderClusterheadId: "+node_Cluster_head_Id);
+
+      SendHello request = SendHello.newBuilder().setSenderId(node_Id).setHopToSenderClusterhead(node_Hopcount).setSenderState(node_State).setSenderClusterheadId(node_Cluster_head_Id).build();
+      HelloResponse response = blockingStub.hello(request);
+      logger.info("Node: "+node_Id+" - Got Response: {} after sending Hello to id: {}"+ id);
+    }
+    catch (RuntimeException e) {
+      logger.error("Error with Node  " + node_Id);
+      logger.error(e);
+    } finally {
+      channel.shutdown();
+      Runtime.getRuntime().gc();
+    }
+  }
   /**
    * Greet server. If provided, the first element of {@code args} is the name to use in the
    * greeting.
@@ -553,13 +737,7 @@ public class CommunicatorClient {
   public static void main(String[] args) throws Exception {
     CommunicatorClient client = new CommunicatorClient();
     try {
-      /* Access a service running on the local machine on port 50051 */
-      String user = "world";
-      if (args.length > 0) {
-        user = args[0]; /* Use the arg as the name to greet if provided */
-      }
-      client.greet(user);
-//      client.getNodeSize(3, "1");
+
     } finally {
       client.shutdown();
     }
