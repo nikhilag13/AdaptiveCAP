@@ -38,7 +38,7 @@ option java_outer_classname = "CommunicatorProto";
 // The greeting service definition.
 service Communicator {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+  //rpc SayHello (HelloRequest) returns (HelloResponse) {}
 
   rpc Size (MySize) returns (AccomodateChild){}
 
@@ -50,6 +50,8 @@ service Communicator {
 
   rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
 
+  rpc Hello(SendHello) returns (SendHelloResponse){}
+
   rpc Accept(AcceptRequest) returns(AcceptResponse){}
 
   rpc Reject(RejectRequest) returns(RejectResponse){}
@@ -59,16 +61,31 @@ service Communicator {
   rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
 
   rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
+
+  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+
+  rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
+
+  rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+
+  rpc ShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+
+  rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
+
+  rpc StartPhase2Clustering(StartPhase2ClusteringRequest) returns (StartedPhase2ClusteringResponse){}
+
+  rpc CheckEnergyDrain(CheckEnergyDrainRequest) returns (CheckEnergyDrainResponse){}
+
 }
 
 // The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
+//message HelloRequest {
+//  string name = 1;
+//}
 // The response message containing the greetings
-message HelloResponse {
-  string message = 1;
-}
+//message HelloResponse {
+//  string message = 1;
+//}
 
 message AccomodateChild{
   string message = 1;
@@ -115,39 +132,116 @@ message ShiftClusterReq{
   int32 sumOfweights = 3;
 }
 
-message AcceptResponse{
-  string message = 1;
+message SendHello{
+    string senderId = 1;
+    int32 hopToSenderClusterhead = 2;
+    string senderState = 3;
+    string senderClusterheadId = 4;
 }
+
+message SendHelloResponse{
+    int32 interested =1;
+}
+
 message AcceptRequest{
   string clusterHeadId = 1;
+}
+
+message AcceptResponse{
+  string message = 1;
 }
 
 message RejectResponse{
   string message = 1;
 }
+
 message RejectRequest{
   string clusterHeadId = 1;
 }
 
-message wakeUpResponse{
-    string wokenUp = 1;
-}
-message wakeUpRequest {
-    string wakeywakey = 1;
-}
 
 message JoinNewParentResponse{
     string joinResponse = 1;
 }
+
 message JoinNewParentRequest{
     int32 childSize = 1;
     string nodeId = 2;
 }
 
+
+message WakeUpRequest {
+    string wakeUp = 1;
+}
+
+message WakeUpResponse{
+    string wokenUp = 1;
+}
+
+
+message ShiftStartRequest{
+    string targetNodeId = 1;
+}
+
+message ShiftStartResponse{
+    string shiftStartResponse = 1;
+}
+
+message ShiftFinishedRequest{
+  string clusterHeadId = 1;
+}
+
+message ShiftFinishedResponse{
+  string message = 1;
+}
+
+
 message UpdateSizeResponse{
     string updateSizeResponse = 1;
 }
+
 message UpdateSizeRequest{
     int32 sizeIncrement = 1;
 }
 
+message UpdateClusterheadRequest{
+    string newClusterheadId = 1;
+}
+
+message UpdateClusterheadResponse{
+    string updateClusterheadResponse = 1;
+
+}
+
+message SendShiftCompleteAck{
+    string id = 1;
+    string sendShiftCompleteAck = 2;
+}
+
+message ClusterheadAckSendShift{
+    string clusterheadAckSendShift = 1;
+}
+
+message RemoveChildIdFromParentRequest{
+    string departingChildId = 1;
+}
+
+message RemoveChildIdFromParentResponse{
+    string removeChildIdFromParentResponse = 1;
+}
+
+message StartPhase2ClusteringRequest{
+    string startPhase2 = 1;
+}
+
+message StartedPhase2ClusteringResponse{
+    string startedPhase2ClusteringResponse =1;
+}
+
+message CheckEnergyDrainRequest{
+    string checkEnergyDrainRequest = 1;
+}
+
+message CheckEnergyDrainResponse{
+    int32 checkEnergyDrainResponse = 1;
+}
