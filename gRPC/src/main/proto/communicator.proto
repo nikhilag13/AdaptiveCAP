@@ -37,24 +37,26 @@ option java_outer_classname = "CommunicatorProto";
 
 // The greeting service definition.
 service Communicator {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloResponse) {}
 
   rpc Size (MySize) returns (AccomodateChild){}
 
   rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
 
+  rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+
+  rpc ShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+
+  rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
+
+  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+
+   rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
+
+     rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+
+      rpc Hello(SendHello) returns (HelloResponse){}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings
-message HelloResponse {
-  string message = 1;
-}
 
 message AccomodateChild{
   string message = 1;
@@ -73,4 +75,66 @@ message JoinClusterRequest{
     string clusterHeadName = 1;
     int32 hopcount = 2;
 
+}
+
+message UpdateClusterheadRequest{
+    string newClusterheadId = 1;
+}
+
+message UpdateClusterheadResponse{
+    string updateClusterheadResponse = 1;
+
+}
+
+message SendShiftCompleteAck{
+    string id = 1;
+    string sendShiftCompleteAck = 2;
+}
+
+message ClusterheadAckSendShift{
+    string clusterheadAckSendShift = 1;
+}
+
+message RemoveChildIdFromParentRequest{
+    string departingChildId = 1;
+}
+
+message RemoveChildIdFromParentResponse{
+    string removeChildIdFromParentResponse = 1;
+}
+
+message ShiftStartRequest{
+    string targetNodeId = 1;
+}
+
+message ShiftStartResponse{
+    string shiftStartResponse = 1;
+}
+
+message ShiftFinishedRequest{
+  string clusterHeadId = 1;
+}
+
+message ShiftFinishedResponse{
+  string message = 1;
+}
+
+
+message wakeUpRequest {
+    string wakeywakey = 1;
+}
+
+message wakeUpResponse{
+    string wokenUp = 1;
+}
+
+message SendHello{
+    string senderId = 1;
+    int32 hopToSenderClusterhead = 2;
+    string senderState = 3;
+    string senderClusterheadId = 4;
+}
+
+message HelloResponse{
+    int32 interested =1;
 }
