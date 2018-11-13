@@ -244,7 +244,7 @@ public class Node {
                 logger.error("Some Error occurred in sendSizeToParent()");
                System.out.println(e);
             }
-            client.sendCluster(this);
+            client.send_Cluster(this);
         }
   }
 

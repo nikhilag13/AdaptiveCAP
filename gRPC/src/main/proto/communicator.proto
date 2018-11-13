@@ -44,13 +44,27 @@ service Communicator {
 
   rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
 
+  rpc Jam (JamRequest) returns (JamResponse){}
+
+  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
+
+  rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
+
+  rpc Accept(AcceptRequest) returns(AcceptResponse){}
+
+  rpc Reject(RejectRequest) returns(RejectResponse){}
+
+  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+
+  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
+
+  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
 }
 
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
 }
-
 // The response message containing the greetings
 message HelloResponse {
   string message = 1;
@@ -59,12 +73,10 @@ message HelloResponse {
 message AccomodateChild{
   string message = 1;
 }
-
 message MySize{
   int32 size = 1;
   string nodeId = 2;
 }
-
 
 message JoinClusterResponse{
     string joinClusterResponse = 1;
@@ -74,3 +86,68 @@ message JoinClusterRequest{
     int32 hopcount = 2;
 
 }
+
+message JamResponse{
+    string jamResponse = 1;
+}
+message JamRequest{
+    string nodeId = 1;
+
+}
+
+message ShiftResponse{
+  string message = 1;
+}
+message ShiftRequest{
+  string nodeId = 1;
+  int32 sumOfweight = 2;
+  string clusterHeadId = 3;
+}
+
+
+message ShiftClusterRes{
+  string message = 1;
+
+}
+message ShiftClusterReq{
+  string senderClusterHeadId = 1;
+  string senderNodeId = 2;
+  int32 sumOfweights = 3;
+}
+
+message AcceptResponse{
+  string message = 1;
+}
+message AcceptRequest{
+  string clusterHeadId = 1;
+}
+
+message RejectResponse{
+  string message = 1;
+}
+message RejectRequest{
+  string clusterHeadId = 1;
+}
+
+message wakeUpResponse{
+    string wokenUp = 1;
+}
+message wakeUpRequest {
+    string wakeywakey = 1;
+}
+
+message JoinNewParentResponse{
+    string joinResponse = 1;
+}
+message JoinNewParentRequest{
+    int32 childSize = 1;
+    string nodeId = 2;
+}
+
+message UpdateSizeResponse{
+    string updateSizeResponse = 1;
+}
+message UpdateSizeRequest{
+    int32 sizeIncrement = 1;
+}
+
