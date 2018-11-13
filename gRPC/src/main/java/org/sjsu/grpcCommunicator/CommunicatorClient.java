@@ -481,8 +481,8 @@ public class CommunicatorClient {
               .build();
       blockingStub = CommunicatorGrpc.newBlockingStub(channel);
       try {
-        wakeUpRequest request = wakeUpRequest.newBuilder().setWakeywakey("wakeup").build();
-        wakeUpResponse response = blockingStub.wakeUp(request);
+        WakeUpRequest request = WakeUpRequest.newBuilder().setWakeUp("wakeup").build();
+        WakeUpResponse response = blockingStub.wakeUp(request);
         String clusterRPC = response.getWokenUp();
         logger.info("Node: {} - Got Response: {} after sending wake to child ip: {} " +node_Id+ "," +clusterRPC+ "," +childIP);
 
@@ -689,8 +689,8 @@ public class CommunicatorClient {
       blockingStub = CommunicatorGrpc.newBlockingStub(channel);
       try {
         logger.info("Node: %s - Sending wakeup to child ip: %s" +childIp);
-        wakeUpRequest request = wakeUpRequest.newBuilder().setWakeywakey(node_Id).build();
-        wakeUpResponse response = blockingStub.wakeUp(request);
+        WakeUpRequest request = WakeUpRequest.newBuilder().setWakeUp(node_Id).build();
+        WakeUpResponse response = blockingStub.wakeUp(request);
         logger.info("Node: {} - Got Response: {} after sending wakeup to child ip: {}"+childIp);
       }catch (RuntimeException e) {
         logger.error("Error with Node  " + node_Id);
@@ -719,7 +719,7 @@ public class CommunicatorClient {
       logger.info("Node: "+node_Id+"- senderClusterheadId: "+node_Cluster_head_Id);
 
       SendHello request = SendHello.newBuilder().setSenderId(node_Id).setHopToSenderClusterhead(node_Hopcount).setSenderState(node_State).setSenderClusterheadId(node_Cluster_head_Id).build();
-      HelloResponse response = blockingStub.hello(request);
+      SendHelloResponse response = blockingStub.hello(request);
       logger.info("Node: "+node_Id+" - Got Response: {} after sending Hello to id: {}"+ id);
     }
     catch (RuntimeException e) {
