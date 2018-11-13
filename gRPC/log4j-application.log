@@ -1,0 +1,170 @@
+2018-11-12 11:19:07 INFO  InitScript:53 - Cleaning DB if it exists
+2018-11-12 11:19:07 INFO  InitScript:62 - Creating New DB
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 0
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 1
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 0
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 2
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 1
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 2
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 3
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 1
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 2
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 0
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 3
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 3
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 4
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 4
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 4
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 5
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 5
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 5
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 6
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 6
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 6
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 7
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 7
+2018-11-12 11:19:07 INFO  Node:64 - Constructor 7
+2018-11-12 11:19:07 INFO  InitScript:21 - Run method 8
+2018-11-12 11:19:07 INFO  InitScript:69 - Spwanning new node 8
+2018-11-12 11:19:08 INFO  Node:64 - Constructor 8
+2018-11-12 11:19:08 INFO  InitScript:21 - Run method 9
+2018-11-12 11:19:08 INFO  InitScript:69 - Spwanning new node 9
+2018-11-12 11:19:08 INFO  InitScript:21 - Run method 10
+2018-11-12 11:19:08 INFO  InitScript:69 - Spwanning new node 10
+2018-11-12 11:19:08 INFO  Node:64 - Constructor 10
+2018-11-12 11:19:08 INFO  InitScript:21 - Run method 11
+2018-11-12 11:19:08 INFO  InitScript:69 - Spwanning new node 11
+2018-11-12 11:19:08 INFO  Node:64 - Constructor 9
+2018-11-12 11:19:08 INFO  Node:64 - Constructor 11
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 12
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 14
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 11
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent0
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 13
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 10
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parentnull
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 15
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 0 34
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent1
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 17
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent6
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 110
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent8
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 10 22
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 10
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 10
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 18
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 1 47
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 16
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent2
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 6 44
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 6
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 6
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 19
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent2
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent0
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 2 37
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 2
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 2
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent4
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 4 42
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 1
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 1
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent6
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 7 43
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 3 42
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 0
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 0
+2018-11-12 11:19:08 INFO  Node:204 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-12 11:19:08 INFO  Node:69 - Constructor 111
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent1
+2018-11-12 11:19:08 INFO  Node:74 - Constructor 2 parent5
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 3
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 3
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 8 66
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 7
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 4
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 4
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 9 27
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 7
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 8
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 8
+2018-11-12 11:19:08 INFO  Node:204 - Node: 7- No node with rackLocation:3,2 found!
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 11 32
+2018-11-12 11:19:08 INFO  WeightMatrix:95 - **********Node and size 5 26
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 5
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 5
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 11
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 11
+2018-11-12 11:19:08 INFO  Node:118 - constructor get_Neighbors 9
+2018-11-12 11:19:08 INFO  Node:182 -  get_Neighbors 9
+2018-11-12 11:19:08 INFO  Node:204 - Node: 2- No node with rackLocation:-1,0 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 8- No node with rackLocation:3,2 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 11- No node with rackLocation:3,2 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 9- No node with rackLocation:-1,0 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 2- No node with rackLocation:0,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 1- No node with rackLocation:0,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 6- No node with rackLocation:3,3 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 9- No node with rackLocation:0,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 7- No node with rackLocation:3,3 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 8- No node with rackLocation:3,3 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 2- No node with rackLocation:-1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 1- No node with rackLocation:-1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 11- No node with rackLocation:3,3 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 2- No node with rackLocation:1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 1- No node with rackLocation:1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 9- No node with rackLocation:-1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-12 11:19:08 INFO  Node:204 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 2
+2018-11-12 11:19:08 INFO  Node:204 - Node: 8- No node with rackLocation:3,1 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 6
+2018-11-12 11:19:08 INFO  Node:204 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 1
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 6
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server6
+2018-11-12 11:19:08 INFO  Node:204 - Node: 11- No node with rackLocation:3,1 found!
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 2
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server2
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 1
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server1
+2018-11-12 11:19:08 INFO  Node:204 - Node: 3- No node with rackLocation:0,2 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 3
+2018-11-12 11:19:08 INFO  Node:204 - Node: 10- No node with rackLocation:0,2 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 10
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 7
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 10
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server10
+2018-11-12 11:19:08 INFO  Node:204 - Node: 9- No node with rackLocation:1,-1 found!
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 7
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server7
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 8
+2018-11-12 11:19:08 INFO  Node:204 - Node: 5- No node with rackLocation:0,2 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 5
+2018-11-12 11:19:08 INFO  Node:204 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 0
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 3
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server3
+2018-11-12 11:19:08 INFO  Node:204 - Node: 4- No node with rackLocation:0,2 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 4
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 11
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 8
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server8
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 5
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server5
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 4
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 0
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server0
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 11
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server4
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server11
+2018-11-12 11:19:08 INFO  Node:204 - Node: 9- No node with rackLocation:-1,1 found!
+2018-11-12 11:19:08 INFO  Node:131 -  Starting Phase One Clustering in constructor 9
+2018-11-12 11:19:08 INFO  CommunicatorServer:100 - Node: %s - Creating GRPC Server 9
+2018-11-12 11:19:08 INFO  CommunicatorServer:103 - Node %s - Created GRPC Server9

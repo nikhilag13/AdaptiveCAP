@@ -15,6 +15,8 @@ public class Node {
     String ip_address;
     List<String> child_list_Id;
     int dist;
+
+
     String cluster_head_Id;
     int hop_count;
     String rack_location;
@@ -28,6 +30,7 @@ public class Node {
     int best_node_hop_count;
     String best_node_cluster_head_Id;
     List<String>  neighbor_ID;
+    public HashSet<String> neighbour_Hello_Array; //Phase 2
 
 
 
@@ -118,6 +121,8 @@ public class Node {
             logger.info("constructor get_Neighbors "+ this.id);
             get_Neighbors();
 
+            neighbour_Hello_Array = new HashSet<>(); //Phase 2
+
             initial_node_child_length= child_list_Id.size();
             shift_Node_Sum=0;
             shift_Node_Cluster=0;
@@ -165,15 +170,6 @@ public class Node {
 
     public void setIp_address(String ip_address) {
         this.ip_address = ip_address;
-    }
-
-    public List<String> getChild_list_Id() {
-        return child_list_Id;
-    }
-
-    public String getIPfromId(String id){
-        HashMap<String, String> list =  nodeIdsList.getNodeIdsList();
-        return list.get(id);
     }
 
 
@@ -406,7 +402,15 @@ public class Node {
         this.state = state;
     }
 
-//    public void sendSizeToParent() {
+    public HashSet<String> getNeighbour_Hello_Array() {
+        return neighbour_Hello_Array;
+    }
+
+    public void setNeighbour_Hello_Array(HashSet<String> neighbour_Hello_Array) {
+        this.neighbour_Hello_Array = neighbour_Hello_Array;
+    }
+
+    //    public void sendSizeToParent() {
 //            logger.info("size sent to parent node");
 //    }
 
