@@ -172,6 +172,87 @@ public class Node {
         this.ip_address = ip_address;
     }
 
+    public List<String> getChild_list_Id() {
+        return child_list_Id;
+    }
+
+    public String getIPfromId(String id){
+        HashMap<String, String> list =  nodeIdsList.getNodeIdsList();
+        return list.get(id);
+    }
+
+
+
+    public void get_Neighbors(){
+        logger.info(" get_Neighbors "+ this.id);
+        String rack_row= rack_location.split(",")[0];
+        String rack_column= rack_location.split(",")[0];
+        List<String> my_Neighbors_Rack = new ArrayList<String>();
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
+        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
+
+        for(String el: my_Neighbors_Rack){
+            try{
+                BasicDBObject query = new BasicDBObject();
+                query.put("rack_location",el );
+
+                DBObject document = collection.findOne(query);;
+                if(document!=null)
+                  this.neighbor_ID.add((String) document.get("parent_Id"));
+                else
+                    logger.info("Node: "+id+"- No node with rackLocation:"+el+" found!");
+
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
+
+    }
+
+
+
+  public void send_size_to_parent(){
+        if(this.parent_Id!=null){
+            client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));
+        }else{
+            logger.info("Node: %s - Setting myself as clusterhead as no parent found! "+id);
+            this.is_Cluster_head=1;
+            this.cluster_head_Id= this.id;
+            this.state = "free";
+            BasicDBObject query = new BasicDBObject();
+            query.put("node_id", this.id);
+            try{
+                logger.info("Node: %s - Updating DB with size,hopcount variables "+id+" "+this.size);
+                BasicDBObject newDocument = new BasicDBObject();
+                newDocument.put("is_Cluster_head", this.is_Cluster_head);
+                newDocument.put("cluster_head_Id", this.cluster_head_Id);
+                newDocument.put("parent_Id", null);
+                newDocument.put("size", this.size);
+                newDocument.put("hop_count", 0);
+                newDocument.put("state", this.state);
+
+
+
+                BasicDBObject updateObject = new BasicDBObject();
+                updateObject.put("$set", newDocument);
+
+                collection.update(query, updateObject);
+
+                logger.info("Node: %s - Successfully DB with size,hopcount variables");
+            }catch(Exception e){
+                logger.error("Some Error occurred in sendSizeToParent()");
+               System.out.println(e);
+            }
+            client.send_Cluster(this);
+        }
+  }
+
 
     public void setChild_list_Id(List<String> child_list_Id) {
         this.child_list_Id = child_list_Id;
@@ -735,13 +816,8 @@ public class Node {
                 logger.error("Error in calculateClusterEnergy");
                 System.out.println(e);
             }
-
-
         }
     }
-
-
-
 }
 
 

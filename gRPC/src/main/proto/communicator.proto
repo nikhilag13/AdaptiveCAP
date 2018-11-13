@@ -38,19 +38,19 @@ option java_outer_classname = "CommunicatorProto";
 // The greeting service definition.
 service Communicator {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+  //rpc SayHello (HelloRequest) returns (HelloResponse) {}
 
   rpc Size (MySize) returns (AccomodateChild){}
 
   rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
 
-  rpc Hello(SendHello) returns (SendHelloResponse){}
+  rpc Jam (JamRequest) returns (JamResponse){}
 
-  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse) {}
+  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
 
   rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
 
-  rpc Jam (JamRequest) returns (JamResponse){}
+  rpc Hello(SendHello) returns (SendHelloResponse){}
 
   rpc Accept(AcceptRequest) returns(AcceptResponse){}
 
@@ -58,41 +58,42 @@ service Communicator {
 
   rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
 
-   rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
+
+  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
+
+  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
 
   rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
 
-  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
-  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
   rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
+
   rpc ShiftComplete(SendShiftCompleteAck) returns (ClusterheadAckSendShift){}
+
   rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
 
   rpc StartPhase2Clustering(StartPhase2ClusteringRequest) returns (StartedPhase2ClusteringResponse){}
-  rpc CheckEnergyDrain(CheckEnergyDrainRequest) returns (CheckEnergyDrainResponse){}
 
+  rpc CheckEnergyDrain(CheckEnergyDrainRequest) returns (CheckEnergyDrainResponse){}
 
 }
 
 // The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
+//message HelloRequest {
+//  string name = 1;
+//}
 // The response message containing the greetings
-message HelloResponse {
-  string message = 1;
-}
+//message HelloResponse {
+//  string message = 1;
+//}
 
 message AccomodateChild{
   string message = 1;
 }
-
 message MySize{
   int32 size = 1;
   string nodeId = 2;
 }
-
 
 message JoinClusterResponse{
     string joinClusterResponse = 1;
@@ -103,33 +104,32 @@ message JoinClusterRequest{
 
 }
 
-message ShiftRequest{
-  string nodeId = 1;
-  int32 sumOfWeight = 2;
-  string clusterHeadId = 3;
+message JamResponse{
+    string jamResponse = 1;
+}
+message JamRequest{
+    string nodeId = 1;
+
 }
 
 message ShiftResponse{
-  string shiftMessage = 1;
+  string message = 1;
+}
+message ShiftRequest{
+  string nodeId = 1;
+  int32 sumOfweight = 2;
+  string clusterHeadId = 3;
 }
 
+
+message ShiftClusterRes{
+  string message = 1;
+
+}
 message ShiftClusterReq{
   string senderClusterHeadId = 1;
   string senderNodeId = 2;
-  int32 sumOfWeights = 3;
-}
-
-message ShiftClusterRes{
-  string shiftClusterMessage = 1;
-
-}
-
-message JamRequest{
-    string nodeId = 1;
-}
-
-message JamResponse{
-    string jamResponse = 1;
+  int32 sumOfweights = 3;
 }
 
 message SendHello{
@@ -151,13 +151,24 @@ message AcceptResponse{
   string message = 1;
 }
 
+message RejectResponse{
+  string message = 1;
+}
+
 message RejectRequest{
   string clusterHeadId = 1;
 }
 
-message RejectResponse{
-  string message = 1;
+
+message JoinNewParentResponse{
+    string joinResponse = 1;
 }
+
+message JoinNewParentRequest{
+    int32 childSize = 1;
+    string nodeId = 2;
+}
+
 
 message WakeUpRequest {
     string wakeUp = 1;
@@ -184,26 +195,17 @@ message ShiftFinishedResponse{
   string message = 1;
 }
 
-message JoinNewParentRequest{
-    int32 childSize = 1;
-    string nodeId = 2;
-}
 
-message JoinNewParentResponse{
-    string joinResponse = 1;
+message UpdateSizeResponse{
+    string updateSizeResponse = 1;
 }
 
 message UpdateSizeRequest{
     int32 sizeIncrement = 1;
 }
 
-message UpdateSizeResponse{
-    string updateSizeResponse = 1;
-}
-
-
 message UpdateClusterheadRequest{
-    int32 newClusterheadId = 1;
+    string newClusterheadId = 1;
 }
 
 message UpdateClusterheadResponse{

@@ -157,12 +157,12 @@ public class CommunicatorServer {
     }
 
 
-      @Override
-      public void sayHello(HelloRequest req, StreamObserver<HelloResponse> responseObserver) {
-          HelloResponse reply = HelloResponse.newBuilder().setMessage("Hello " + req.getName()).build();
-          responseObserver.onNext(reply);
-          responseObserver.onCompleted();
-      }
+//      @Override
+//      public void sayHello(HelloRequest req, StreamObserver<HelloResponse> responseObserver) {
+//          HelloResponse reply = HelloResponse.newBuilder().setMessage("Hello " + req.getName()).build();
+//          responseObserver.onNext(reply);
+//          responseObserver.onCompleted();
+//      }
 
       @Override
       public void joinCluster(JoinClusterRequest request, StreamObserver<JoinClusterResponse> responseObserver) {
@@ -322,7 +322,7 @@ public class CommunicatorServer {
 
       /* *************** Phase 2 - call from client SendHello() *******  **/
       @Override
-      public void Hello(SendHello req, StreamObserver<SendHelloResponse> responseObserver) {
+      public void hello(SendHello req, StreamObserver<SendHelloResponse> responseObserver) {
           logger.info("Node: " + node.getId() + " catering to Hello message with request: " + req);
           if (node.getIs_Cluster_head() == 1) {
               // do nothing
@@ -441,7 +441,7 @@ public class CommunicatorServer {
       }
 
       /* *************** Phase 2 - call from client sendJamSignal() and propagateJamToChildren() *******  **/
-      public void Jam(JamRequest req, StreamObserver<JamResponse> responseObserver) {
+      public void jam(JamRequest req, StreamObserver<JamResponse> responseObserver) {
           String jamId = req.getNodeId();
           logger.info("Node: " + node.getId() + " - Received Jam signal from clusterheadId: " + jamId);
           if (node.getIs_Cluster_head() != 1) {
@@ -527,7 +527,7 @@ public class CommunicatorServer {
           }
       }
 
-      public void Accept(AcceptRequest req, StreamObserver<AcceptResponse> responseObserver) {
+      public void accept(AcceptRequest req, StreamObserver<AcceptResponse> responseObserver) {
           if((node.getState()).equals("busy")){
               logger.info("Node: " + node.getId() + "- Accept Request received from clusterhead: "+ req.getClusterHeadId());
               if(node.checkEnergy()){
@@ -562,7 +562,7 @@ public class CommunicatorServer {
 
       }
 
-      public void Reject(RejectRequest req, StreamObserver<RejectResponse> responseObserver) {
+      public void reject(RejectRequest req, StreamObserver<RejectResponse> responseObserver) {
 
           if(node.getState().equals("busy")){
 
@@ -589,7 +589,7 @@ public class CommunicatorServer {
 
       }
 
-      public void Wakeup(wakeUpRequest req, StreamObserver<wakeUpResponse> responseObserver) {
+      public void wakeup(wakeUpRequest req, StreamObserver<wakeUpResponse> responseObserver) {
           if(node.getState().equals("sleep")){
               node.setState("active");
               try{
@@ -615,7 +615,7 @@ public class CommunicatorServer {
               responseObserver.onCompleted();
           }
       }
-      public void ShiftStart(ShiftStartRequest req, StreamObserver<ShiftStartResponse> responseObserver) {
+      public void shiftStart(ShiftStartRequest req, StreamObserver<ShiftStartResponse> responseObserver) {
             if(node.getId() == req.getTargetNodeId() && node.getState().equals("sleep")){
                 String oldClusterheadId = node.getCluster_head_Id();
 
@@ -639,7 +639,7 @@ public class CommunicatorServer {
             }
       }
 
-      public void ShiftFinished(ShiftFinishedRequest req, StreamObserver<ShiftFinishedResponse> responseObserver) {
+      public void shiftFinished(ShiftFinishedRequest req, StreamObserver<ShiftFinishedResponse> responseObserver) {
           if(node.getState().equals("busy")){
               node.sendWakeUp();
               try{
@@ -656,7 +656,7 @@ public class CommunicatorServer {
 
       }
 
-      public void JoinNewParent(JoinNewParentRequest req, StreamObserver<JoinNewParentResponse> responseObserver) {
+      public void joinNewParent(JoinNewParentRequest req, StreamObserver<JoinNewParentResponse> responseObserver) {
           if(node.getState().equals("sleep")){
 
               if(node.child_list_Id == null)
@@ -699,7 +699,7 @@ public class CommunicatorServer {
           responseObserver.onCompleted();
       }
 
-      public void UpdateSize(UpdateSizeRequest req, StreamObserver<UpdateSizeResponse> responseObserver) {
+      public void updateSize(UpdateSizeRequest req, StreamObserver<UpdateSizeResponse> responseObserver) {
           node.setSize(node.getSize() + req.getSizeIncrement());
 
           try{
@@ -729,7 +729,7 @@ public class CommunicatorServer {
       }
 
 
-      public void UpdateClusterhead(UpdateClusterheadRequest req, StreamObserver<UpdateClusterheadResponse> responseObserver) {
+      public void updateClusterhead(UpdateClusterheadRequest req, StreamObserver<UpdateClusterheadResponse> responseObserver) {
 
           node.setCluster_head_Id(req.getNewClusterheadId());
 
@@ -761,7 +761,7 @@ public class CommunicatorServer {
 
       }
 
-      public void ShiftComplete(SendShiftCompleteAck req, StreamObserver<ClusterheadAckSendShift> responseObserver) {
+      public void shiftComplete(SendShiftCompleteAck req, StreamObserver<ClusterheadAckSendShift> responseObserver) {
 
 
 
@@ -786,7 +786,7 @@ public class CommunicatorServer {
           responseObserver.onCompleted();
       }
 
-      public void RemoveChildIdFromParent(RemoveChildIdFromParentRequest req, StreamObserver<RemoveChildIdFromParentResponse> responseObserver) {
+      public void removeChildIdFromParent(RemoveChildIdFromParentRequest req, StreamObserver<RemoveChildIdFromParentResponse> responseObserver) {
 
           logger.info("Node: "+ node.getId() +" - As Parent got RemoveChildIdFromParent rpc from Node: %s" + req.getDepartingChildId());
           logger.info("Node: "+ node.getId() +" - As Parent has children BEFORE removal: " + node.child_list_Id);
@@ -821,7 +821,7 @@ public class CommunicatorServer {
 
       }
 
-      public void StartPhase2Clustering(StartPhase2ClusteringRequest req, StreamObserver<StartedPhase2ClusteringResponse> responseObserver) {
+      public void startPhase2Clustering(StartPhase2ClusteringRequest req, StreamObserver<StartedPhase2ClusteringResponse> responseObserver) {
           logger.info("Node: "+ node.getId() +" - Got StartPhase2Clustering");
           //logger.info("Node: %s - Checking Initial Energy of cluster first"%(self.node.id))
           // self.node.calculateClusterEnergy()
@@ -834,7 +834,7 @@ public class CommunicatorServer {
 
       }
 
-      public void CheckEnergyDrain(CheckEnergyDrainRequest req, StreamObserver<CheckEnergyDrainResponse> responseObserver) {
+      public void checkEnergyDrain(CheckEnergyDrainRequest req, StreamObserver<CheckEnergyDrainResponse> responseObserver) {
 
           logger.info("Node: " + node.getId() + " - Got CheckEnergyDrain Request");
           if (node.getIs_Cluster_head() != 1) {
