@@ -376,7 +376,7 @@ public class CommunicatorServer {
                           + node.getBest_node_cluster_head_Id() + ",current clusterheadId: " + node.getCluster_head_Id() + ",current parent: " + node.getParent_Id());
 
                   //uncomment later
-                  //node.sendShiftNodeRequest(node.getBest_node_cluster_head_Id());
+                  node.sendShiftNodeRequest(node.getBest_node_cluster_head_Id());
 
               }
               //send interested -1
@@ -419,14 +419,14 @@ public class CommunicatorServer {
 
               //call Jam signal
               //uncomment later
-              // node.sendJamSignal();
+              node.sendJamSignal();
 
               //send shift cluster request to Cj
               logger.info("Node: " + (self.node.id) + " - ClusterheadId successfully sent Jam Signal across its cluster");
               logger.info("Node: " + (self.node.id) + " - ClusterheadId now sending sendShiftClusterRequest");
 
               // uncomment later
-              //node.sendShiftClusterRequest();
+              node.sendShiftClusterRequest();
 
               ShiftResponse reply = ShiftResponse.newBuilder().setShiftMessage("Recieved ShiftNode Request").build();
               responseObserver.onNext(reply);
@@ -458,7 +458,7 @@ public class CommunicatorServer {
               logger.info("Node: " + node.getId() + " - Sending jam to all children");
 
               //uncomment later
-              //node.propagateJamToChildren(jamId);
+              node.propagateJamToChildren(jamId);
 
               logger.info("Node: " + node.getId() + " - Successfully propagated jam to all children");
 
@@ -503,12 +503,12 @@ public class CommunicatorServer {
                   // accept to Ci
 
                   //uncomment later
-                  //node.sendJamSignal();
+                  node.sendJamSignal();
 
                   logger.info("Node: " + node.getId() + " - Accepting ShiftClusterRequest from clusterheadId: " + req.getSenderClusterHeadId + " regarding node: " + req.getSenderNodeId);
 
                   //uncomment later
-                  //node.accept(req.getSenderClusterHeadId());
+                  node.accept(req.getSenderClusterHeadId());
 
                   ShiftClusterRes reply = ShiftClusterRes.newBuilder().setShiftClusterMessage("Accepting").build();
                   responseObserver.onNext(reply);
@@ -519,7 +519,7 @@ public class CommunicatorServer {
             else {
               //shifting is already done, send rejecting message
               //uncomment later
-             //node.reject(req.getSenderClusterHeadId());
+             node.reject(req.getSenderClusterHeadId());
 
               ShiftClusterRes reply = ShiftClusterRes.newBuilder().setShiftClusterMessage("Rejecting").build();
               responseObserver.onNext(reply);
