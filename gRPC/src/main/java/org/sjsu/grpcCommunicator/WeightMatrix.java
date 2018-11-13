@@ -1,4 +1,6 @@
 package org.sjsu.grpcCommunicator;
+import org.apache.log4j.Logger;
+
 import java.util.Random;
 import java.util.*;
 import java.lang.*;
@@ -6,6 +8,7 @@ import java.lang.*;
 
 public class WeightMatrix {
 
+    private static final Logger logger = Logger.getLogger(WeightMatrix.class.getName());
 
         public int w = 6;
         public int matrix[][] = new int [][]{{0, 3, 5, 7, 2, 4, 5, 7, 9, 1, 1, 2,1,1,1,1,1,1,0,4,0,1,1,1,1,1,0,0,0,1,1,0,0,1,1,0,0,1,1,0,0,2,2,1,1,0,0,0,0,0,0},
@@ -89,6 +92,7 @@ public class WeightMatrix {
                 sum = sum + matrix[Integer.valueOf(nodei)][i];
                 sum = sum + matrix[i][Integer.valueOf(nodei)];
             }
+            logger.info("**********Node and size "+nodei+ " "+ sum);
             return sum;
 
 

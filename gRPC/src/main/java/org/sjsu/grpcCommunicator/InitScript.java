@@ -24,7 +24,7 @@ public class InitScript {
     }
 
     public void spawn() {
-        for ( int i = 0; i < 8; i++) {
+        for ( int i = 0; i < 12; i++) {
 
             Thread thread = new Thread(new myRunnable(i));
             thread.start();
@@ -49,10 +49,7 @@ public class InitScript {
             MongoClient mongo = new MongoClient("localhost", 27017);
             DB db = mongo.getDB("cmpe295Project");
             DBCollection collection = db.getCollection("spanningtree");
-            BasicDBObject document = new BasicDBObject();
-
-            // Delete All documents from collection Using blank BasicDBObject
-            collection.remove(document);
+            collection.drop();
             logger.info("Cleaning DB if it exists");
         } catch (Exception e) {
             logger.error(e);
@@ -73,6 +70,9 @@ public class InitScript {
         Node node = new Node(id);
         CommunicatorServer cms = new CommunicatorServer();
         cms.serve(node);
+
+
+       // node.start_phase_one_clustering();
     }
 
 

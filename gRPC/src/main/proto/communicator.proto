@@ -37,10 +37,34 @@ option java_outer_classname = "CommunicatorProto";
 
 // The greeting service definition.
 service Communicator {
+  // Sends a greeting
+  //rpc SayHello (HelloRequest) returns (HelloResponse) {}
 
   rpc Size (MySize) returns (AccomodateChild){}
 
   rpc JoinCluster(JoinClusterRequest) returns (JoinClusterResponse) {}
+
+  rpc Jam (JamRequest) returns (JamResponse){}
+
+  rpc ShiftNodeRequest (ShiftRequest) returns (ShiftResponse){}
+
+  rpc ShiftClusterRequest(ShiftClusterReq) returns (ShiftClusterRes){}
+
+  rpc Hello(SendHello) returns (SendHelloResponse){}
+
+  rpc Accept(AcceptRequest) returns(AcceptResponse){}
+
+  rpc Reject(RejectRequest) returns(RejectResponse){}
+
+  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+
+  rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
+
+  rpc UpdateSize(UpdateSizeRequest) returns ( UpdateSizeResponse) {}
+
+  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+
+  rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
 
   rpc UpdateClusterhead (UpdateClusterheadRequest) returns (UpdateClusterheadResponse){}
 
@@ -48,15 +72,20 @@ service Communicator {
 
   rpc RemoveChildIdFromParent(RemoveChildIdFromParentRequest) returns (RemoveChildIdFromParentResponse){}
 
-  rpc ShiftStart (ShiftStartRequest) returns (ShiftStartResponse){}
+  rpc StartPhase2Clustering(StartPhase2ClusteringRequest) returns (StartedPhase2ClusteringResponse){}
 
-   rpc ShiftFinished(ShiftFinishedRequest) returns (ShiftFinishedResponse){}
+  rpc CheckEnergyDrain(CheckEnergyDrainRequest) returns (CheckEnergyDrainResponse){}
 
-     rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
-
-      rpc Hello(SendHello) returns (HelloResponse){}
 }
 
+// The request message containing the user's name.
+//message HelloRequest {
+//  string name = 1;
+//}
+// The response message containing the greetings
+//message HelloResponse {
+//  string message = 1;
+//}
 
 message AccomodateChild{
   string message = 1;
@@ -75,6 +104,106 @@ message JoinClusterRequest{
     string clusterHeadName = 1;
     int32 hopcount = 2;
 
+}
+
+message JamResponse{
+    string jamResponse = 1;
+}
+message JamRequest{
+    string nodeId = 1;
+
+}
+
+message ShiftResponse{
+  string message = 1;
+}
+message ShiftRequest{
+  string nodeId = 1;
+  int32 sumOfweight = 2;
+  string clusterHeadId = 3;
+}
+
+
+message ShiftClusterRes{
+  string message = 1;
+
+}
+message ShiftClusterReq{
+  string senderClusterHeadId = 1;
+  string senderNodeId = 2;
+  int32 sumOfweights = 3;
+}
+
+message SendHello{
+    string senderId = 1;
+    int32 hopToSenderClusterhead = 2;
+    string senderState = 3;
+    string senderClusterheadId = 4;
+}
+
+message SendHelloResponse{
+    int32 interested =1;
+}
+
+message AcceptRequest{
+  string clusterHeadId = 1;
+}
+
+message AcceptResponse{
+  string message = 1;
+}
+
+message RejectResponse{
+  string message = 1;
+}
+
+message RejectRequest{
+  string clusterHeadId = 1;
+}
+
+
+message JoinNewParentResponse{
+    string joinResponse = 1;
+}
+
+message JoinNewParentRequest{
+    int32 childSize = 1;
+    string nodeId = 2;
+}
+
+
+message WakeUpRequest {
+    string wakeUp = 1;
+}
+
+message WakeUpResponse{
+    string wokenUp = 1;
+}
+
+
+message ShiftStartRequest{
+    string targetNodeId = 1;
+}
+
+message ShiftStartResponse{
+    string shiftStartResponse = 1;
+}
+
+message ShiftFinishedRequest{
+  string clusterHeadId = 1;
+}
+
+message ShiftFinishedResponse{
+  string message = 1;
+}
+
+
+message UpdateSizeResponse{
+    string updateSizeResponse = 1;
+}
+
+message UpdateSizeRequest{
+    int32 sizeIncrement = 1;
 }
 
 message UpdateClusterheadRequest{
@@ -103,38 +232,19 @@ message RemoveChildIdFromParentResponse{
     string removeChildIdFromParentResponse = 1;
 }
 
-message ShiftStartRequest{
-    string targetNodeId = 1;
+message StartPhase2ClusteringRequest{
+    string startPhase2 = 1;
 }
 
-message ShiftStartResponse{
-    string shiftStartResponse = 1;
+message StartedPhase2ClusteringResponse{
+    string startedPhase2ClusteringResponse =1;
 }
 
-message ShiftFinishedRequest{
-  string clusterHeadId = 1;
+message CheckEnergyDrainRequest{
+    string checkEnergyDrainRequest = 1;
 }
 
-message ShiftFinishedResponse{
-  string message = 1;
+message CheckEnergyDrainResponse{
+    int32 checkEnergyDrainResponse = 1;
 }
 
-
-message wakeUpRequest {
-    string wakeywakey = 1;
-}
-
-message wakeUpResponse{
-    string wokenUp = 1;
-}
-
-message SendHello{
-    string senderId = 1;
-    int32 hopToSenderClusterhead = 2;
-    string senderState = 3;
-    string senderClusterheadId = 4;
-}
-
-message HelloResponse{
-    int32 interested =1;
-}
