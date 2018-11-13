@@ -247,7 +247,7 @@ public class CommunicatorServer {
                   } catch (Exception e) {
                       logger.error("***");
                       logger.error("ERROR OCCURRED WHILE KICKING CHILDREN");
-                      logger.error("Node id: " + (node.getId() + "  was kicking child " + req.getNodeId + " from childList"));
+                      logger.error("Node id: " + node.getId() + "  was kicking child " + req.getNodeId() + " from childList");
                       logger.error(e); //prints exception in the logger
                       logger.error("***");
                   }
@@ -326,7 +326,7 @@ public class CommunicatorServer {
           logger.info("Node: " + node.getId() + " catering to Hello message with request: " + req);
           if (node.getIs_Cluster_head() == 1) {
               // do nothing
-              logger.info("Node: " + node.getId() + " - Got hello message from senderId: " + req.getsSenderId());
+              logger.info("Node: " + node.getId() + " - Got hello message from senderId: " + req.getSenderId());
               logger.info("Node: " + node.getId() + " - I am clusterhead. Sending Not interested");
               SendHelloResponse reply = SendHelloResponse.newBuilder().setInterested(-1).build();
               responseObserver.onNext(reply);
@@ -334,7 +334,7 @@ public class CommunicatorServer {
           }
           if ((node.getState()).equals("active")) {
               logger.info("Node: " + node.getId() + " - State: active");
-              (node.neighbour_Hello_Array).add(req.getsSenderId());
+              (node.neighbour_Hello_Array).add(req.getSenderId());
               logger.info("Node: " + node.getId() + " - Printing neighbourHelloArray - " + node.neighbour_Hello_Array);
 
               if (req.getSenderId() == req.getSenderClusterheadId()) {
@@ -397,13 +397,13 @@ public class CommunicatorServer {
       @Override
       public void shiftNodeRequest(ShiftRequest req, StreamObserver<ShiftResponse> responseObserver) {
 
-          logger.info("Node: " + node.getId() + " - Clusterhead got ShiftNodeRequest from node id: " + request.getNodeId);
-          if (node.getIs_Cluster_head() == 1 && (node.getState).equals("free")) {
+          logger.info("Node: " + node.getId() + " - Clusterhead got ShiftNodeRequest from node id: " + req.getNodeId());
+          if (node.getIs_Cluster_head() == 1 && (node.getState()).equals("free")) {
               // set the variables of this node
               node.setState("busy");
-              node.setShift_Node_Id(req.getNodeId);
-              node.setShift_Node_Sum(req.getSumOfWeight());
-              node.setShift_Node_Cluster(req.getClusterHeadId);
+              node.setShift_Node_Id(req.getNodeId());
+              node.setShift_Node_Sum(req.getSumOfweight());
+              node.setShift_Node_Cluster(req.getClusterHeadId());
 
               //send Jam request
               try {
@@ -422,18 +422,18 @@ public class CommunicatorServer {
               node.send_jam_signal();
 
               //send shift cluster request to Cj
-              logger.info("Node: " + (self.node.id) + " - ClusterheadId successfully sent Jam Signal across its cluster");
-              logger.info("Node: " + (self.node.id) + " - ClusterheadId now sending sendShiftClusterRequest");
+              logger.info("Node: " + (node.id) + " - ClusterheadId successfully sent Jam Signal across its cluster");
+              logger.info("Node: " + (node.id) + " - ClusterheadId now sending sendShiftClusterRequest");
 
               // uncomment later
               node.send_shift_cluster_request();
 
-              ShiftResponse reply = ShiftResponse.newBuilder().setShiftMessage("Recieved ShiftNode Request").build();
+              ShiftResponse reply = ShiftResponse.newBuilder().setMessage("Recieved ShiftNode Request").build();
               responseObserver.onNext(reply);
               responseObserver.onCompleted();
           } else {
-              logger.info("Node: " + node.getId() + " - ClusterheadId not free for accomodating ShiftNodeRequest from node id: " + request.nodeId);
-              ShiftResponse reply = ShiftResponse.newBuilder().setShiftMessage("Not approving ShiftNode Request").build();
+              logger.info("Node: " + node.getId() + " - ClusterheadId not free for accomodating ShiftNodeRequest from node id: " + req.getNodeId());
+              ShiftResponse reply = ShiftResponse.newBuilder().setMessage("Not approving ShiftNode Request").build();
               responseObserver.onNext(reply);
               responseObserver.onCompleted();
           }
@@ -475,20 +475,20 @@ public class CommunicatorServer {
       public void shiftClusterRequest(ShiftClusterReq req, StreamObserver<ShiftClusterRes> responseObserver) {
           if (node.getIs_Cluster_head() == 1 && (node.getState()).equals("free")) {
               // check size bound condition
-              if (node.getSize() + req.getSumOfWeight() > idList.getTHRESHOLD_S()) {
+              if (node.getSize() + req.getSumOfweights() > idList.getTHRESHOLD_S()) {
                   //send reject to Ci
                   logger.info("Node: " + node.getId() + " Rejecting ShiftClusterRequest from clusterheadId: "
                           + req.getSenderClusterHeadId() + "regarding node: " + req.getSenderNodeId());
 
                   node.reject(req.getSenderClusterHeadId());
-                  ShiftClusterRes reply = ShiftClusterRes.newBuilder().setShiftClusterMessage("Rejecting").build();
+                  ShiftClusterRes reply = ShiftClusterRes.newBuilder().setMessage("Rejecting").build();
                   responseObserver.onNext(reply);
                   responseObserver.onCompleted();
 
               } else {
                   node.setShift_Node_Id(req.getSenderNodeId());
                   node.setShift_Node_Cluster(req.getSenderClusterHeadId());
-                  node.setShift_Node_Id(req.getSumOfWeights());
+                  node.setShift_Node_Sum(req.getSumOfweights());
 
                   //set state to busy for the node
                   node.setState("busy");
@@ -505,12 +505,12 @@ public class CommunicatorServer {
                   //uncomment later
                   node.send_jam_signal();
 
-                  logger.info("Node: " + node.getId() + " - Accepting ShiftClusterRequest from clusterheadId: " + req.getSenderClusterHeadId + " regarding node: " + req.getSenderNodeId);
+                  logger.info("Node: " + node.getId() + " - Accepting ShiftClusterRequest from clusterheadId: " + req.getSenderClusterHeadId() + " regarding node: " + req.getSenderNodeId());
 
                   //uncomment later
                   node.accept(req.getSenderClusterHeadId());
 
-                  ShiftClusterRes reply = ShiftClusterRes.newBuilder().setShiftClusterMessage("Accepting").build();
+                  ShiftClusterRes reply = ShiftClusterRes.newBuilder().setMessage("Accepting").build();
                   responseObserver.onNext(reply);
                   responseObserver.onCompleted();
 
@@ -521,7 +521,7 @@ public class CommunicatorServer {
               //uncomment later
              node.reject(req.getSenderClusterHeadId());
 
-              ShiftClusterRes reply = ShiftClusterRes.newBuilder().setShiftClusterMessage("Rejecting").build();
+              ShiftClusterRes reply = ShiftClusterRes.newBuilder().setMessage("Rejecting").build();
               responseObserver.onNext(reply);
               responseObserver.onCompleted();
           }
@@ -531,8 +531,8 @@ public class CommunicatorServer {
           if((node.getState()).equals("busy")){
               logger.info("Node: " + node.getId() + "- Accept Request received from clusterhead: "+ req.getClusterHeadId());
               if(node.check_energy()){
-                  node.sendShiftStart();
-                  AcceptResponse reply = AcceptResponse.newBuilder().setShiftClusterMessage("Starting Shift Start").build();
+                  node.send_shift_start();
+                  AcceptResponse reply = AcceptResponse.newBuilder().setMessage("Starting Shift Start").build();
                   responseObserver.onNext(reply);
                   responseObserver.onCompleted();
               }
@@ -589,7 +589,7 @@ public class CommunicatorServer {
 
       }
 
-      public void wakeup(wakeUpRequest req, StreamObserver<wakeUpResponse> responseObserver) {
+      public void wakeUp(WakeUpRequest req, StreamObserver<WakeUpResponse> responseObserver) {
           if(node.getState().equals("sleep")){
               node.setState("active");
               try{
@@ -602,7 +602,7 @@ public class CommunicatorServer {
               //uncomment later
               node.propogate_wake_up();
 
-              wakeUpResponse reply = wakeUpResponse.newBuilder().setWokenUp("wokeup").build();
+              WakeUpResponse reply = WakeUpResponse.newBuilder().setWokenUp("wokeup").build();
               responseObserver.onNext(reply);
               responseObserver.onCompleted();
           }
@@ -610,7 +610,7 @@ public class CommunicatorServer {
 
               //uncomment later
               node.propogate_wake_up();
-              wakeUpResponse reply = wakeUpResponse.newBuilder().setWokenUp("already").build();
+              WakeUpResponse reply = WakeUpResponse.newBuilder().setWokenUp("already").build();
               responseObserver.onNext(reply);
               responseObserver.onCompleted();
           }
@@ -650,7 +650,7 @@ public class CommunicatorServer {
                   logger.error("Error Occurred in Node: " +(node.getId()));
               }
           }
-          ShiftFinishedResponse reply = ShiftFinishedResponse.newBuilder().setmessage("Finished").build();
+          ShiftFinishedResponse reply = ShiftFinishedResponse.newBuilder().setMessage("Finished").build();
           responseObserver.onNext(reply);
           responseObserver.onCompleted();
 
@@ -769,7 +769,7 @@ public class CommunicatorServer {
           logger.info("Node: "+ node.getId() +" - Clusterhead sending wakeup across its cluster");
 
           //uncomment later
-          node.sendWakeup();
+          node.send_wakeup();
           logger.info("Node: "+ node.getId() +"- Clusterhead successfully sent wakeup across its cluster" );
           node.setState("free");
           try{
@@ -839,15 +839,18 @@ public class CommunicatorServer {
           logger.info("Node: " + node.getId() + " - Got CheckEnergyDrain Request");
           if (node.getIs_Cluster_head() != 1) {
               logger.info("Node: " + node.getId() + " - Not a clusterhead Rejecting request");
-              CheckEnergyDrainResponse reply = CheckEnergyDrainResponse.newBuilder().setCheckEnergyDrainResponsee(-1).build();
+              CheckEnergyDrainResponse reply = CheckEnergyDrainResponse.newBuilder().setCheckEnergyDrainResponse(-1).build();
+              responseObserver.onNext(reply);
+              responseObserver.onCompleted();
           } else {
 
               // uncomment later, check the type of drain
               //String drain = node.startCheckingEnergyDrain();
-              CheckEnergyDrainResponse reply = CheckEnergyDrainResponse.newBuilder().setCheckEnergyDrainResponsee(-1).build();
+              CheckEnergyDrainResponse reply = CheckEnergyDrainResponse.newBuilder().setCheckEnergyDrainResponse(-1).build();
+              responseObserver.onNext(reply);
+              responseObserver.onCompleted();
           }
-          responseObserver.onNext(reply);
-          responseObserver.onCompleted();
+
       }
 
 
