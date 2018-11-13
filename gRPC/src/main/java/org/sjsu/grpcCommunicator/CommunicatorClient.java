@@ -282,7 +282,7 @@ public class CommunicatorClient {
     }
   }
 
-  public void propagateNewClusterHeadToChildren(List<String> childIpList, String Id, String cluster_head_Id) {
+  public void propagate_New_Cluster_Head_To_Children(List<String> childIpList, String Id, String cluster_head_Id) {
 
     // have to check corresponding call in Node later
 
@@ -609,7 +609,7 @@ public class CommunicatorClient {
   }
 
 
-  public void removeChildIdFromParent(String node_Id, String parent_Ip) {
+  public void remove_Child_Id_From_Parent(String node_Id, String parent_Ip) {
     String[] strArr = parent_Ip.split(":");
     String host = strArr[0];
     int port = Integer.valueOf(strArr[1]);

@@ -182,78 +182,6 @@ public class Node {
     }
 
 
-
-    public void get_Neighbors(){
-        logger.info(" get_Neighbors "+ this.id);
-        String rack_row= rack_location.split(",")[0];
-        String rack_column= rack_location.split(",")[0];
-        List<String> my_Neighbors_Rack = new ArrayList<String>();
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column))+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row))+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)+1)+","+String.valueOf(Integer.parseInt(rack_column)-1)+"");
-        my_Neighbors_Rack.add(""+String.valueOf(Integer.parseInt(rack_row)-1)+","+String.valueOf(Integer.parseInt(rack_column)+1)+"");
-
-        for(String el: my_Neighbors_Rack){
-            try{
-                BasicDBObject query = new BasicDBObject();
-                query.put("rack_location",el );
-
-                DBObject document = collection.findOne(query);;
-                if(document!=null)
-                  this.neighbor_ID.add((String) document.get("parent_Id"));
-                else
-                    logger.info("Node: "+id+"- No node with rackLocation:"+el+" found!");
-
-            }catch(Exception e){
-                System.out.println(e);
-            }
-        }
-
-    }
-
-
-
-  public void send_size_to_parent(){
-        if(this.parent_Id!=null){
-            client.startStageOneCluster(this,nodeIdsList.getNodeIdsList().get(this.parent_Id));
-        }else{
-            logger.info("Node: %s - Setting myself as clusterhead as no parent found! "+id);
-            this.is_Cluster_head=1;
-            this.cluster_head_Id= this.id;
-            this.state = "free";
-            BasicDBObject query = new BasicDBObject();
-            query.put("node_id", this.id);
-            try{
-                logger.info("Node: %s - Updating DB with size,hopcount variables "+id+" "+this.size);
-                BasicDBObject newDocument = new BasicDBObject();
-                newDocument.put("is_Cluster_head", this.is_Cluster_head);
-                newDocument.put("cluster_head_Id", this.cluster_head_Id);
-                newDocument.put("parent_Id", null);
-                newDocument.put("size", this.size);
-                newDocument.put("hop_count", 0);
-                newDocument.put("state", this.state);
-
-
-
-                BasicDBObject updateObject = new BasicDBObject();
-                updateObject.put("$set", newDocument);
-
-                collection.update(query, updateObject);
-
-                logger.info("Node: %s - Successfully DB with size,hopcount variables");
-            }catch(Exception e){
-                logger.error("Some Error occurred in sendSizeToParent()");
-               System.out.println(e);
-            }
-            client.send_Cluster(this);
-        }
-  }
-
-
     public void setChild_list_Id(List<String> child_list_Id) {
         this.child_list_Id = child_list_Id;
     }
@@ -499,7 +427,7 @@ public class Node {
                 logger.error("Some Error occurred in sendSizeToParent()");
                System.out.println(e);
             }
-            client.sendCluster(this);
+            client.send_Cluster(this);
         }
   }
 
@@ -535,7 +463,7 @@ public class Node {
 
     public void send_shift_node_request(String best_node_cluster_head_Id){
         if(this.is_Cluster_head!=1){
-            client.send_shift_node_request(this,best_node_cluster_head_Id,nodeIdsList.getNodeIdsList().get(this.cluster_head_Id));
+            client.send_Shift_Node_Request(this,best_node_cluster_head_Id,nodeIdsList.getNodeIdsList().get(this.cluster_head_Id));
         }
     }
 
@@ -551,7 +479,7 @@ public class Node {
         for(String childId : this.child_list_Id)
             childIPs.add(nodeIdsList.getNodeIdsList().get(childId));
         logger.info(childIPs);
-        client.propogate_jam_to_children(childIPs,jamID,this.id);
+        client.propagate_Jam_To_Children(childIPs,jamID,this.id);
     }
 
     public void propogate_wake_up(){
@@ -560,7 +488,7 @@ public class Node {
             List<String>childIPs = new ArrayList<String>();
             for(String childId : this.child_list_Id)
                 childIPs.add(nodeIdsList.getNodeIdsList().get(childId));
-            client.propogate_wakeup(childIPs,this.id);
+            client.propagate_WakeUp(childIPs,this.id);
         }else{
             logger.info("Node: %s - No children found! Stopping wakeup propagation. " + this.id);
         }
@@ -589,7 +517,7 @@ public class Node {
             logger.error("Some error occurred while updating db in update_internal_variables_and_send_join()");
             System.out.println(e);
         }
-        client.join_new_parent(this.id,this.size,nodeIdsList.getNodeIdsList().get(best_node_id));
+        client.join_New_Parent(this.id,this.size,nodeIdsList.getNodeIdsList().get(best_node_id));
 
     }
 
@@ -597,23 +525,23 @@ public class Node {
         List<String>childIPs = new ArrayList<String>();
         for(String childId : this.child_list_Id)
             childIPs.add(nodeIdsList.getNodeIdsList().get(childId));
-        client.propogate_new_cluster_head_to_children(childIPs,this.id, this.cluster_head_Id);
+        client.propagate_New_Cluster_Head_To_Children(childIPs,this.id, this.cluster_head_Id);
 
     }
 
     public void inform_parent_about_new_size(int size_increment){
         if(this.parent_Id!=null){
-            client.inform_parent_about_new_size(size_increment,this.id,nodeIdsList.getNodeIdsList().get(this.parent_Id));
+            client.inform_Parent_About_New_Size(size_increment,this.id,nodeIdsList.getNodeIdsList().get(this.parent_Id));
         }
     }
 
     public void say_bye_to_parent(){
-        client.remove_childId_from_parent(this.id, nodeIdsList.getNodeIdsList().get(this.parent_Id));
-        client.inform_parent_about_new_size(-this.size,this.id,nodeIdsList.getNodeIdsList().get(this.parent_Id));
+        client.remove_Child_Id_From_Parent(this.id, nodeIdsList.getNodeIdsList().get(this.parent_Id));
+        client.inform_Parent_About_New_Size(-this.size,this.id,nodeIdsList.getNodeIdsList().get(this.parent_Id));
     }
 
     public void send_shift_complete_to_both_cluster_heads(String old_cluster_head_id, String new_cluster_head_id){
-        client.send_shift_complete_to_both_cluster_heads(nodeIdsList.getNodeIdsList().get(old_cluster_head_id),nodeIdsList.getNodeIdsList().get(new_cluster_head_id), this.id);
+        client.sendShiftCompleteToBothClusterHeads(nodeIdsList.getNodeIdsList().get(old_cluster_head_id),nodeIdsList.getNodeIdsList().get(new_cluster_head_id), this.id);
     }
 
 
@@ -624,7 +552,7 @@ public class Node {
         for(String i: this.neighbor_ID){
             if(i.equals(this.id))
                 continue;
-            client.send_hello(this.id, i, nodeIdsList.getNodeIdsList().get(i), this.cluster_head_Id, this.hop_count, this.state);
+            client.sendHello(this.id, i, nodeIdsList.getNodeIdsList().get(i), this.cluster_head_Id, this.hop_count, this.state);
         }
     }
 
@@ -646,7 +574,7 @@ public class Node {
             for(String childId : this.child_list_Id){
                 childIpList.add(nodeIdsList.getNodeIdsList().get(childId));
             }
-         client.send_jam_signal(childIpList,this.cluster_head_Id);
+         client.send_Jam_Signal(childIpList,this.cluster_head_Id);
 
         }
     }
@@ -654,25 +582,25 @@ public class Node {
     public void send_shift_cluster_request(){
         logger.info("Node: %s - Clusterhead sending ShiftClusterRequest to clusterheadId: %s "+this.id+" "+ this.shift_Node_Cluster);
         String shift_node_cluster_ip = this.get_ip_from_id(this.shift_Node_Cluster);
-        client.send_shift_cluster_request(this.cluster_head_Id, this.shift_Node_Id, this.shift_Node_Sum, shift_node_cluster_ip);
+        client.send_Shift_Cluster_Request(this.cluster_head_Id, this.shift_Node_Id, this.shift_Node_Sum, shift_node_cluster_ip);
     }
 
     public void accept(String sender_cluster_head_id){
         String sender_cluster_head_ip = this.get_ip_from_id(sender_cluster_head_id);
-        client.send_accept(this.id,sender_cluster_head_ip);
+        client.send_Accept(this.id,sender_cluster_head_ip);
     }
 
     public void reject(String send_cluster_head_id){
       String  sender_cluster_head_ip  = this.get_ip_from_id(send_cluster_head_id);
-      client.send_reject(this.id, sender_cluster_head_ip);
+      client.send_Reject(this.id, sender_cluster_head_ip);
     }
 
     public void send_shift_start(){
-        client.send_shift_start(this.id, this.shift_Node_Id, this.get_ip_from_id(this.shift_Node_Id));
+        client.sendShiftStart(this.id, this.shift_Node_Id, this.get_ip_from_id(this.shift_Node_Id));
     }
 
     public void send_shift_finished(){
-         client.send_shift_finished(this.id, this.get_ip_from_id(this.shift_Node_Cluster));
+         client.sendShiftFinished(this.id, this.get_ip_from_id(this.shift_Node_Cluster));
     }
 
     public void send_wakeup(){
@@ -681,7 +609,7 @@ public class Node {
             for(String childId : this.child_list_Id){
                 childIpList.add(nodeIdsList.getNodeIdsList().get(childId));
             }
-            client.send_wakeup(childIpList,this.id);
+            client.sendWakeUp(childIpList,this.id);
         }
     }
 
