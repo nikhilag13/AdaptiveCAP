@@ -355,11 +355,11 @@ public class CommunicatorServer {
                   node.setBest_node_cluster_head_Id(req.getSenderClusterheadId());
 
                   if ((node.getNeighbour_Hello_Array().size() == node.getNeighbor_ID().size()) && (node.getBest_node_id() != node.getId())) {
-                      logger.info("Node: %s - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:%s" % (self.node.id, self.node.clusterheadId))
-                      logger.info("Node: %s - State variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(self.node.bestNodeId, self.node.bestNodeClusterHeadId, self.node.clusterheadId, self.node.parentId))
+                      //logger.info("Node: %s - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:%s" + node_id, self.node.clusterheadId));
+                      //logger.info("Node: %s - State variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(self.node.bestNodeId, self.node.bestNodeClusterHeadId, self.node.clusterheadId, self.node.parentId));
 
                       //uncomment it later
-                      node.sendShiftNodeRequest(node.getBest_node_cluster_head_Id());
+                      node.send_shift_node_request(node.getBest_node_cluster_head_Id());
                   }
                   logger.info("Node: " + node.getId() + "- Sending interested response for senderId: " + req.getSenderId());
 
@@ -376,7 +376,7 @@ public class CommunicatorServer {
                           + node.getBest_node_cluster_head_Id() + ",current clusterheadId: " + node.getCluster_head_Id() + ",current parent: " + node.getParent_Id());
 
                   //uncomment later
-                  node.sendShiftNodeRequest(node.getBest_node_cluster_head_Id());
+                  node.send_shift_node_request(node.getBest_node_cluster_head_Id());
 
               }
               //send interested -1

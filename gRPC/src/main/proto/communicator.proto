@@ -56,7 +56,7 @@ service Communicator {
 
   rpc Reject(RejectRequest) returns(RejectResponse){}
 
-  rpc WakeUp (wakeUpRequest) returns (wakeUpResponse){}
+  rpc WakeUp (WakeUpRequest) returns (WakeUpResponse){}
 
   rpc JoinNewParent( JoinNewParentRequest) returns (JoinNewParentResponse){}
 

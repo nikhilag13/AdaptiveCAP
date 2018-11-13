@@ -567,7 +567,7 @@ public class Node {
     }
 
     public void update_internal_variables_and_send_join(String best_node_id, String best_node_cluster_head_id, int new_hop_count){
-        logger.info("Node: {} - Updating parent,clusterhead and hopcount from "+this.id +" "+this.parent_Id+" "+ this.cluster_head_Id +" "+this.hop_count+" "+this.best_node_id +" "+best_node_cluster_head_id+" "+ String.valueOf(this.best_node_hop_count);
+        logger.info("Node: {} - Updating parent,clusterhead and hopcount from "+this.id +" "+this.parent_Id+" "+ this.cluster_head_Id +" "+this.hop_count+" "+this.best_node_id +" "+best_node_cluster_head_id+" "+ String.valueOf(this.best_node_hop_count));
         this.parent_Id = this.best_node_id;
         this.cluster_head_Id = best_node_cluster_head_id;
         this.hop_count= this.best_node_hop_count;
