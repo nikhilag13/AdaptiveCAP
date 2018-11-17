@@ -1,0 +1,498 @@
+2018-11-17 15:33:50.957 [INFO] org.sjsu.grpcCommunicator.InitScript:57 - Cleaning DB if it exists
+2018-11-17 15:33:50.960 [INFO] org.sjsu.grpcCommunicator.InitScript:66 - Creating New DB
+2018-11-17 15:33:51.105 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 0
+2018-11-17 15:33:51.114 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 0
+2018-11-17 15:33:51.134 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:51.137 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 0
+2018-11-17 15:33:51.137 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:51.170 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 0
+2018-11-17 15:33:51.171 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : null
+2018-11-17 15:33:51.172 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:51.172 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 0
+2018-11-17 15:33:51.177 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-17 15:33:51.183 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-17 15:33:51.187 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-17 15:33:51.190 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-17 15:33:51.198 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-17 15:33:51.201 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 0
+2018-11-17 15:33:51.202 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 0- Starting Phase One Clustering 
+2018-11-17 15:33:51.202 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 0- I am a parent not leaf 0
+2018-11-17 15:33:51.202 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 0 - Calling Server 
+2018-11-17 15:33:51.206 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 0 - Creating GRPC Server 
+2018-11-17 15:33:51.207 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 0 - Created GRPC Server
+2018-11-17 15:33:51.207 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 0 - assigned to node variable
+2018-11-17 15:33:51.416 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50049
+2018-11-17 15:33:51.419 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server0
+2018-11-17 15:33:51.419 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...0
+2018-11-17 15:33:52.106 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 1
+2018-11-17 15:33:52.106 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 1
+2018-11-17 15:33:52.110 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:52.110 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 1
+2018-11-17 15:33:52.111 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:52.121 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 1
+2018-11-17 15:33:52.122 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 0
+2018-11-17 15:33:52.122 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:52.122 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 1
+2018-11-17 15:33:52.126 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-17 15:33:52.143 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-17 15:33:52.149 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 1- No node with rackLocation:-1,2 found!
+2018-11-17 15:33:52.150 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 1
+2018-11-17 15:33:52.152 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 1- Starting Phase One Clustering 
+2018-11-17 15:33:52.154 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 1- I am a parent not leaf 1
+2018-11-17 15:33:52.156 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 1 - Calling Server 
+2018-11-17 15:33:52.161 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 1 - Creating GRPC Server 
+2018-11-17 15:33:52.161 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 1 - Created GRPC Server
+2018-11-17 15:33:52.161 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 1 - assigned to node variable
+2018-11-17 15:33:52.164 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50050
+2018-11-17 15:33:52.164 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server1
+2018-11-17 15:33:52.165 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...1
+2018-11-17 15:33:53.110 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 2
+2018-11-17 15:33:53.110 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 2
+2018-11-17 15:33:53.119 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:53.119 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 2
+2018-11-17 15:33:53.120 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:53.145 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 2
+2018-11-17 15:33:53.146 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 0
+2018-11-17 15:33:53.146 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:53.147 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 2
+2018-11-17 15:33:53.158 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 2- No node with rackLocation:-1,2 found!
+2018-11-17 15:33:53.168 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-17 15:33:53.179 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 2- No node with rackLocation:-1,3 found!
+2018-11-17 15:33:53.179 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 2
+2018-11-17 15:33:53.180 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 2- Starting Phase One Clustering 
+2018-11-17 15:33:53.180 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 2- I am a parent not leaf 2
+2018-11-17 15:33:53.180 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 2 - Calling Server 
+2018-11-17 15:33:53.183 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 2 - Creating GRPC Server 
+2018-11-17 15:33:53.184 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 2 - Created GRPC Server
+2018-11-17 15:33:53.185 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 2 - assigned to node variable
+2018-11-17 15:33:53.186 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50051
+2018-11-17 15:33:53.187 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server2
+2018-11-17 15:33:53.187 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...2
+2018-11-17 15:33:54.114 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 3
+2018-11-17 15:33:54.114 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 3
+2018-11-17 15:33:54.119 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:54.119 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 3
+2018-11-17 15:33:54.119 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:54.128 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 3
+2018-11-17 15:33:54.128 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 1
+2018-11-17 15:33:54.129 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:54.129 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 3
+2018-11-17 15:33:54.135 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 3- No node with rackLocation:1,-1 found!
+2018-11-17 15:33:54.139 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 3- No node with rackLocation:0,-1 found!
+2018-11-17 15:33:54.141 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 3- No node with rackLocation:2,-1 found!
+2018-11-17 15:33:54.144 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 3
+2018-11-17 15:33:54.144 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 3- Starting Phase One Clustering 
+2018-11-17 15:33:54.145 [INFO] org.sjsu.grpcCommunicator.Node:260 - Node: 3 - Calling phaseOneClusterStart with parentId: 1
+2018-11-17 15:33:54.145 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50050
+2018-11-17 15:33:54.151 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:33:54.152 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50050
+2018-11-17 15:33:54.176 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@58a3e6bf
+2018-11-17 15:33:54.179 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@6c194b8b
+2018-11-17 15:33:54.179 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@254e4632 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@6c194b8b
+2018-11-17 15:33:54.180 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 42
+2018-11-17 15:33:54.180 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize3
+2018-11-17 15:33:54.345 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 1 - Current size: 47 Threshold value is 150
+2018-11-17 15:33:54.345 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 1 - Sending Accept to childId: 3 after checking if all children responded or not 42 47
+2018-11-17 15:33:54.351 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 1: - New size: 89
+2018-11-17 15:33:54.352 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 1 Sending accept to childId: 3
+2018-11-17 15:33:54.424 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:33:54.426 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:33:54.426 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:3 - Successfully sent the size message of size42 to parentId:1
+2018-11-17 15:33:54.426 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:1- Responded to Size RPC with reply:Accepted
+2018-11-17 15:33:54.426 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:3Didn't get Prune
+2018-11-17 15:33:54.427 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:33:54.474 [INFO] org.sjsu.grpcCommunicator.Node:263 - Node: 3- Sent size() message to parent: 1
+2018-11-17 15:33:54.475 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 3 - Calling Server 
+2018-11-17 15:33:54.479 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 3 - Creating GRPC Server 
+2018-11-17 15:33:54.479 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 3 - Created GRPC Server
+2018-11-17 15:33:54.479 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 3 - assigned to node variable
+2018-11-17 15:33:54.481 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50052
+2018-11-17 15:33:54.481 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server3
+2018-11-17 15:33:54.481 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...3
+2018-11-17 15:33:55.117 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 4
+2018-11-17 15:33:55.118 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 4
+2018-11-17 15:33:55.122 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:55.123 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 4
+2018-11-17 15:33:55.123 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:55.149 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 4
+2018-11-17 15:33:55.149 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 2
+2018-11-17 15:33:55.150 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:55.150 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 4
+2018-11-17 15:33:55.176 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 4
+2018-11-17 15:33:55.176 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 4- Starting Phase One Clustering 
+2018-11-17 15:33:55.176 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 4- I am a parent not leaf 4
+2018-11-17 15:33:55.176 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 4 - Calling Server 
+2018-11-17 15:33:55.178 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 4 - Creating GRPC Server 
+2018-11-17 15:33:55.178 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 4 - Created GRPC Server
+2018-11-17 15:33:55.179 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 4 - assigned to node variable
+2018-11-17 15:33:55.180 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50053
+2018-11-17 15:33:55.181 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server4
+2018-11-17 15:33:55.181 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...4
+2018-11-17 15:33:56.122 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 5
+2018-11-17 15:33:56.123 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 5
+2018-11-17 15:33:56.128 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:56.128 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 5
+2018-11-17 15:33:56.128 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:56.142 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 5
+2018-11-17 15:33:56.143 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 1
+2018-11-17 15:33:56.143 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:56.143 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 5
+2018-11-17 15:33:56.170 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 5
+2018-11-17 15:33:56.170 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 5- Starting Phase One Clustering 
+2018-11-17 15:33:56.171 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 5- I am a parent not leaf 5
+2018-11-17 15:33:56.171 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 5 - Calling Server 
+2018-11-17 15:33:56.176 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 5 - Creating GRPC Server 
+2018-11-17 15:33:56.177 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 5 - Created GRPC Server
+2018-11-17 15:33:56.177 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 5 - assigned to node variable
+2018-11-17 15:33:56.180 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50054
+2018-11-17 15:33:56.180 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server5
+2018-11-17 15:33:56.181 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...5
+2018-11-17 15:33:57.125 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 6
+2018-11-17 15:33:57.126 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 6
+2018-11-17 15:33:57.129 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:57.130 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 6
+2018-11-17 15:33:57.130 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:57.137 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 6
+2018-11-17 15:33:57.137 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 2
+2018-11-17 15:33:57.137 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:57.138 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 6
+2018-11-17 15:33:57.139 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-17 15:33:57.145 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-17 15:33:57.162 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 6- No node with rackLocation:3,0 found!
+2018-11-17 15:33:57.167 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 6
+2018-11-17 15:33:57.167 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 6- Starting Phase One Clustering 
+2018-11-17 15:33:57.168 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 6- I am a parent not leaf 6
+2018-11-17 15:33:57.168 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 6 - Calling Server 
+2018-11-17 15:33:57.174 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 6 - Creating GRPC Server 
+2018-11-17 15:33:57.174 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 6 - Created GRPC Server
+2018-11-17 15:33:57.174 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 6 - assigned to node variable
+2018-11-17 15:33:57.177 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50055
+2018-11-17 15:33:57.177 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server6
+2018-11-17 15:33:57.178 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...6
+2018-11-17 15:33:58.130 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 7
+2018-11-17 15:33:58.131 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 7
+2018-11-17 15:33:58.135 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:58.135 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 7
+2018-11-17 15:33:58.135 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:58.143 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 7
+2018-11-17 15:33:58.143 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 6
+2018-11-17 15:33:58.143 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:58.143 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 7
+2018-11-17 15:33:58.144 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 7- No node with rackLocation:3,0 found!
+2018-11-17 15:33:58.148 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 7- No node with rackLocation:2,-1 found!
+2018-11-17 15:33:58.150 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-17 15:33:58.161 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 7- No node with rackLocation:1,-1 found!
+2018-11-17 15:33:58.163 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 7- No node with rackLocation:3,-1 found!
+2018-11-17 15:33:58.167 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 7
+2018-11-17 15:33:58.167 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 7- Starting Phase One Clustering 
+2018-11-17 15:33:58.167 [INFO] org.sjsu.grpcCommunicator.Node:260 - Node: 7 - Calling phaseOneClusterStart with parentId: 6
+2018-11-17 15:33:58.167 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50055
+2018-11-17 15:33:58.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:33:58.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50055
+2018-11-17 15:33:58.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@8602e58
+2018-11-17 15:33:58.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@4d62a130
+2018-11-17 15:33:58.169 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@d931cb1 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@4d62a130
+2018-11-17 15:33:58.169 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 43
+2018-11-17 15:33:58.169 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize7
+2018-11-17 15:33:58.191 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 6 - Current size: 44 Threshold value is 150
+2018-11-17 15:33:58.191 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 6 - Sending Accept to childId: 7 after checking if all children responded or not 43 44
+2018-11-17 15:33:58.197 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 6: - New size: 87
+2018-11-17 15:33:58.198 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 6 Sending accept to childId: 7
+2018-11-17 15:33:58.201 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:33:58.201 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:33:58.202 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:7 - Successfully sent the size message of size43 to parentId:6
+2018-11-17 15:33:58.203 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:6- Responded to Size RPC with reply:Accepted
+2018-11-17 15:33:58.204 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:7Didn't get Prune
+2018-11-17 15:33:58.204 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:33:58.259 [INFO] org.sjsu.grpcCommunicator.Node:263 - Node: 7- Sent size() message to parent: 6
+2018-11-17 15:33:58.262 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 7 - Calling Server 
+2018-11-17 15:33:58.264 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 7 - Creating GRPC Server 
+2018-11-17 15:33:58.264 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 7 - Created GRPC Server
+2018-11-17 15:33:58.264 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 7 - assigned to node variable
+2018-11-17 15:33:58.266 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50056
+2018-11-17 15:33:58.266 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server7
+2018-11-17 15:33:58.266 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...7
+2018-11-17 15:33:59.135 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 8
+2018-11-17 15:33:59.135 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 8
+2018-11-17 15:33:59.139 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:33:59.139 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 8
+2018-11-17 15:33:59.139 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:33:59.146 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 8
+2018-11-17 15:33:59.146 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 6
+2018-11-17 15:33:59.146 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:33:59.146 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 8
+2018-11-17 15:33:59.148 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 8- No node with rackLocation:3,2 found!
+2018-11-17 15:33:59.155 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 8- No node with rackLocation:3,3 found!
+2018-11-17 15:33:59.164 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 8- No node with rackLocation:3,1 found!
+2018-11-17 15:33:59.165 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 8
+2018-11-17 15:33:59.165 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 8- Starting Phase One Clustering 
+2018-11-17 15:33:59.165 [INFO] org.sjsu.grpcCommunicator.Node:265 - Node: 8- I am a parent not leaf 8
+2018-11-17 15:33:59.165 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 8 - Calling Server 
+2018-11-17 15:33:59.173 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 8 - Creating GRPC Server 
+2018-11-17 15:33:59.174 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 8 - Created GRPC Server
+2018-11-17 15:33:59.175 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 8 - assigned to node variable
+2018-11-17 15:33:59.178 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50057
+2018-11-17 15:33:59.178 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server8
+2018-11-17 15:33:59.179 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...8
+2018-11-17 15:34:00.139 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 9
+2018-11-17 15:34:00.140 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 9
+2018-11-17 15:34:00.143 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:34:00.143 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 9
+2018-11-17 15:34:00.143 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:34:00.149 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 9
+2018-11-17 15:34:00.149 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 4
+2018-11-17 15:34:00.149 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:34:00.149 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 9
+2018-11-17 15:34:00.151 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 9- No node with rackLocation:-1,3 found!
+2018-11-17 15:34:00.152 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 9- No node with rackLocation:0,4 found!
+2018-11-17 15:34:00.154 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 9- No node with rackLocation:1,4 found!
+2018-11-17 15:34:00.156 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 9- No node with rackLocation:-1,2 found!
+2018-11-17 15:34:00.161 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 9- No node with rackLocation:-1,4 found!
+2018-11-17 15:34:00.161 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 9
+2018-11-17 15:34:00.161 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 9- Starting Phase One Clustering 
+2018-11-17 15:34:00.161 [INFO] org.sjsu.grpcCommunicator.Node:260 - Node: 9 - Calling phaseOneClusterStart with parentId: 4
+2018-11-17 15:34:00.162 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50053
+2018-11-17 15:34:00.162 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:00.162 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50053
+2018-11-17 15:34:00.162 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@bf95aef
+2018-11-17 15:34:00.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@4efbd5f4
+2018-11-17 15:34:00.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@46fe987d printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@4efbd5f4
+2018-11-17 15:34:00.168 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 27
+2018-11-17 15:34:00.169 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize9
+2018-11-17 15:34:00.211 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 4 - Current size: 42 Threshold value is 150
+2018-11-17 15:34:00.212 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 4 - Sending Accept to childId: 9 after checking if all children responded or not 27 42
+2018-11-17 15:34:00.216 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 4: - New size: 69
+2018-11-17 15:34:00.216 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:309 - Node: 4  - All children responded. Sending size to parent
+2018-11-17 15:34:00.216 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50051
+2018-11-17 15:34:00.216 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:00.216 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50051
+2018-11-17 15:34:00.217 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@526eb942
+2018-11-17 15:34:00.217 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@4267f5bb
+2018-11-17 15:34:00.217 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@4572d71f printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@4267f5bb
+2018-11-17 15:34:00.217 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 69
+2018-11-17 15:34:00.217 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize4
+2018-11-17 15:34:00.235 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 2 - Current size: 37 Threshold value is 150
+2018-11-17 15:34:00.236 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 2 - Sending Accept to childId: 4 after checking if all children responded or not 69 37
+2018-11-17 15:34:00.241 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 2: - New size: 106
+2018-11-17 15:34:00.241 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 2 Sending accept to childId: 4
+2018-11-17 15:34:00.259 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:34:00.268 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:34:00.269 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:4 - Successfully sent the size message of size69 to parentId:2
+2018-11-17 15:34:00.269 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:2- Responded to Size RPC with reply:Accepted
+2018-11-17 15:34:00.269 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:4Didn't get Prune
+2018-11-17 15:34:00.269 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:00.329 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 4 Sending accept to childId: 9
+2018-11-17 15:34:00.331 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:34:00.332 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:34:00.332 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:9 - Successfully sent the size message of size27 to parentId:4
+2018-11-17 15:34:00.332 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:4- Responded to Size RPC with reply:Accepted
+2018-11-17 15:34:00.332 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:9Didn't get Prune
+2018-11-17 15:34:00.332 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:00.361 [INFO] org.sjsu.grpcCommunicator.Node:263 - Node: 9- Sent size() message to parent: 4
+2018-11-17 15:34:00.362 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 9 - Calling Server 
+2018-11-17 15:34:00.364 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 9 - Creating GRPC Server 
+2018-11-17 15:34:00.364 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 9 - Created GRPC Server
+2018-11-17 15:34:00.364 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 9 - assigned to node variable
+2018-11-17 15:34:00.365 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50058
+2018-11-17 15:34:00.365 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server9
+2018-11-17 15:34:00.365 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...9
+2018-11-17 15:34:01.143 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 10
+2018-11-17 15:34:01.143 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 10
+2018-11-17 15:34:01.153 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:34:01.154 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 10
+2018-11-17 15:34:01.155 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:34:01.180 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 10
+2018-11-17 15:34:01.181 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 8
+2018-11-17 15:34:01.183 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:34:01.183 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 10
+2018-11-17 15:34:01.196 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 10- No node with rackLocation:1,4 found!
+2018-11-17 15:34:01.200 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 10- No node with rackLocation:2,4 found!
+2018-11-17 15:34:01.234 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 10- No node with rackLocation:0,4 found!
+2018-11-17 15:34:01.234 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 10
+2018-11-17 15:34:01.234 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 10- Starting Phase One Clustering 
+2018-11-17 15:34:01.234 [INFO] org.sjsu.grpcCommunicator.Node:260 - Node: 10 - Calling phaseOneClusterStart with parentId: 8
+2018-11-17 15:34:01.235 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50057
+2018-11-17 15:34:01.235 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:01.235 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50057
+2018-11-17 15:34:01.235 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@5b7200ee
+2018-11-17 15:34:01.236 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@1e7095e4
+2018-11-17 15:34:01.236 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@1ca4cb2f printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@1e7095e4
+2018-11-17 15:34:01.236 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 22
+2018-11-17 15:34:01.236 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize10
+2018-11-17 15:34:01.275 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 8 - Current size: 66 Threshold value is 150
+2018-11-17 15:34:01.276 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 8 - Sending Accept to childId: 10 after checking if all children responded or not 22 66
+2018-11-17 15:34:01.285 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 8: - New size: 88
+2018-11-17 15:34:01.285 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:309 - Node: 8  - All children responded. Sending size to parent
+2018-11-17 15:34:01.285 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50055
+2018-11-17 15:34:01.285 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:01.285 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50055
+2018-11-17 15:34:01.286 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@7e1ceba8
+2018-11-17 15:34:01.286 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@7a2360b3
+2018-11-17 15:34:01.286 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@3f21e193 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@7a2360b3
+2018-11-17 15:34:01.286 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 88
+2018-11-17 15:34:01.286 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize8
+2018-11-17 15:34:01.306 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 6 - Current size: 87 Threshold value is 150
+2018-11-17 15:34:01.308 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:264 - Node: 6 - Removed child 8 from childList 88 87
+2018-11-17 15:34:01.308 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:265 - Node: 6 - Sending Prune after checking if all children responded or not
+2018-11-17 15:34:01.308 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:267 - Node: %s - All children responded. Sending size to parent6
+2018-11-17 15:34:01.309 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:277 - Node: 6  - Sending Prune to childId: 8
+2018-11-17 15:34:01.310 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:148 - Run method inside separate Thread for Node: 6
+2018-11-17 15:34:01.310 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50051
+2018-11-17 15:34:01.310 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:01.310 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50051
+2018-11-17 15:34:01.311 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@5032a990
+2018-11-17 15:34:01.316 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@5ef55de6
+2018-11-17 15:34:01.317 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@5acac2e0 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@5ef55de6
+2018-11-17 15:34:01.317 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 87
+2018-11-17 15:34:01.317 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize6
+2018-11-17 15:34:01.319 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 15:34:01.320 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 15:34:01.320 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:8 - Successfully sent the size message of size88 to parentId:6
+2018-11-17 15:34:01.321 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:6- Responded to Size RPC with reply:Prune
+2018-11-17 15:34:01.321 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:176 - Node:8 - Got Prune
+2018-11-17 15:34:01.321 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 15:34:01.324 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 2 - Current size: 106 Threshold value is 150
+2018-11-17 15:34:01.337 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:264 - Node: 2 - Removed child 6 from childList 87 106
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:265 - Node: 2 - Sending Prune after checking if all children responded or not
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:267 - Node: %s - All children responded. Sending size to parent2
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:277 - Node: 2  - Sending Prune to childId: 6
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:148 - Run method inside separate Thread for Node: 2
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50049
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:01.338 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50049
+2018-11-17 15:34:01.339 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@22b1ead7
+2018-11-17 15:34:01.339 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@2c7610f1
+2018-11-17 15:34:01.339 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@284981a7 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@2c7610f1
+2018-11-17 15:34:01.339 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 106
+2018-11-17 15:34:01.339 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize2
+2018-11-17 15:34:01.343 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 15:34:01.343 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 15:34:01.344 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:6 - Successfully sent the size message of size87 to parentId:2
+2018-11-17 15:34:01.344 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:2- Responded to Size RPC with reply:Prune
+2018-11-17 15:34:01.345 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:176 - Node:6 - Got Prune
+2018-11-17 15:34:01.345 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 15:34:01.355 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 0 - Current size: 34 Threshold value is 150
+2018-11-17 15:34:01.355 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 0 - Sending Accept to childId: 2 after checking if all children responded or not 106 34
+2018-11-17 15:34:01.370 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:01.445 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 8 Sending accept to childId: 10
+2018-11-17 15:34:01.446 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:01.447 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 0: - New size: 140
+2018-11-17 15:34:01.484 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 0 Sending accept to childId: 2
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:10 - Successfully sent the size message of size22 to parentId:8
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:8- Responded to Size RPC with reply:Accepted
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:10Didn't get Prune
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:01.486 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:34:01.487 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:34:01.487 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:2 - Successfully sent the size message of size106 to parentId:0
+2018-11-17 15:34:01.487 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:0- Responded to Size RPC with reply:Accepted
+2018-11-17 15:34:01.487 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:2Didn't get Prune
+2018-11-17 15:34:01.487 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:01.520 [INFO] org.sjsu.grpcCommunicator.Node:263 - Node: 10- Sent size() message to parent: 8
+2018-11-17 15:34:01.520 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 10 - Calling Server 
+2018-11-17 15:34:01.522 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 10 - Creating GRPC Server 
+2018-11-17 15:34:01.522 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 10 - Created GRPC Server
+2018-11-17 15:34:01.522 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 10 - assigned to node variable
+2018-11-17 15:34:01.550 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50059
+2018-11-17 15:34:01.551 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server10
+2018-11-17 15:34:01.551 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...10
+2018-11-17 15:34:02.148 [INFO] org.sjsu.grpcCommunicator.InitScript:22 - Run method for Node: 11
+2018-11-17 15:34:02.150 [INFO] org.sjsu.grpcCommunicator.InitScript:71 - Spwaning new node 11
+2018-11-17 15:34:02.153 [INFO] org.sjsu.grpcCommunicator.Node:66 - ################################################
+2018-11-17 15:34:02.154 [INFO] org.sjsu.grpcCommunicator.Node:67 - Constructor initialization for Node: 11
+2018-11-17 15:34:02.154 [INFO] org.sjsu.grpcCommunicator.Node:68 - ################################################
+2018-11-17 15:34:02.168 [INFO] org.sjsu.grpcCommunicator.Node:74 - Constructor 11
+2018-11-17 15:34:02.168 [INFO] org.sjsu.grpcCommunicator.Node:79 - its parent id : 5
+2018-11-17 15:34:02.168 [INFO] org.sjsu.grpcCommunicator.Node:127 - constructor get_Neighbors []
+2018-11-17 15:34:02.168 [INFO] org.sjsu.grpcCommunicator.Node:165 -  get_Neighbors 11
+2018-11-17 15:34:02.169 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 11- No node with rackLocation:3,3 found!
+2018-11-17 15:34:02.172 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 11- No node with rackLocation:2,4 found!
+2018-11-17 15:34:02.175 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 11- No node with rackLocation:3,4 found!
+2018-11-17 15:34:02.184 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 11- No node with rackLocation:3,2 found!
+2018-11-17 15:34:02.187 [INFO] org.sjsu.grpcCommunicator.Node:187 - Node: 11- No node with rackLocation:1,4 found!
+2018-11-17 15:34:02.188 [INFO] org.sjsu.grpcCommunicator.Node:142 -  Starting Phase One Clustering in constructor 11
+2018-11-17 15:34:02.188 [INFO] org.sjsu.grpcCommunicator.Node:257 - Node: 11- Starting Phase One Clustering 
+2018-11-17 15:34:02.188 [INFO] org.sjsu.grpcCommunicator.Node:260 - Node: 11 - Calling phaseOneClusterStart with parentId: 5
+2018-11-17 15:34:02.189 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50054
+2018-11-17 15:34:02.189 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:02.190 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50054
+2018-11-17 15:34:02.190 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@153a8dab
+2018-11-17 15:34:02.190 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@50380168
+2018-11-17 15:34:02.190 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@5844c18a printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@50380168
+2018-11-17 15:34:02.190 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 32
+2018-11-17 15:34:02.190 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize11
+2018-11-17 15:34:02.199 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 5 - Current size: 26 Threshold value is 150
+2018-11-17 15:34:02.200 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 5 - Sending Accept to childId: 11 after checking if all children responded or not 32 26
+2018-11-17 15:34:02.207 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 5: - New size: 58
+2018-11-17 15:34:02.208 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:309 - Node: 5  - All children responded. Sending size to parent
+2018-11-17 15:34:02.208 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50050
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50050
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@178c70a7
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@e549855
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@6f1357d4 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@e549855
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 58
+2018-11-17 15:34:02.209 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize5
+2018-11-17 15:34:02.213 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 1 - Current size: 89 Threshold value is 150
+2018-11-17 15:34:02.213 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:282 - Node: 1 - Sending Accept to childId: 5 after checking if all children responded or not 58 89
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:304 - Node 1: - New size: 147
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:309 - Node: 1  - All children responded. Sending size to parent
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50049
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:89 - printing host localhost
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:91 - printing port after splitting 50049
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@27748a3a
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@262509c0
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@7687241d printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@262509c0
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:159 - Inside sendSize in client 147
+2018-11-17 15:34:02.215 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:160 - Node: %s - Starting function sendSize1
+2018-11-17 15:34:02.220 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:240 - Node: 0 - Current size: 140 Threshold value is 150
+2018-11-17 15:34:02.223 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:264 - Node: 0 - Removed child 1 from childList 147 140
+2018-11-17 15:34:02.223 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:265 - Node: 0 - Sending Prune after checking if all children responded or not
+2018-11-17 15:34:02.223 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:267 - Node: %s - All children responded. Sending size to parent0
+2018-11-17 15:34:02.224 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:277 - Node: 0  - Sending Prune to childId: 1
+2018-11-17 15:34:02.224 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:148 - Run method inside separate Thread for Node: 0
+2018-11-17 15:34:02.224 [INFO] org.sjsu.grpcCommunicator.Node:213 - Node: 0- Setting myself as clusterhead as no parent found! 0
+2018-11-17 15:34:02.225 [INFO] org.sjsu.grpcCommunicator.Node:220 - Node: 0- Updating DB with size,hopcount variables 0 140
+2018-11-17 15:34:02.230 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 15:34:02.231 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 15:34:02.231 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:1 - Successfully sent the size message of size147 to parentId:0
+2018-11-17 15:34:02.231 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:0- Responded to Size RPC with reply:Prune
+2018-11-17 15:34:02.231 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:176 - Node:1 - Got Prune
+2018-11-17 15:34:02.231 [INFO] org.sjsu.grpcCommunicator.Node:236 - Node: 0- Successfully DB with size,hopcount variables
+2018-11-17 15:34:02.231 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 15:34:02.236 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:02.308 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 1 Sending accept to childId: 5
+2018-11-17 15:34:02.313 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:34:02.313 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:34:02.313 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:5 - Successfully sent the size message of size58 to parentId:1
+2018-11-17 15:34:02.313 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:1- Responded to Size RPC with reply:Accepted
+2018-11-17 15:34:02.313 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:5Didn't get Prune
+2018-11-17 15:34:02.313 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:02.340 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:319 - Node: 5 Sending accept to childId: 11
+2018-11-17 15:34:02.347 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 15:34:02.347 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 15:34:02.347 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:167 - Node:11 - Successfully sent the size message of size32 to parentId:5
+2018-11-17 15:34:02.347 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:168 - Node:5- Responded to Size RPC with reply:Accepted
+2018-11-17 15:34:02.347 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:207 - Node:11Didn't get Prune
+2018-11-17 15:34:02.347 [INFO] org.sjsu.grpcCommunicator.CommunicatorClient:102 - after sendSize in client
+2018-11-17 15:34:02.396 [INFO] org.sjsu.grpcCommunicator.Node:263 - Node: 11- Sent size() message to parent: 5
+2018-11-17 15:34:02.396 [INFO] org.sjsu.grpcCommunicator.Node:147 - Node: 11 - Calling Server 
+2018-11-17 15:34:02.400 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:94 - Node: 11 - Creating GRPC Server 
+2018-11-17 15:34:02.401 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:97 - Node 11 - Created GRPC Server
+2018-11-17 15:34:02.401 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:100 - Node 11 - assigned to node variable
+2018-11-17 15:34:02.404 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:65 - Server started, listening on 50060
+2018-11-17 15:34:02.404 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:106 - Node %s - Starting GRPC Server11
+2018-11-17 15:34:02.404 [INFO] org.sjsu.grpcCommunicator.CommunicatorServer:115 - Node: %s - GRPC Server started successfully. Entering forever listening mode...11
