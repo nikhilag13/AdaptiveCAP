@@ -48,17 +48,14 @@ public class CommunicatorServer {
   private static final Logger logger = Logger.getLogger(CommunicatorServer.class.getName());
 
   /* The port on which the server should run */
-  private int port = 50051;
-  private Server server;
-  private Node node;
+   int port;
+   Server server; //grpc server
+   Node node;
 
   MongoClient mongoClient = new MongoClient("localhost", 27017);
   DB database = mongoClient.getDB("cmpe295Project");
   DBCollection collection = database.getCollection("spanningtree");
-
-//  CommunicatorServer(Node node){
-//    node = node;
-//  }
+  NodeIdsList nodeIdsList = new NodeIdsList();
 
   private void start() throws Exception {
     server = ServerBuilder.forPort(this.port)
@@ -92,21 +89,23 @@ public class CommunicatorServer {
     }
   }
 
-  public static void serve(Node node){
-    logger.info("Node: %s - Creating GRPC Server " +(node.getId()));
+  //called from init script to launch several nodes
+  public void serve(Node node){
+    logger.info("Node: "+node.getId()+" - Creating GRPC Server " );
 
     try {
-      logger.info("Node %s - Created GRPC Server"+(node.getId()));
-      NodeIdsList nodeIdsList = new NodeIdsList();
-      final CommunicatorServer server = new CommunicatorServer();
-      server.node= node;
-      server.port = Integer.parseInt(nodeIdsList.getNodeIdsList().get(node.getId()).split(":")[1]);
+      logger.info("Node "+node.getId()+" - Created GRPC Server");
 
-      server.start();
+//      final CommunicatorServer server = new CommunicatorServer();
+        logger.info("Node "+node.getId()+" - assigned to node variable");
+      this.node= node;
+      this.port = Integer.parseInt(nodeIdsList.getNodeIdsList().get(node.getId()).split(":")[1]);
+
+      start(); //call start method of communicator class
      // server.add_insecure_port(raspberryPi_id_list.ID_IP_MAPPING[node.id])
       logger.info("Node %s - Starting GRPC Server" + (node.getId()));
-      node.start_phase_one_clustering();
-      server.blockUntilShutdown();
+//      node.start_phase_one_clustering();
+//      blockUntilShutdown();
     }
     catch(Exception e){
       logger.error(e);
@@ -115,12 +114,10 @@ public class CommunicatorServer {
       while (true) {
         logger.info("Node: %s - GRPC Server started successfully. Entering forever listening mode..." + (node.id));
         System.out.println("Inside Forever while...");
-        sleep(30);
-      }
-//        except KeyboardInterrupt:
-//    server.stop(0)
+        sleep(60 * 60 * 24);
+        }
       } catch (InterruptedException e1) {
-      e1.printStackTrace();
+      logger.error("error occurred in server, Node: "+ node.getId());
       logger.error(e1);
     }
   }
@@ -139,7 +136,22 @@ public class CommunicatorServer {
   private  class CommunicatorServiceImpl implements CommunicatorGrpc.Communicator {
       NodeIdsList idList = new NodeIdsList();
 
-    public void setStateDB(){
+      //Thread class
+      class MyRunnable implements Runnable {
+          Node node ;
+
+          MyRunnable(Node node) {
+              this.node =node;
+          }
+
+          public void run() {
+              logger.info("Run method inside separate Thread for Node: "+node.getId());
+              node.send_size_to_parent();
+          }
+      }
+
+
+      public void setStateDB(){
         //update state of the node in db
 //        DBCollection collection = database.getCollection("spanningtree");
         BasicDBObject query = new BasicDBObject();
@@ -213,6 +225,7 @@ public class CommunicatorServer {
 //          return JoinClusterResponse(joinClusterResponse="Joined");
       }
 
+
       @Override
       public void size(MySize req, StreamObserver<AccomodateChild> responseObserver) {
           int childSize = req.getSize();
@@ -220,17 +233,18 @@ public class CommunicatorServer {
 
           node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
 
-          collection = database.getCollection("spanningtree");
-          BasicDBObject query = new BasicDBObject();
-          query.put("node_id", node.getId());
+//          collection = database.getCollection("spanningtree");
+
+
 
           logger.info("Node: " + node.getId() + " - Current size: "+ node.getSize() + " Threshold value is "+ idList.getTHRESHOLD_S());
 
           try {
-              logger.info("Node: " + node.getId() + " - Child Node: "+ req.getNodeId() + "has size %s" + childSize);
               if ((node.getSize() + childSize) > idList.getTHRESHOLD_S()) {
                   node.setChild_request_counter(node.getChild_request_counter() + 1);
                   try {
+                      BasicDBObject query = new BasicDBObject();
+                      query.put("node_id", node.getId());
                       BasicDBObject newDocument = new BasicDBObject();
                       newDocument.put("child_list_Id", node.getChild_list_Id());
 
@@ -255,13 +269,10 @@ public class CommunicatorServer {
                       /** below line is running method sendSizetoparent as background thread,
                        while the rest of the application continues it’s work.**/
 
-//                    Thread thread1 = new Thread(new Runnable() {
-//
-//                        public void run() {
-//                            node.sendSizeToParent();
-//                        }
-//                    }).start();
-                      node.send_size_to_parent();
+                    Thread thread1 = new Thread(new MyRunnable(node));
+                    thread1.start();
+
+//                     node.send_size_to_parent();
                   }
                   logger.info("Node: " + node.id + "  - Sending Prune to childId: " + req.getNodeId());
                   AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Prune").build();
@@ -271,6 +282,8 @@ public class CommunicatorServer {
                   logger.info("Node: " + (node.id) + " - Sending Accept to childId: " + req.getNodeId() + " after checking if all children responded or not " + childSize + " " + node.getSize());
                   node.setSize(node.getSize() + childSize);
                   try {
+                      BasicDBObject query = new BasicDBObject();
+                      query.put("node_id", node.getId());
 
                       BasicDBObject newDocument = new BasicDBObject();
                       newDocument.put("size", node.getSize());
@@ -296,19 +309,18 @@ public class CommunicatorServer {
                       logger.info("Node: " + node.getId() + "  - All children responded. Sending size to parent");
 
 //                    Thread thread2 = new Thread(new Runnable() {
-//
-//                        public void run() { node.sendSizeToParent();
-//                        }
-//                    }).start();
+////
+////                        public void run() { node.sendSizeToParent();
+////                        }
+////                    }).start();
 
                       node.send_size_to_parent();
-
+                  }
                       logger.info("Node: " + node.getId() + " Sending accept to childId: " + req.getNodeId());
                       AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Accepted").build();
                       responseObserver.onNext(reply);
                       responseObserver.onCompleted();
 
-                  }
               }
           } catch (Exception e) {
               logger.error(e);
