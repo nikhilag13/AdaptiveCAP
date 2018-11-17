@@ -271,8 +271,10 @@ public class CommunicatorClient {
         JoinClusterRequest request = JoinClusterRequest.newBuilder().setHopcount(hopCount).setClusterHeadName(node.getId()).build();
         JoinClusterResponse  response =  blockingStub.joinCluster(request);
         String clusterRPC = response.getJoinClusterResponse();
+        logger.info("Node: "+node.getId()+" - Got Response: "+clusterRPC + " after sending cluster message to child id: " + (child));
 
       } catch (RuntimeException e) {
+        logger.error(e);
         logger.error("Node:{} - {}" + node.getId());
 
       } finally {

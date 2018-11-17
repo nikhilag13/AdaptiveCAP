@@ -92,7 +92,7 @@ public class WeightMatrix {
                 sum = sum + matrix[Integer.valueOf(nodei)][i];
                 sum = sum + matrix[i][Integer.valueOf(nodei)];
             }
-            logger.info("**********Node and size "+nodei+ " "+ sum);
+//            logger.info("**********Node and size "+nodei+ " "+ sum);
             return sum;
 
 

@@ -52,7 +52,7 @@ public class CommunicatorServer {
   private Server server;
   private Node node;
 
-  private NodeIdsList idList;
+  private NodeIdsList idList = new NodeIdsList();
 
   MongoClient mongoClient = new MongoClient("localhost", 27017);
   DB database = mongoClient.getDB("cmpe295Project");
@@ -194,20 +194,19 @@ public class CommunicatorServer {
 
           } catch (Exception e) {
               logger.error(e);
-
-              //    print("Node: %s is now joining Clusterleader Node: %s"%(str(self.node.id),str(clusterName)))
-              //   logger.info("Node: %s - Now joining Clusterleader Node: %s"%(str(self.node.id),str(clusterName)))
-              //   logger.info("Node: %s - current hop count: %s"%(str(self.node.id),self.node.hopcount))
           }
 
+          logger.info("Node: "+ node.getId()+" - Now joining Clusterleader Node: %s"+ clusterName);
+          logger.info("Node: "+ node.getId()+" - current hop count: %s" + node.getHop_count());
+
           if (node.getChild_list_Id() != null) {
-              //logger.info("Node:%s - Children Found! Starting ClusterheadId Propagation" % (self.node.id))
+              logger.info("Node: "+ node.getId()+" - Children Found! Starting ClusterheadId Propagation" );
               //thread3 = threading.Thread(target = self.node.propogateClusterheadInfo, args = (clusterName, hopCount))
               //thread3.start()
               //#time.sleep(2)
               node.propogate_Cluster_head_Info(clusterName, hopCount);
           } else {
-              // logger.info("Node: %s - NO children found!"%(self.node.id))
+               logger.info("Node: "+ node.getId()+" - NO children found!");
           }
           JoinClusterResponse reply = JoinClusterResponse.newBuilder().setJoinClusterResponse("joined").build();
           responseObserver.onNext(reply);
@@ -218,23 +217,31 @@ public class CommunicatorServer {
       @Override
       public void size(MySize req, StreamObserver<AccomodateChild> responseObserver) {
           int childSize = req.getSize();
-//          int THRESHOLD_S = 150; //keep in it different file
+         int THRESHOLD_S = 150; //keep in it different file
 
           node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
-
-//          DBCollection collection = database.getCollection("spanningtree");
+//
+          collection = database.getCollection("spanningtree");
           BasicDBObject query = new BasicDBObject();
-          query.put("node_id", node.id);
+          query.put("node_id", node.getId());
 
-          logger.info("Node: %s - Current size: %s " + node.getId() + " " + node.getSize());
-          logger.info("Node:%s - Child Node: %s has size %s" + node.getId() + " " + req.getNodeId() + " " + childSize);
+          logger.info("Node: " + node.getId() + " - Current size: %s "+ node.getSize());
+
 
           try {
+
+              logger.info("Node: " + node.getId() + " - Child Node: "+ req.getNodeId() + "has size %s" + childSize);
               if (node.getSize() + childSize > idList.getTHRESHOLD_S()) {
+//              if ((node.getSize() + childSize) > THRESHOLD_S) {
+                  logger.info("inside if");
+
                   node.setChild_request_counter(node.getChild_request_counter() + 1);
                   // Move removing the child above sendSizeToParent as parent might send cluster but child needs to be removed
                   // Case of Node 0 and Node 1 (12 node cluster)
                   try {
+
+                      logger.info("updating node" );
+
 
                       BasicDBObject newDocument = new BasicDBObject();
                       newDocument.put("child_list_Id", node.getChild_list_Id());
@@ -316,7 +323,7 @@ public class CommunicatorServer {
                   }
               }
           } catch (Exception e) {
-              logger.error("***");
+              logger.error(e);
           }
       }
 

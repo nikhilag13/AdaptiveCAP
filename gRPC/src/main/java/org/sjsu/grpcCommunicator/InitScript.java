@@ -37,7 +37,7 @@ public class InitScript {
         InitScript initScript = new InitScript();
         initScript.cleanDB();
         initScript.buildDB();
-         initScript.spawn();
+//         initScript.spawn();
        // initScript.spawnNode(0);
 
 
