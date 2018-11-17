@@ -52,8 +52,6 @@ public class CommunicatorServer {
   private Server server;
   private Node node;
 
-  private NodeIdsList idList = new NodeIdsList();
-
   MongoClient mongoClient = new MongoClient("localhost", 27017);
   DB database = mongoClient.getDB("cmpe295Project");
   DBCollection collection = database.getCollection("spanningtree");
@@ -139,6 +137,7 @@ public class CommunicatorServer {
   }
 
   private  class CommunicatorServiceImpl implements CommunicatorGrpc.Communicator {
+      NodeIdsList idList = new NodeIdsList();
 
     public void setStateDB(){
         //update state of the node in db
@@ -220,29 +219,18 @@ public class CommunicatorServer {
          int THRESHOLD_S = 150; //keep in it different file
 
           node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
-//
+
           collection = database.getCollection("spanningtree");
           BasicDBObject query = new BasicDBObject();
           query.put("node_id", node.getId());
 
-          logger.info("Node: " + node.getId() + " - Current size: %s "+ node.getSize());
-
+          logger.info("Node: " + node.getId() + " - Current size: "+ node.getSize() + " Threshold value is "+ idList.getTHRESHOLD_S());
 
           try {
-
               logger.info("Node: " + node.getId() + " - Child Node: "+ req.getNodeId() + "has size %s" + childSize);
-              if (node.getSize() + childSize > idList.getTHRESHOLD_S()) {
-//              if ((node.getSize() + childSize) > THRESHOLD_S) {
-                  logger.info("inside if");
-
+              if ((node.getSize() + childSize) > idList.getTHRESHOLD_S()) {
                   node.setChild_request_counter(node.getChild_request_counter() + 1);
-                  // Move removing the child above sendSizeToParent as parent might send cluster but child needs to be removed
-                  // Case of Node 0 and Node 1 (12 node cluster)
                   try {
-
-                      logger.info("updating node" );
-
-
                       BasicDBObject newDocument = new BasicDBObject();
                       newDocument.put("child_list_Id", node.getChild_list_Id());
 
@@ -482,7 +470,10 @@ public class CommunicatorServer {
       public void shiftClusterRequest(ShiftClusterReq req, StreamObserver<ShiftClusterRes> responseObserver) {
           if (node.getIs_Cluster_head() == 1 && (node.getState()).equals("free")) {
               // check size bound condition
-              if (node.getSize() + req.getSumOfweights() > idList.getTHRESHOLD_S()) {
+
+              int threshold_s = idList.getTHRESHOLD_S();
+              System.out.println("threshold is : "+ threshold_s);
+              if ((node.getSize() + req.getSumOfweights()) > threshold_s) {
                   //send reject to Ci
                   logger.info("Node: " + node.getId() + " Rejecting ShiftClusterRequest from clusterheadId: "
                           + req.getSenderClusterHeadId() + "regarding node: " + req.getSenderNodeId());

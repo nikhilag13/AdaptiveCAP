@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class NodeIdsList {
     private HashMap<String, String> nodeIdsList = new HashMap<String,String>();
 
-    private int THRESHOLD_S = 150;
+    private int THRESHOLD_S ;
 
     public  NodeIdsList(){
          nodeIdsList.put("0","localhost:50049");
@@ -30,6 +30,8 @@ public class NodeIdsList {
          nodeIdsList.put("19","localhost:50068");
          nodeIdsList.put("20","localhost:50069");
          nodeIdsList.put("21","localhost:50070");
+
+         THRESHOLD_S = 150;
      }
 
     public int getTHRESHOLD_S() {

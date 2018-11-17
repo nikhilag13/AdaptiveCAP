@@ -1,2 +1,432 @@
-2018-11-16 17:47:57 INFO  InitScript:53 - Cleaning DB if it exists
-2018-11-16 17:47:57 INFO  InitScript:62 - Creating New DB
+2018-11-17 10:40:53 INFO  InitScript:53 - Cleaning DB if it exists
+2018-11-17 10:40:53 INFO  InitScript:62 - Creating New DB
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 0
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 3
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 3
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 2
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 2
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 4
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 4
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 1
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 1
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 0
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 5
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 8
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 8
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 6
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 6
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 5
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 7
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 7
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 9
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 9
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 11
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 11
+2018-11-17 10:40:53 INFO  InitScript:21 - Run method 10
+2018-11-17 10:40:53 INFO  InitScript:69 - Spwanning new node 10
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 11
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 5
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 2
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 8
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 9
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 7
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 0
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 6
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 10
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 4
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 1
+2018-11-17 10:40:53 INFO  Node:67 - Constructor 3
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 15
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 18
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent6
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 111
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 19
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 14
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent2
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 16
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent2
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 11
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent0
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 1
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 6
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 6
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 110
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 4
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 4
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 10
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parentnull
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 17
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent6
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 7
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 7
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent4
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 9
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 9
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent5
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 11
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 11
+2018-11-17 10:40:53 INFO  Node:376 - Node: 7- No node with rackLocation:3,2 found!
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 12
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent0
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 2
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 2
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 8
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 8
+2018-11-17 10:40:53 INFO  Node:376 - Node: 11- No node with rackLocation:3,2 found!
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent1
+2018-11-17 10:40:53 INFO  Node:72 - Constructor 13
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent1
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 3
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 3
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 0
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 0
+2018-11-17 10:40:53 INFO  Node:376 - Node: 6- No node with rackLocation:3,2 found!
+2018-11-17 10:40:53 INFO  Node:77 - Constructor 2 parent8
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 1
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 10
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 10
+2018-11-17 10:40:53 INFO  Node:121 - constructor get_Neighbors 5
+2018-11-17 10:40:53 INFO  Node:354 -  get_Neighbors 5
+2018-11-17 10:40:53 INFO  Node:376 - Node: 8- No node with rackLocation:3,2 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 9- No node with rackLocation:-1,0 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 2- No node with rackLocation:-1,0 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 0- No node with rackLocation:-1,0 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 1- No node with rackLocation:-1,0 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 9- No node with rackLocation:0,-1 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 2- No node with rackLocation:0,-1 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 7- No node with rackLocation:3,3 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 0- No node with rackLocation:0,-1 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 11- No node with rackLocation:3,3 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 6- No node with rackLocation:3,3 found!
+2018-11-17 10:40:53 INFO  Node:376 - Node: 1- No node with rackLocation:0,-1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 8- No node with rackLocation:3,3 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 9- No node with rackLocation:-1,-1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 2- No node with rackLocation:-1,-1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 0- No node with rackLocation:-1,-1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 7- No node with rackLocation:3,1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 9- No node with rackLocation:1,-1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 11- No node with rackLocation:3,1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 1- No node with rackLocation:-1,-1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 6- No node with rackLocation:3,1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 2- No node with rackLocation:1,-1 found!
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 4
+2018-11-17 10:40:54 INFO  Node:376 - Node: 8- No node with rackLocation:3,1 found!
+2018-11-17 10:40:54 INFO  Node:376 - Node: 0- No node with rackLocation:1,-1 found!
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 4
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server4
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 7
+2018-11-17 10:40:54 INFO  Node:376 - Node: 9- No node with rackLocation:-1,1 found!
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 9
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 11
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 9
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server9
+2018-11-17 10:40:54 INFO  Node:376 - Node: 1- No node with rackLocation:1,-1 found!
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 7
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server7
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 11
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server11
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 6
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 6
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server6
+2018-11-17 10:40:54 INFO  Node:376 - Node: 2- No node with rackLocation:-1,1 found!
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 2
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 3
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 2
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server2
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 8
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 8
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server8
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 3
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server3
+2018-11-17 10:40:54 INFO  Node:376 - Node: 0- No node with rackLocation:-1,1 found!
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 0
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 0
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server0
+2018-11-17 10:40:54 INFO  Node:376 - Node: 1- No node with rackLocation:-1,1 found!
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 1
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 10
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 1
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server1
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 10
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server10
+2018-11-17 10:40:54 INFO  Node:136 -  Starting Phase One Clustering in constructor 5
+2018-11-17 10:40:54 INFO  CommunicatorServer:96 - Node: %s - Creating GRPC Server 5
+2018-11-17 10:40:54 INFO  CommunicatorServer:99 - Node %s - Created GRPC Server5
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50059
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server10
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 10
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50052
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50049
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50053
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50050
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[]
+2018-11-17 10:40:54 INFO  Node:453 - Node: %s - Calling phaseOneClusterStart with parentId: 10 8
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50057
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50057
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server4
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server1
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 1
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[3, 5]
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 1
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50051
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50055
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server0
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50057
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server8
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 8
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[10]
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 8
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50060
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server3
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 3
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[]
+2018-11-17 10:40:54 INFO  Node:453 - Node: %s - Calling phaseOneClusterStart with parentId: 3 1
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50058
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50050
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server11
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 0
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server2
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server6
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 4
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[9]
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 4
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50056
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server7
+2018-11-17 10:40:54 INFO  CommunicatorServer:68 - Server started, listening on 50054
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server5
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 7
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 6
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 2
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[1, 2]
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 11
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50050
+2018-11-17 10:40:54 INFO  CommunicatorServer:107 - Node %s - Starting GRPC Server9
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 9
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[]
+2018-11-17 10:40:54 INFO  Node:453 - Node: %s - Calling phaseOneClusterStart with parentId: 9 4
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50053
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[]
+2018-11-17 10:40:54 INFO  Node:453 - Node: %s - Calling phaseOneClusterStart with parentId: 11 5
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 0
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[4, 6]
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 2
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@339f4fe
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[]
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[7, 8]
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 6
+2018-11-17 10:40:54 INFO  Node:450 - Node: %s - Starting Phase One Clustering 5
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@79bd8e4f
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@5583df56 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@79bd8e4f
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 22
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize10
+2018-11-17 10:40:54 INFO  Node:453 - Node: %s - Calling phaseOneClusterStart with parentId: 7 6
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@43d0e239
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50054
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50053
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@9aba586
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@77b8cb33 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@9aba586
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 42
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize3
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50055
+2018-11-17 10:40:54 INFO  Node:451 - inside start phase one clustering in node[11]
+2018-11-17 10:40:54 INFO  Node:458 - Node: %s - I am a parent not leaf 5
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50054
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@679a4a17
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@20894c1d
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@6fd1a364
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@507f7881
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@40d3ec5d printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@6fd1a364
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@2190dec2 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@507f7881
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 27
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize9
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 32
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize11
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50055
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@3391adf7
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@264d96b5
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@5e33f08e printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@264d96b5
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 43
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize7
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 6 - Current size: 44 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 8 - Current size: 66 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 4 - Current size: 42 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 1 - Current size: 47 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 5 - Current size: 26 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 1 - Child Node: 3has size %s42
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 4 - Child Node: 9has size %s27
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 8 - Child Node: 10has size %s22
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 6 - Child Node: 7has size %s43
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 8 - Sending Accept to childId: 10 after checking if all children responded or not 22 66
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 4 - Sending Accept to childId: 9 after checking if all children responded or not 27 42
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 1 - Sending Accept to childId: 3 after checking if all children responded or not 42 47
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 5 - Child Node: 11has size %s32
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 5 - Sending Accept to childId: 11 after checking if all children responded or not 32 26
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 6 - Sending Accept to childId: 7 after checking if all children responded or not 43 44
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 8: - New size: 88
+2018-11-17 10:40:54 INFO  CommunicatorServer:298 - Node: 8  - All children responded. Sending size to parent
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 1: - New size: 89
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50055
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50055
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@43e23b95
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@78612efb
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@4407cfb4 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@78612efb
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 88
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize8
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 4: - New size: 69
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 5: - New size: 58
+2018-11-17 10:40:54 INFO  CommunicatorServer:298 - Node: 4  - All children responded. Sending size to parent
+2018-11-17 10:40:54 INFO  CommunicatorServer:298 - Node: 5  - All children responded. Sending size to parent
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50051
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50050
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50051
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@562fbb60
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50050
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@5210357d
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@76944d97
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@1712b15b printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@5210357d
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@7c856216
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 69
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@2df8633f printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@7c856216
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize4
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 6: - New size: 87
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 58
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize5
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 6 - Current size: 87 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 6 - Child Node: 8has size %s88
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 1 - Current size: 89 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 1 - Child Node: 5has size %s58
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 1 - Sending Accept to childId: 5 after checking if all children responded or not 58 89
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 2 - Current size: 37 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 2 - Child Node: 4has size %s69
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 2 - Sending Accept to childId: 4 after checking if all children responded or not 69 37
+2018-11-17 10:40:54 INFO  CommunicatorServer:252 - Node: 6 - Removed child 8 from childList 88 87
+2018-11-17 10:40:54 INFO  CommunicatorServer:253 - Node: 6 - Sending Prune after checking if all children responded or not
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 1: - New size: 147
+2018-11-17 10:40:54 INFO  CommunicatorServer:255 - Node: %s - All children responded. Sending size to parent6
+2018-11-17 10:40:54 INFO  CommunicatorServer:298 - Node: 1  - All children responded. Sending size to parent
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50049
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50051
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50049
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50051
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@32fb986e
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@68ce7cc1
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@2412aca0
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@23ed1e75 printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@2412aca0
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@2dccffbc
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 147
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@7f15ee2b printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@2dccffbc
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 87
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize6
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize1
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 2 - Current size: 106 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 2 - Child Node: 6has size %s87
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 0 - Current size: 34 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 0 - Child Node: 1has size %s147
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 2: - New size: 106
+2018-11-17 10:40:54 INFO  CommunicatorServer:298 - Node: 2  - All children responded. Sending size to parent
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50049
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50049
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@78509ed5
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@7c6f0507
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@396d94ee printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@7c6f0507
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 106
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize2
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 0 - Current size: 34 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 0 - Child Node: 2has size %s106
+2018-11-17 10:40:54 INFO  CommunicatorServer:273 - Node: 0 - Sending Accept to childId: 2 after checking if all children responded or not 106 34
+2018-11-17 10:40:54 INFO  CommunicatorServer:252 - Node: 2 - Removed child 6 from childList 87 106
+2018-11-17 10:40:54 INFO  CommunicatorServer:253 - Node: 2 - Sending Prune after checking if all children responded or not
+2018-11-17 10:40:54 INFO  CommunicatorServer:255 - Node: %s - All children responded. Sending size to parent2
+2018-11-17 10:40:54 INFO  CommunicatorClient:86 - startStageOneCluster in CommunicatorClient - printing ipAddress localhost:50049
+2018-11-17 10:40:54 INFO  CommunicatorClient:89 - printing host localhost
+2018-11-17 10:40:54 INFO  CommunicatorClient:91 - printing port after splitting 50049
+2018-11-17 10:40:54 INFO  CommunicatorClient:95 - printing channel io.grpc.internal.ManagedChannelImpl@648fccce
+2018-11-17 10:40:54 INFO  CommunicatorClient:97 - printing blockingStub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@6a483e2f
+2018-11-17 10:40:54 INFO  CommunicatorClient:100 - before calling sendSize in client and print node org.sjsu.grpcCommunicator.Node@396d94ee printing stub org.sjsu.grpcCommunicator.CommunicatorGrpc$CommunicatorBlockingStub@6a483e2f
+2018-11-17 10:40:54 INFO  CommunicatorClient:159 - Inside sendSize in client 106
+2018-11-17 10:40:54 INFO  CommunicatorClient:160 - Node: %s - Starting function sendSize2
+2018-11-17 10:40:54 INFO  CommunicatorServer:227 - Node: 0 - Current size: 140 Threshold value is 150
+2018-11-17 10:40:54 INFO  CommunicatorServer:230 - Node: 0 - Child Node: 2has size %s106
+2018-11-17 10:40:54 INFO  CommunicatorServer:252 - Node: 0 - Removed child 1 from childList 147 140
+2018-11-17 10:40:54 INFO  CommunicatorServer:253 - Node: 0 - Sending Prune after checking if all children responded or not
+2018-11-17 10:40:54 INFO  CommunicatorServer:255 - Node: %s - All children responded. Sending size to parent0
+2018-11-17 10:40:54 INFO  Node:402 - Node: %s - Setting myself as clusterhead as no parent found! 0
+2018-11-17 10:40:54 INFO  Node:409 - Node: %s - Updating DB with size,hopcount variables 0 140
+2018-11-17 10:40:54 INFO  CommunicatorServer:293 - Node 0: - New size: 140
+2018-11-17 10:40:54 INFO  Node:425 - Node: %s - Successfully DB with size,hopcount variables
+2018-11-17 10:40:54 INFO  CommunicatorServer:268 - Node: 0  - Sending Prune to childId: 1
+2018-11-17 10:40:54 INFO  CommunicatorServer:252 - Node: 0 - Removed child 2 from childList 106 140
+2018-11-17 10:40:54 INFO  CommunicatorServer:253 - Node: 0 - Sending Prune after checking if all children responded or not
+2018-11-17 10:40:54 INFO  CommunicatorServer:268 - Node: 0  - Sending Prune to childId: 2
+2018-11-17 10:40:54 INFO  CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 10:40:54 INFO  CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 10:40:54 INFO  CommunicatorClient:167 - Node:2 - Successfully sent the size message of size106 to parentId:0
+2018-11-17 10:40:54 INFO  CommunicatorClient:168 - Node:0- Responded to Size RPC with reply:Prune
+2018-11-17 10:40:54 INFO  CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 10:40:54 INFO  CommunicatorClient:176 - Node:2 - Got Prune
+2018-11-17 10:40:54 INFO  CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 10:40:54 INFO  CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 10:40:54 INFO  CommunicatorClient:167 - Node:1 - Successfully sent the size message of size147 to parentId:0
+2018-11-17 10:40:54 INFO  CommunicatorClient:168 - Node:0- Responded to Size RPC with reply:Prune
+2018-11-17 10:40:54 INFO  CommunicatorClient:176 - Node:1 - Got Prune
+2018-11-17 10:40:54 INFO  CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 10:40:54 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  CommunicatorServer:268 - Node: 2  - Sending Prune to childId: 6
+2018-11-17 10:40:55 INFO  CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 10:40:55 INFO  CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:167 - Node:6 - Successfully sent the size message of size87 to parentId:2
+2018-11-17 10:40:55 INFO  CommunicatorClient:168 - Node:2- Responded to Size RPC with reply:Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:176 - Node:6 - Got Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 10:40:55 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  CommunicatorServer:308 - Node: 1 Sending accept to childId: 5
+2018-11-17 10:40:55 INFO  CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 10:40:55 INFO  CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 10:40:55 INFO  CommunicatorClient:167 - Node:5 - Successfully sent the size message of size58 to parentId:1
+2018-11-17 10:40:55 INFO  CommunicatorClient:168 - Node:1- Responded to Size RPC with reply:Accepted
+2018-11-17 10:40:55 INFO  CommunicatorClient:207 - Node:5Didn't get Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  CommunicatorServer:308 - Node: 5 Sending accept to childId: 11
+2018-11-17 10:40:55 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  CommunicatorServer:268 - Node: 6  - Sending Prune to childId: 8
+2018-11-17 10:40:55 INFO  CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 10:40:55 INFO  CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 10:40:55 INFO  CommunicatorClient:167 - Node:11 - Successfully sent the size message of size32 to parentId:5
+2018-11-17 10:40:55 INFO  CommunicatorClient:168 - Node:5- Responded to Size RPC with reply:Accepted
+2018-11-17 10:40:55 INFO  CommunicatorClient:207 - Node:11Didn't get Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  Node:456 - Node: %s - Sent size() message to parent: 11 5
+2018-11-17 10:40:55 INFO  CommunicatorClient:164 - printing response message: "Prune"
+
+2018-11-17 10:40:55 INFO  CommunicatorClient:166 - printing sizeRPC Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:167 - Node:8 - Successfully sent the size message of size88 to parentId:6
+2018-11-17 10:40:55 INFO  CommunicatorClient:168 - Node:6- Responded to Size RPC with reply:Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:176 - Node:8 - Got Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:192 - printing schema while updating db free 1
+2018-11-17 10:40:55 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  CommunicatorServer:308 - Node: 8 Sending accept to childId: 10
+2018-11-17 10:40:55 INFO  CommunicatorClient:164 - printing response message: "Accepted"
+
+2018-11-17 10:40:55 INFO  CommunicatorClient:166 - printing sizeRPC Accepted
+2018-11-17 10:40:55 INFO  CommunicatorClient:167 - Node:10 - Successfully sent the size message of size22 to parentId:8
+2018-11-17 10:40:55 INFO  CommunicatorClient:168 - Node:8- Responded to Size RPC with reply:Accepted
+2018-11-17 10:40:55 INFO  CommunicatorClient:207 - Node:10Didn't get Prune
+2018-11-17 10:40:55 INFO  CommunicatorClient:102 - after sendSize in client
+2018-11-17 10:40:55 INFO  Node:456 - Node: %s - Sent size() message to parent: 10 8
+2018-11-17 10:47:16 INFO  CommunicatorServer:116 - Node: %s - GRPC Server started successfully. Entering forever listening mode...11
