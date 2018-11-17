@@ -138,21 +138,7 @@ th{
                         <td>4</td>
                         <td>2</td>
                     </tr>
-                            <tr>
-                        <th>Node13</th>
-                        <td>5</td>
-                        <td>3</td>
-                    </tr>
-                            <tr>
-                        <th>Node14</th>
-                        <td>4</td>
-                        <td>1</td>
-                    </tr>
-                            <tr>
-                        <th>Node15</th>
-                        <td>5</td>
-                        <td>2</td>
-                    </tr>
+
                   </tbody>
               </table>
             
@@ -188,7 +174,8 @@ Highcharts.chart('container', {
     tooltip: {
         formatter: function () {
             return '<b>' + this.series.name + '</b><br/>' +
-                this.point.name.toLowerCase() + ' ' + this.point.y ;
+                'Hop count of '+
+                this.point.name.toLowerCase() + ': ' + this.point.y ;
         }
     }
 });
