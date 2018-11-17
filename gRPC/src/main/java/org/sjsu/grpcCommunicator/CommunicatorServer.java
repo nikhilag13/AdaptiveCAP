@@ -222,7 +222,6 @@ public class CommunicatorServer {
           JoinClusterResponse reply = JoinClusterResponse.newBuilder().setJoinClusterResponse("joined").build();
           responseObserver.onNext(reply);
           responseObserver.onCompleted();
-//          return JoinClusterResponse(joinClusterResponse="Joined");
       }
 
 
@@ -232,10 +231,6 @@ public class CommunicatorServer {
          int THRESHOLD_S = 150; //keep in it different file
 
           node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
-
-//          collection = database.getCollection("spanningtree");
-
-
 
           logger.info("Node: " + node.getId() + " - Current size: "+ node.getSize() + " Threshold value is "+ idList.getTHRESHOLD_S());
 
@@ -270,7 +265,7 @@ public class CommunicatorServer {
                        while the rest of the application continues it’s work.**/
 
                     Thread thread1 = new Thread(new MyRunnable(node));
-                    thread1.start();
+                    thread1.start(); //node.send_size_to_parent() is called inside thread
 
 //                     node.send_size_to_parent();
                   }
@@ -297,7 +292,6 @@ public class CommunicatorServer {
                       logger.error("***");
                       logger.error("ERROR OCCURRED WHILE Accepting size Node " + (node.id));
                       logger.error(e);
-//                logger.error(traceback.format_exc())
                       logger.error("***");
                   }
 
@@ -308,13 +302,10 @@ public class CommunicatorServer {
                           (node.getChild_request_counter() == node.getInitial_node_child_length())) {
                       logger.info("Node: " + node.getId() + "  - All children responded. Sending size to parent");
 
-//                    Thread thread2 = new Thread(new Runnable() {
-////
-////                        public void run() { node.sendSizeToParent();
-////                        }
-////                    }).start();
+                      Thread thread1 = new Thread(new MyRunnable(node));
+                      thread1.start(); //node.send_size_to_parent() is called inside thread
 
-                      node.send_size_to_parent();
+//                      node.send_size_to_parent();
                   }
                       logger.info("Node: " + node.getId() + " Sending accept to childId: " + req.getNodeId());
                       AccomodateChild reply = AccomodateChild.newBuilder().setMessage("Accepted").build();
@@ -327,7 +318,7 @@ public class CommunicatorServer {
           }
       }
 
-      /* *************** Phase 2 - call from client SendHello() *******  **/
+      /** Phase2 - call from client SendHello() *******  **/
       @Override
       public void hello(SendHello req, StreamObserver<SendHelloResponse> responseObserver) {
           logger.info("Node: " + node.getId() + " catering to Hello message with request: " + req);
@@ -362,10 +353,6 @@ public class CommunicatorServer {
                   node.setBest_node_cluster_head_Id(req.getSenderClusterheadId());
 
                   if ((node.getNeighbour_Hello_Array().size() == node.getNeighbor_ID().size()) && (node.getBest_node_id() != node.getId())) {
-                      //logger.info("Node: %s - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:%s" + node_id, self.node.clusterheadId));
-                      //logger.info("Node: %s - State variables: bestNodeId: {},bestNodeClusterHeadId:{},current clusterheadId: {},current parent: {}".format(self.node.bestNodeId, self.node.bestNodeClusterHeadId, self.node.clusterheadId, self.node.parentId));
-
-                      //uncomment it later
                       node.send_shift_node_request(node.getBest_node_cluster_head_Id());
                   }
                   logger.info("Node: " + node.getId() + "- Sending interested response for senderId: " + req.getSenderId());
@@ -377,12 +364,10 @@ public class CommunicatorServer {
 
               if ((node.getNeighbour_Hello_Array().size() == node.getNeighbor_ID().size()) && (node.getBest_node_id() != node.getId())) {
 
-                  //May need to add best_Node_Hop_Count in the sendShiftRPC to update node's hop count if request is accepted
                   logger.info("Node: " + node.getId() + " - Received hello messages from ALL neighbours. Sending shift node request to would be ex-clusterheadId:%s" + node.getCluster_head_Id());
                   logger.info("Node: " + node.getId() + " - State variables: bestNodeId: " + node.getBest_node_id() + ",bestNodeClusterHeadId: "
                           + node.getBest_node_cluster_head_Id() + ",current clusterheadId: " + node.getCluster_head_Id() + ",current parent: " + node.getParent_Id());
 
-                  //uncomment later
                   node.send_shift_node_request(node.getBest_node_cluster_head_Id());
 
               }
@@ -400,7 +385,7 @@ public class CommunicatorServer {
           }
       }
 
-      /* *******Phase 2 - call from client.sendShiftNodeRequest()************************* */
+      /** Phase2  - call from client.sendShiftNodeRequest()************************* */
       @Override
       public void shiftNodeRequest(ShiftRequest req, StreamObserver<ShiftResponse> responseObserver) {
 
@@ -424,15 +409,12 @@ public class CommunicatorServer {
 
               logger.info("Node: " + (node.id) + " - ClusterheadId sending Jam Signal across its cluster");
 
-              //call Jam signal
-              //uncomment later
               node.send_jam_signal();
 
               //send shift cluster request to Cj
               logger.info("Node: " + (node.id) + " - ClusterheadId successfully sent Jam Signal across its cluster");
               logger.info("Node: " + (node.id) + " - ClusterheadId now sending sendShiftClusterRequest");
 
-              // uncomment later
               node.send_shift_cluster_request();
 
               ShiftResponse reply = ShiftResponse.newBuilder().setMessage("Recieved ShiftNode Request").build();
@@ -447,7 +429,7 @@ public class CommunicatorServer {
 
       }
 
-      /* *************** Phase 2 - call from client sendJamSignal() and propagateJamToChildren() *******  **/
+      /** Phase2  - call from client sendJamSignal() and propagateJamToChildren() *******  **/
       public void jam(JamRequest req, StreamObserver<JamResponse> responseObserver) {
           String jamId = req.getNodeId();
           logger.info("Node: " + node.getId() + " - Received Jam signal from clusterheadId: " + jamId);
@@ -464,7 +446,6 @@ public class CommunicatorServer {
 
               logger.info("Node: " + node.getId() + " - Sending jam to all children");
 
-              //uncomment later
               node.propogate_jam_to_children(jamId);
 
               logger.info("Node: " + node.getId() + " - Successfully propagated jam to all children");
@@ -477,7 +458,7 @@ public class CommunicatorServer {
 
 
 
-      /* ************* Phase 2 ********************* */
+      /** Phase2 **/
       @Override
       public void shiftClusterRequest(ShiftClusterReq req, StreamObserver<ShiftClusterRes> responseObserver) {
           if (node.getIs_Cluster_head() == 1 && (node.getState()).equals("free")) {
@@ -510,14 +491,11 @@ public class CommunicatorServer {
                   } catch (Exception e) {
                       logger.error(e);
                   }
-                  // accept to Ci
 
-                  //uncomment later
                   node.send_jam_signal();
 
                   logger.info("Node: " + node.getId() + " - Accepting ShiftClusterRequest from clusterheadId: " + req.getSenderClusterHeadId() + " regarding node: " + req.getSenderNodeId());
 
-                  //uncomment later
                   node.accept(req.getSenderClusterHeadId());
 
                   ShiftClusterRes reply = ShiftClusterRes.newBuilder().setMessage("Accepting").build();
@@ -527,8 +505,7 @@ public class CommunicatorServer {
               }
           }
             else {
-              //shifting is already done, send rejecting message
-              //uncomment later
+
              node.reject(req.getSenderClusterHeadId());
 
               ShiftClusterRes reply = ShiftClusterRes.newBuilder().setMessage("Rejecting").build();
@@ -537,6 +514,7 @@ public class CommunicatorServer {
           }
       }
 
+      /** Phase2 **/
       public void accept(AcceptRequest req, StreamObserver<AcceptResponse> responseObserver) {
           if((node.getState()).equals("busy")){
               logger.info("Node: " + node.getId() + "- Accept Request received from clusterhead: "+ req.getClusterHeadId());
@@ -572,6 +550,7 @@ public class CommunicatorServer {
 
       }
 
+      /** Phase2 **/
       public void reject(RejectRequest req, StreamObserver<RejectResponse> responseObserver) {
 
           if(node.getState().equals("busy")){
@@ -598,7 +577,7 @@ public class CommunicatorServer {
           }
 
       }
-
+      /** Phase2 **/
       public void wakeUp(WakeUpRequest req, StreamObserver<WakeUpResponse> responseObserver) {
           if(node.getState().equals("sleep")){
               node.setState("active");
@@ -609,7 +588,6 @@ public class CommunicatorServer {
                   logger.error(e);
               }
 
-              //uncomment later
               node.propogate_wake_up();
 
               WakeUpResponse reply = WakeUpResponse.newBuilder().setWokenUp("wokeup").build();
@@ -617,8 +595,6 @@ public class CommunicatorServer {
               responseObserver.onCompleted();
           }
           else{
-
-              //uncomment later
               node.propogate_wake_up();
               WakeUpResponse reply = WakeUpResponse.newBuilder().setWokenUp("already").build();
               responseObserver.onNext(reply);
@@ -629,12 +605,8 @@ public class CommunicatorServer {
             if(node.getId() == req.getTargetNodeId() && node.getState().equals("sleep")){
                 String oldClusterheadId = node.getCluster_head_Id();
 
-                //uncomment later
                 node.say_bye_to_parent();
                 node.update_internal_variables_and_send_join(node.getBest_node_id(), node.getBest_node_cluster_head_Id(), node.getBest_node_hop_count() + 1);
-
-                 // self.node.propagateNewClusterHeadToChildren()
-                 // is sendShiftCompleteToBothClusterHeads it necessary - can remove if not needed
 
                 node.send_shift_complete_to_both_cluster_heads(oldClusterheadId, node.getCluster_head_Id());
 
@@ -648,7 +620,7 @@ public class CommunicatorServer {
                 responseObserver.onCompleted();
             }
       }
-
+      /** Phase2 **/
       public void shiftFinished(ShiftFinishedRequest req, StreamObserver<ShiftFinishedResponse> responseObserver) {
           if(node.getState().equals("busy")){
               node.send_wakeup();
@@ -665,7 +637,7 @@ public class CommunicatorServer {
           responseObserver.onCompleted();
 
       }
-
+      /** Phase2 **/
       public void joinNewParent(JoinNewParentRequest req, StreamObserver<JoinNewParentResponse> responseObserver) {
           if(node.getState().equals("sleep")){
 
@@ -683,7 +655,6 @@ public class CommunicatorServer {
 
               try{
                   //set child list id
-//                  DBCollection collection = database.getCollection("spanningtree");
                   BasicDBObject query = new BasicDBObject();
                   query.put("node_id", node.id); setStateDB();
 
@@ -709,6 +680,7 @@ public class CommunicatorServer {
           responseObserver.onCompleted();
       }
 
+      /** Phase2 **/
       public void updateSize(UpdateSizeRequest req, StreamObserver<UpdateSizeResponse> responseObserver) {
           node.setSize(node.getSize() + req.getSizeIncrement());
 
@@ -738,7 +710,7 @@ public class CommunicatorServer {
           responseObserver.onCompleted();
       }
 
-
+      /** Phase2 **/
       public void updateClusterhead(UpdateClusterheadRequest req, StreamObserver<UpdateClusterheadResponse> responseObserver) {
 
           node.setCluster_head_Id(req.getNewClusterheadId());
@@ -771,6 +743,7 @@ public class CommunicatorServer {
 
       }
 
+      /** Phase2 **/
       public void shiftComplete(SendShiftCompleteAck req, StreamObserver<ClusterheadAckSendShift> responseObserver) {
 
 
@@ -796,6 +769,7 @@ public class CommunicatorServer {
           responseObserver.onCompleted();
       }
 
+      /** Phase2 **/
       public void removeChildIdFromParent(RemoveChildIdFromParentRequest req, StreamObserver<RemoveChildIdFromParentResponse> responseObserver) {
 
           logger.info("Node: "+ node.getId() +" - As Parent got RemoveChildIdFromParent rpc from Node: %s" + req.getDepartingChildId());
@@ -831,11 +805,12 @@ public class CommunicatorServer {
 
       }
 
+      /** Phase2 **/
       public void startPhase2Clustering(StartPhase2ClusteringRequest req, StreamObserver<StartedPhase2ClusteringResponse> responseObserver) {
           logger.info("Node: "+ node.getId() +" - Got StartPhase2Clustering");
-          //logger.info("Node: %s - Checking Initial Energy of cluster first"%(self.node.id))
+          logger.info("Node: "+ node.getId()+" - Checking Initial Energy of cluster first");
           // self.node.calculateClusterEnergy()
-          // logger.info("Node: %s - Now initiating phase2"%(self.node.id))
+          logger.info("Node: "+ node.getId()+" - Now initiating phase2");
           node.start_phase2_clustering();
           String response = "Node: "+ node.getId()+" - Done with phase2 clustering";
           StartedPhase2ClusteringResponse reply = StartedPhase2ClusteringResponse.newBuilder().setStartedPhase2ClusteringResponse(response).build();
@@ -844,6 +819,7 @@ public class CommunicatorServer {
 
       }
 
+      /** Phase2 **/
       public void checkEnergyDrain(CheckEnergyDrainRequest req, StreamObserver<CheckEnergyDrainResponse> responseObserver) {
 
           logger.info("Node: " + node.getId() + " - Got CheckEnergyDrain Request");
@@ -854,7 +830,6 @@ public class CommunicatorServer {
               responseObserver.onCompleted();
           } else {
 
-              // uncomment later, check the type of drain
               //String drain = node.startCheckingEnergyDrain();
               CheckEnergyDrainResponse reply = CheckEnergyDrainResponse.newBuilder().setCheckEnergyDrainResponse(-1).build();
               responseObserver.onNext(reply);

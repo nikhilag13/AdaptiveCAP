@@ -32,8 +32,6 @@ public class Node {
     List<String>  neighbor_ID;
     public HashSet<String> neighbour_Hello_Array; //Phase 2
 
-
-
     String shift_Node_Id ;
     int shift_Node_Sum ;
     String shift_Node_Cluster ;
@@ -142,7 +140,7 @@ public class Node {
             logger.info(" Starting Phase One Clustering in constructor "+ this.id);
 
 
-            // starting phase 1 and callinf server "serve() " function
+            // starting phase 1 and calling server "serve() " function from node constructor
             start_phase_one_clustering();
             logger.info("Node: "+this.id+" - Calling Server ");
             final CommunicatorServer server = new CommunicatorServer();

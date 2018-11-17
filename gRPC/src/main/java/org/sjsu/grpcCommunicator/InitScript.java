@@ -18,8 +18,7 @@ public class InitScript {
 
 
         public void run() {
-//            System.out.println("Run method "+String.valueOf(id));
-            logger.info("Run method for Node: "+String.valueOf(id));
+//            logger.info("Run method for Node: "+String.valueOf(id));
             spawnNode(id);
         }
     }
@@ -45,7 +44,6 @@ public class InitScript {
         initScript.cleanDB();
         initScript.buildDB();
          initScript.spawn();
-       // initScript.spawnNode(0);
     }
 
     public  void cleanDB() {
@@ -57,7 +55,6 @@ public class InitScript {
             logger.info("Cleaning DB if it exists");
         } catch (Exception e) {
             logger.error(e);
-//            logger.error(traceback.format_exc());
         }
 
     }
@@ -68,12 +65,8 @@ public class InitScript {
     }
 
     public  void spawnNode( int id) {
-        logger.info("Spwaning new node "+String.valueOf(id));
+//        logger.info("Spwaning new node "+String.valueOf(id));
         Node node = new Node(id);
-        CommunicatorServer cms = new CommunicatorServer();
-        cms.serve(node);
-
-       // node.start_phase_one_clustering();
     }
 
 
