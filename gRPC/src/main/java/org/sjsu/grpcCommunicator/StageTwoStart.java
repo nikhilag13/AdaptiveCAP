@@ -58,10 +58,11 @@ public class StageTwoStart {
         channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext(true)
                 .build();
-        logger.info("printing channel " + channel);
+//        logger.info("printing channel " + channel);
         blockingStub = CommunicatorGrpc.newBlockingStub(channel);
 
         StartPhase2ClusteringRequest request = StartPhase2ClusteringRequest.newBuilder().setStartPhase2("Start Phase 2 ").build();
+
         StartedPhase2ClusteringResponse response = blockingStub.startPhase2Clustering(request);
         String clusterRPC = response.getStartedPhase2ClusteringResponse();
 

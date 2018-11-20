@@ -20,16 +20,16 @@ public class NodeIdsList {
          nodeIdsList.put("9","localhost:50058");
          nodeIdsList.put("10","localhost:50059");
          nodeIdsList.put("11","localhost:50060");
-         nodeIdsList.put("12","localhost:50061");
-         nodeIdsList.put("13","localhost:50062");
-         nodeIdsList.put("14","localhost:50063");
-         nodeIdsList.put("15","localhost:50064");
-         nodeIdsList.put("16","localhost:50065");
-         nodeIdsList.put("17","localhost:50066");
-         nodeIdsList.put("18","localhost:50067");
-         nodeIdsList.put("19","localhost:50068");
-         nodeIdsList.put("20","localhost:50069");
-         nodeIdsList.put("21","localhost:50070");
+ //        nodeIdsList.put("12","localhost:50061");
+//         nodeIdsList.put("13","localhost:50062");
+//         nodeIdsList.put("14","localhost:50063");
+//         nodeIdsList.put("15","localhost:50064");
+//         nodeIdsList.put("16","localhost:50065");
+//         nodeIdsList.put("17","localhost:50066");
+//         nodeIdsList.put("18","localhost:50067");
+//         nodeIdsList.put("19","localhost:50068");
+//         nodeIdsList.put("20","localhost:50069");
+//         nodeIdsList.put("21","localhost:50070");
 
          THRESHOLD_S = 150;
      }

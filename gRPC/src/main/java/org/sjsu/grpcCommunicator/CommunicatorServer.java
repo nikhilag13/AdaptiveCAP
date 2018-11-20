@@ -182,7 +182,11 @@ public class CommunicatorServer {
           String clusterName = request.getClusterHeadName();
           int hopCount = request.getHopcount();
 
-
+          node.cluster_head_Id= clusterName;
+          node.state = "active";
+          node.hop_count= hopCount;
+          node.best_node_hop_count = hopCount;
+          node.is_Cluster_head = 0;
 //          DBCollection collection = database.getCollection("spanningtree");
 
           BasicDBObject query = new BasicDBObject();
@@ -324,7 +328,7 @@ public class CommunicatorServer {
       /** Phase2 - call from client SendHello() *******  **/
       @Override
       public void hello(SendHello req, StreamObserver<SendHelloResponse> responseObserver) {
-          logger.info("Node: " + node.getId() + " catering to Hello message with request: " + req);
+          logger.info("Node: " + node.getId() + " catering to Hello message with request: " + req.getSenderId());
           if (node.getIs_Cluster_head() == 1) {
               // do nothing
               logger.info("Node: " + node.getId() + " - Got hello message from senderId: " + req.getSenderId());
@@ -383,8 +387,8 @@ public class CommunicatorServer {
               logger.info("Node: " + node.getId() + " - Sending NOT interested response for senderId: " + req.getSenderId());
 
               SendHelloResponse reply = SendHelloResponse.newBuilder().setInterested(-1).build();
-              responseObserver.onNext(reply);
-              responseObserver.onCompleted();
+//              responseObserver.onNext(reply);
+//              responseObserver.onCompleted();
           }
       }
 

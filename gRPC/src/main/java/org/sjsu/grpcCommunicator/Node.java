@@ -180,7 +180,7 @@ public class Node {
 
                 DBObject document = collection.findOne(query);;
                 if(document!=null)
-                  this.neighbor_ID.add((String) document.get("parent_Id"));
+                  this.neighbor_ID.add((String) document.get("node_id"));
                 else
                     logger.info("Node: "+id+"- No node with rackLocation:"+el+" found!");
 
@@ -354,11 +354,15 @@ public class Node {
         this.best_node_hop_count = this.hop_count;
         logger.info("Node: "+this.id+" - hopcount before Phase 2 clustering:  "+this.hop_count);
 
-        for(String i: this.neighbor_ID){
-            if(i.equals(this.id))
+    for (String i : this.neighbor_ID) {
+        System.out.println("i is "+ i +", id is "+ this.id);
+        if(i != null) {
+            if (i.equals(this.id))
                 continue;
+            System.out.println("i is "+ i +", cluster_head_Id: "+  this.cluster_head_Id);
             client.sendHello(this.id, i, nodeIdsList.getNodeIdsList().get(i), this.cluster_head_Id, this.hop_count, this.state);
         }
+    }
     }
 
     public String get_ip_from_id(String Id){
@@ -374,6 +378,7 @@ public class Node {
     }
 
     public void send_jam_signal(){
+
         List<String> childIpList = new ArrayList<String>();
         if(this.child_list_Id!=null && this.child_list_Id.size()!=0){
             for(String childId : this.child_list_Id){
