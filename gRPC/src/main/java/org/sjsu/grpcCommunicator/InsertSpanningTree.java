@@ -14,7 +14,7 @@ public class InsertSpanningTree {
         DBCollection collection = database.getCollection("spanningtree");
 
         String json = "{'node_id' : '0','parent_Id' : null, 'child_list_Id' : ['1', '2' ]," +
-                "'dist' : 0 , 'cluster_head_Id': null, 'sub_tree_list' : ['1', '2', '3' , '4' , '5' ]," +
+                "'dist' : 0 , 'cluster_head_Id': null, 'sub_tree_list' : ['1', '2', '3' , '4' , '5', '6' ]," +
                 "'neighbour_list' : null ,weight : 0, 'child_weight_list' : null, 'is_Cluster_head' : 0," +
                 "'state' : 'active', 'rack_location' : '0,0' }";
 

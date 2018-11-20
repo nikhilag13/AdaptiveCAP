@@ -230,14 +230,17 @@ public class CommunicatorServer {
           int childSize = req.getSize();
          int THRESHOLD_S = 150; //keep in it different file
 
-          node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
 
           logger.info("Node: " + node.getId() + " - Current size: "+ node.getSize() + " Threshold value is "+ idList.getTHRESHOLD_S());
 
           try {
               if ((node.getSize() + childSize) > idList.getTHRESHOLD_S()) {
                   node.setChild_request_counter(node.getChild_request_counter() + 1);
+                  node.getChild_list_Id().remove(req.getNodeId()); //remove from arraylist childListId
+
                   try {
+
+
                       BasicDBObject query = new BasicDBObject();
                       query.put("node_id", node.getId());
                       BasicDBObject newDocument = new BasicDBObject();
