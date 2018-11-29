@@ -4,6 +4,7 @@ import com.mongodb.*;
 import org.apache.http.util.ExceptionUtils;
 import org.apache.log4j.Logger;
 import java.util.*;
+import java.util.logging.Logger;
 
 
 public class Node {
@@ -280,7 +281,7 @@ public class Node {
             return;
         }
 
-        List<String>childIPs = new ArrayList<String>();
+        List<String> childIPs = new ArrayList<String>();
         for(String childId : this.child_list_Id)
             childIPs.add(nodeIdsList.getNodeIdsList().get(childId));
         logger.info(childIPs);
@@ -351,6 +352,7 @@ public class Node {
 
 
     public void start_phase2_clustering(){
+
         this.best_node_hop_count = this.hop_count;
         logger.info("Node: "+this.id+" - hopcount before Phase 2 clustering:  "+this.hop_count);
 

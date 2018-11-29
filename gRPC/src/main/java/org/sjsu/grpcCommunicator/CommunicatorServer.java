@@ -815,9 +815,9 @@ public class CommunicatorServer {
       /** Phase2 **/
       public void startPhase2Clustering(StartPhase2ClusteringRequest req, StreamObserver<StartedPhase2ClusteringResponse> responseObserver) {
           logger.info("Node: "+ node.getId() +" - Got StartPhase2Clustering");
-          logger.info("Node: "+ node.getId()+" - Checking Initial Energy of cluster first");
+//          logger.info("Node: "+ node.getId()+" - Checking Initial Energy of cluster first");
           // self.node.calculateClusterEnergy()
-          logger.info("Node: "+ node.getId()+" - Now initiating phase2");
+//          logger.info("Node: "+ node.getId()+" - Now initiating phase2");
           node.start_phase2_clustering();
           String response = "Node: "+ node.getId()+" - Done with phase2 clustering";
           StartedPhase2ClusteringResponse reply = StartedPhase2ClusteringResponse.newBuilder().setStartedPhase2ClusteringResponse(response).build();
