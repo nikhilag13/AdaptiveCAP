@@ -539,8 +539,6 @@ public class CommunicatorClient {
     String host = strArr[0];
     int port = Integer.valueOf(strArr[1]);
 
-    logger.info("")
-
     channel = ManagedChannelBuilder.forAddress(host, port)
             .usePlaintext(true)
             .build();
