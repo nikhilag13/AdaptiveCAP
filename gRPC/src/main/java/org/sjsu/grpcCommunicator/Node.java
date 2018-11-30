@@ -267,6 +267,7 @@ public class Node {
 
 
     public void send_shift_node_request(String best_node_cluster_head_Id){
+        logger.info("Node  "+ this.id + " got shift node request");
         if(this.is_Cluster_head!=1){
             client.send_Shift_Node_Request(this,best_node_cluster_head_Id,nodeIdsList.getNodeIdsList().get(this.cluster_head_Id));
         }
@@ -342,7 +343,7 @@ public class Node {
 
     public void say_bye_to_parent(){
         client.remove_Child_Id_From_Parent(this.id, nodeIdsList.getNodeIdsList().get(this.parent_Id));
-        client.inform_Parent_About_New_Size(-this.size,this.id,nodeIdsList.getNodeIdsList().get(this.parent_Id));
+        client.inform_Parent_About_New_Size(this.size*(-1),this.id,nodeIdsList.getNodeIdsList().get(this.parent_Id));
     }
 
     public void send_shift_complete_to_both_cluster_heads(String old_cluster_head_id, String new_cluster_head_id){
@@ -355,11 +356,11 @@ public class Node {
         logger.info("Node: "+this.id+" - hopcount before Phase 2 clustering:  "+this.hop_count);
 
     for (String i : this.neighbor_ID) {
-        System.out.println("i is "+ i +", id is "+ this.id);
+        logger.info("i is "+ i +", id is "+ this.id);
         if(i != null) {
             if (i.equals(this.id))
                 continue;
-            System.out.println("i is "+ i +", cluster_head_Id: "+  this.cluster_head_Id);
+            logger.info("i is "+ i +", cluster_head_Id: "+  this.cluster_head_Id);
             client.sendHello(this.id, i, nodeIdsList.getNodeIdsList().get(i), this.cluster_head_Id, this.hop_count, this.state);
         }
     }
@@ -379,6 +380,7 @@ public class Node {
 
     public void send_jam_signal(){
 
+        logger.info("Node " + this.id + " got jam signal from server");
         List<String> childIpList = new ArrayList<String>();
         if(this.child_list_Id!=null && this.child_list_Id.size()!=0){
             for(String childId : this.child_list_Id){

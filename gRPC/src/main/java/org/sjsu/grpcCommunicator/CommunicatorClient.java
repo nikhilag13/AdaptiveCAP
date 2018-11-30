@@ -318,6 +318,7 @@ public class CommunicatorClient {
   /** Phase2 **/
   public void send_Shift_Node_Request(Node node, String best_Node_Cluster_Head_Id, String cluster_Head_Ip){
 
+    logger.info("Node " + node.id + " got shift node req from node with best_Node_Cluster_Head_Id" + best_Node_Cluster_Head_Id + " cluster_Head_Ip "+ cluster_Head_Ip);
       String[] strArr = cluster_Head_Ip.split(":");
       String host = strArr[0];
       int port = Integer.valueOf(strArr[1]);
@@ -538,6 +539,8 @@ public class CommunicatorClient {
     String host = strArr[0];
     int port = Integer.valueOf(strArr[1]);
 
+    logger.info("")
+
     channel = ManagedChannelBuilder.forAddress(host, port)
             .usePlaintext(true)
             .build();
@@ -648,7 +651,7 @@ public class CommunicatorClient {
 
       ShiftStartRequest request = ShiftStartRequest.newBuilder().setTargetNodeId(target_Node_Id).build();
       ShiftStartResponse response = blockingStub.shiftStart(request);
-      logger.info("Node: {} - Got Response: {} after sending shift start to Node id: {}"+node_Id+"  "+target_Node_Id);
+      logger.info("Node: {} - Got Response: {} after sending shift start to Node id: {}"+node_Id+"  "+target_Node_Id + " "+ response);
     }catch (RuntimeException e) {
       logger.error("Error with Node  " + node_Id);
       logger.error(e);
@@ -690,10 +693,10 @@ public class CommunicatorClient {
               .build();
       blockingStub = CommunicatorGrpc.newBlockingStub(channel);
       try {
-        logger.info("Node: %s - Sending wakeup to child ip: %s" +childIp);
+        logger.info("Node: "+node_Id+" - Sending wakeup to child ip:" +childIp);
         WakeUpRequest request = WakeUpRequest.newBuilder().setWakeUp(node_Id).build();
         WakeUpResponse response = blockingStub.wakeUp(request);
-        logger.info("Node: {} - Got Response: {} after sending wakeup to child ip: {}"+childIp);
+        logger.info("Node: "+node_Id+" - Got Response: "+response+" after sending wakeup to child ip: {}"+childIp );
       }catch (RuntimeException e) {
         logger.error("Error with Node  " + node_Id);
         logger.error(e);
@@ -720,6 +723,7 @@ public class CommunicatorClient {
       logger.info("Node: "+node_Id+"- senderState:"+node_State);
       logger.info("Node: "+node_Id+"- senderClusterheadId: "+node_Cluster_head_Id);
 
+      logger.info( "sender id: "+ node_Id + " senderClusterheadId "+ node_Cluster_head_Id);
       SendHello request = SendHello.newBuilder().setSenderId(node_Id).setHopToSenderClusterhead(node_Hopcount).setSenderState(node_State).setSenderClusterheadId(node_Cluster_head_Id).build();
       SendHelloResponse response = blockingStub.hello(request);
       logger.info("Node: "+node_Id+" - Got Response: {} after sending Hello to id: {}"+ id);
