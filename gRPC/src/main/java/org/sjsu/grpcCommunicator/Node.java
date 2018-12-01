@@ -589,7 +589,7 @@ public class Node {
     }
 
     public String getIPfromId(String id){
-        HashMap<String, String> list =  nodeIdsList.getNodeIdsList();
+        LinkedHashMap<String, String> list =  nodeIdsList.getNodeIdsList();
         return list.get(id);
     }
 

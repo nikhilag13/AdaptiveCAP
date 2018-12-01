@@ -4,11 +4,10 @@ import com.mongodb.*;
 import com.mongodb.util.*;
 import org.apache.log4j.Logger;
 
-public class InsertSpanningTree {
-
+public class InsertSpanningTreeMedium {
     static int nodeCount =12;
 
-    public static void insertNodes(){
+    public static void insertNodes() {
         //insert spanning tree info
         MongoClient mongoClient = new MongoClient("localhost", 27017);
         DB database = mongoClient.getDB("cmpe295Project");
@@ -107,9 +106,5 @@ public class InsertSpanningTree {
                 "'state' : 'active', 'rack_location' : '2,3' }";
 
         collection.insert((DBObject) JSON.parse(json));
-
-
     }
-
-
 }
