@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class InitScript {
     final static Logger logger = Logger.getLogger(InitScript.class.getName());
+    int nodeCount = 12;
 
     class myRunnable implements Runnable {
         int id ;
@@ -42,7 +43,10 @@ public class InitScript {
 
         InitScript initScript = new InitScript();
         initScript.cleanDB();
-        initScript.buildDB();
+        if(args.length>0)
+            initScript.buildDB(args[0]);
+        else
+            initScript.buildDB("sparse");
          initScript.spawn();
     }
 
@@ -59,10 +63,22 @@ public class InitScript {
 
     }
 
-    public  void buildDB() {
-        logger.info("Creating New DB");
-        InsertSpanningTree.insertNodes(); //populate tree
+    public  void buildDB(String type) {
+        logger.info("Creating New DB "+type);
+        if(type.equals("dense")) {
+            this.nodeCount= InsertSpanningTreeDense.nodeCount;
+            InsertSpanningTreeDense.insertNodes();
+        }
+        else if (type.equals("medium")) {
+            this.nodeCount= InsertSpanningTreeMedium.nodeCount;
+            InsertSpanningTreeMedium.insertNodes();
+        }
+        else {
+            this.nodeCount=InsertSpanningTree.nodeCount;
+            InsertSpanningTree.insertNodes(); //populate tree
+        }
     }
+
 
     public  void spawnNode( int id) {
 //        logger.info("Spwaning new node "+String.valueOf(id));

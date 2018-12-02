@@ -139,7 +139,7 @@ public class Node {
             state=(String) document.get("state");
             logger.info(" Starting Phase One Clustering in constructor "+ this.id);
 
-
+            logger.info("Node: "+this.id+" - Starting Server");
             // starting phase 1 and calling server "serve() " function from node constructor
             start_phase_one_clustering();
             logger.info("Node: "+this.id+" - Calling Server ");

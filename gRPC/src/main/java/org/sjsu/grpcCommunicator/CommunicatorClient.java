@@ -173,7 +173,7 @@ public class CommunicatorClient {
     query.put("node_id", node.getId());
 
     if (sizeRPC.equals("Prune")) {
-      logger.info("Node:" + node.getId() + " - Got Prune");
+      logger.info("Node: " + node.getId() + " - Got Prune");
       // Become a clusterhead and send Cluster RPC to children
       node.setCluster_head_Id(node.getId());
       node.setParent_Id(null);
@@ -724,7 +724,8 @@ public class CommunicatorClient {
       logger.info( "sender id: "+ node_Id + " senderClusterheadId "+ node_Cluster_head_Id);
       SendHello request = SendHello.newBuilder().setSenderId(node_Id).setHopToSenderClusterhead(node_Hopcount).setSenderState(node_State).setSenderClusterheadId(node_Cluster_head_Id).build();
       SendHelloResponse response = blockingStub.hello(request);
-      logger.info("Node: "+node_Id+" - Got Response: {} after sending Hello to id: {}"+ id);
+      logger.info("Node: "+node_Id+" - Got Response: "+response+" after sending Hello to id: "+ id);
+
     }
     catch (RuntimeException e) {
       logger.error("Error with Node  " + node_Id);
