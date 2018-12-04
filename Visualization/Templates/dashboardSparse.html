@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurants</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="static/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="static/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="static/vendors/css/style.css">
+
+    <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/static/vendors/js/vendor.bundle.addons.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/restaurants.css">
+    <link rel="stylesheet" type="text/css" href="/static/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
+    <link rel="stylesheet" href="/static/jquery-ui.css">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/js/themes/sand-signika.js"></script>
+
+    <!-- <link rel="stylesheet" href="/static/widgets.css"> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="/static/jquery-ui.js"></script>
+    <!-- <script type="text/javascript" src="/static/js/widgets.js"></script> -->
+
+    <script src="static/js/search.js"></script>
+
+    <!-- <script>
+            $( function() {
+              $( "#accordion" ).accordion({
+                
+                heightStyle: "content",
+                collapsible: true,
+                active: false
+              });
+            } );
+            </script>
+
+<script>
+  $( function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener" ).on( "click", function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  } );
+  </script> -->
+
+
+</head>
+
+<!-- <body onload="showGraphs(); getUsername()"> -->
+    <body onload="getUsername()">
+
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="#"><img src="static/images/logo_small.png" alt="logo"/></a>
+                <!-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="static/images/logo-mini.svg" alt="logo"/></a> -->
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <!-- <div class="search-field d-none d-md-block">
+                <form class="d-flex align-items-center h-100" action="#">
+                    <div class="input-group">
+                    <div class="input-group-prepend bg-transparent">
+                        <i class="input-group-text border-0 mdi mdi-magnify"></i>                
+                    </div>
+                    <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                    </div>
+                </form>
+                </div> -->
+                <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                    <div class="nav-profile-img">
+                        <img src="static/images/faces/usericon.png" alt="image">
+                        <span class="availability-status online"></span>             
+                    </div>
+                    <div class="nav-profile-text">
+                        <!-- <p class="mb-1 text-black">David Greymaax</p> -->
+                        <p class="mb-1 text-black" id="unameTopbar"></p>
+                    </div>
+                    </a>
+                    <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item" href="/profile">
+                        <i class="mdi mdi-cached mr-2 text-success"></i>
+                        Profile
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" onclick='goHome()'>
+                        <i class="mdi mdi-logout mr-2 text-primary"></i>
+                        Signout
+                    </a>
+                    </div>
+                </li>
+                <li class="nav-item d-none d-lg-block full-screen-link">
+                    <a class="nav-link">
+                    <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                    </a>
+                </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="container-fluid page-body-wrapper">
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-profile">
+                        <a href="#" class="nav-link">
+                            <div class="nav-profile-image">
+                            <img src="static/images/faces/usericon.png" alt="profile">
+                            <span class="login-status online"></span> <!--change to offline or busy as needed-->              
+                            </div>
+                            <div class="nav-profile-text d-flex flex-column">
+                            <!-- <span class="font-weight-bold mb-2">David Grey. H</span> -->
+                            <span class="font-weight-bold mb-2" id="uname"></span>
+                            <span class="text-secondary text-small">User</span>
+                            </div>
+                            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/story">
+                        <span class="menu-title">Home</span>
+                        <i class="mdi mdi-home menu-icon"></i>
+                        </a>
+                    </li>
+                    
+                 
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sparse">
+                            <span class="menu-title">Dashboard</span>
+                            <i class="mdi mdi-chart-bar menu-icon"></i>
+                        </a>
+                        <div>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/medium">Medium cluster</a></li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="/dense">Dense Cluster</a></li>
+                            </ul>
+                        </div>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dynamic">
+                            <span class="menu-title">Dynamic Graph</span>
+                            <i class="mdi mdi-contacts menu-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                
+
+                <div class='tableauPlaceholder'
+                    id='viz1543214651881' 
+                    style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt=' '
+                                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard2_384&#47;Dashboard1&#47;1_rss.png'
+                                style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz'
+                        style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                        <param name='embed_code_version' value='3' /> 
+                        <param name='site_root' value='' />
+                        <param name='name' value='Dashboard2_384&#47;Dashboard1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard2_384&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1543214651881');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.minWidth='420px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <!-- <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                        
+                        <div class='tableauPlaceholder' id='viz1543214651881' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard2_384&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Dashboard2_384&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard2_384&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1543214651881');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="card-title">Bar chart</h4>
+                        <canvas id="barChart" style="height:230px"></canvas>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="card-title">Area chart</h4>
+                        <canvas id="areaChart" style="height:250px"></canvas>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="card-title">Doughnut chart</h4>
+                        <canvas id="doughnutChart" style="height:250px"></canvas>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="card-title">Pie chart</h4>
+                        <canvas id="pieChart" style="height:250px"></canvas>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                        <h4 class="card-title">Scatter chart</h4>
+                        <canvas id="scatterChart" style="height:250px"></canvas>
+                        </div>
+                    </div>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+            <!-- <div class="content-wrapper">
+                <div class="row" style="width:73%;height:600px">
+                    <div id="container" class="column" style="background-color:#aaa;width: 50%;float: left;height: 300px;">
+                    </div>
+                    <div id="container2" class="column" style="background-color:#bbb;width: 50%;float: left;height: 300px;">
+                        <h2>Chart 2</h2>
+                    </div>
+                    <div id="container3" class="column" style="background-color:#ccc;width: 50%;float: left;height: 300px;">
+                        <h2>Chart 3</h2>
+                    </div>
+                    <div id="container4" class="column" style="background-color:#ddd;width: 50%;float: left;height: 300px;">
+                        <h2>Chart 4</h2>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <div class="container"> -->
+        <!-- <div id="accordion" style="width:73%;">
+                <h3>Comparison</h3>
+                <div><h4>Select Restaurants for comparison</h4>
+                    <ul>
+                            <li><a href="#">Paradise</a></li>
+                            <li><a href="#">Yuk Wah Restaurant</a></li>
+                            <li><a href="#">Boston Market</a></li>
+                            <li><a href="#">Chinese Kitchen</a></li>
+                    </ul></div>
+                    <h3>Statistics</h3>
+                    <div><ul>
+                            <li>Top Reviewed Restaurants: Boston Market</li>
+                            <li>Most Liked Cuisine: Chinese</li>
+                    </ul></div>
+                <h3>Dashboard</h3>
+                <div>
+                    <img src="/static/images/line-chart.png"></img></div>
+        </div> -->
+        <!-- <div id="container" style="width: 25%; height: 400px; " ></div>
+        <div id="container" style="width: 25%; height: 400px; " ></div>
+        <div id="container" style="width: 25%; height: 400px; " ></div>
+        <div id="container" style="width: 25%; height: 400px; " ></div> -->
+    <!-- </div> -->
+    <script src="/static/js/off-canvas.js"></script>
+    <script src="/static/js/misc.js"></script>
+</body>
+
+</html>

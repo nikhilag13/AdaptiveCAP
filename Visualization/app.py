@@ -45,7 +45,7 @@ app = Flask(__name__)
 
 @app.route("/story")
 def story():
-	return render_template("restaurants.html")
+	return render_template("story.html")
 
 @app.route("/medium")
 def medium():
@@ -57,7 +57,7 @@ def dense():
 
 @app.route("/sparse")
 def sparse():
-    return render_template("dashboard.html")
+    return render_template("dashboardSparse.html")
 
 @app.route("/dynamic")
 def dynamic():

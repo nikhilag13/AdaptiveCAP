@@ -1,366 +1,222 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+<html>
 
-<style type="text/css">
-*{
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+<head>
+    <title>Restaurants</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="static/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="static/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="static/vendors/css/style.css">
 
-h1{
-  font-size: 2.5rem;
-  font-family: 'Montserrat';
-  font-weight: normal;
-  color: #444;
-  text-align: center;
-  margin: 2rem 0;
-}
+    <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/static/vendors/js/vendor.bundle.addons.js"></script>
 
-.wrapper{
-  width: 90%;
-  margin: 0 auto;
-  max-width: 80rem;
-}
+    <link rel="stylesheet" type="text/css" href="/static/restaurants.css">
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
+    <link rel="stylesheet" href="/static/jquery-ui.css">
 
-.cols{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/js/themes/sand-signika.js"></script>
 
-.col{
-  width: calc(25% - 2rem);
-  margin: 1rem;
-  cursor: pointer;
-}
 
-.container{
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="/static/jquery-ui.js"></script>
 
-.front,
-.back{
-  background-size: cover;
-  background-position: center;
-  -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  text-align: center;
-  min-height: 280px;
-  height: auto;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 1.5rem;
-}
+    <script src="static/js/search.js"></script>
 
-.back{
-  background: #cedce7;
-  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-}
 
-.front:after{
-  position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    content: '';
-    display: block;
-    opacity: .6;
-    background-color: #000;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    border-radius: 10px;
-}
-.container:hover .front,
-.container:hover .back{
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
 
-.back{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
 
-.inner{
-    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-            transform: translateY(-50%) translateZ(60px) scale(0.94);
-    top: 50%;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding: 2rem;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    outline: 1px solid transparent;
-    -webkit-perspective: inherit;
-            perspective: inherit;
-    z-index: 2;
-}
-
-.container .back{
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-}
-
-.container .front{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-}
-
-.container:hover .back{
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-.container:hover .front{
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-.front .inner p{
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.front .inner p:after{
-  content: '';
-  width: 4rem;
-  height: 2px;
-  position: absolute;
-  background: #C6D4DF;
-  display: block;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: -.75rem;
-}
-
-.front .inner span{
-  color: rgba(255,255,255,0.7);
-  font-family: 'Montserrat';
-  font-weight: 300;
-}
-
-@media screen and (max-width: 64rem){
-  .col{
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem){
-  .col{
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem){
-  .col{
-    width: 100%;
-    margin: 0 0 2rem 0;
-  }
-}
-
-</style>
+</head>
 
 <body>
 
-<div class="wrapper">
-  <h1>Parallax Flipping Cards</h1>
-  <div class="cols">
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-            <div class="inner">
-            
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
+
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo" href="#"><img src="static/images/logo_small.png" alt="logo" /></a>
         </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/511/511/)">
-            <div class="inner">
-              <p>Stage1</p>
-              <span>Lorem ipsum</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown"
+                        aria-expanded="false">
+                        <div class="nav-profile-img">
+                            <img src="static/images/faces/usericon.png" alt="image">
+                            <span class="availability-status online"></span>
+                        </div>
+                        <div class="nav-profile-text">
+                            <!-- <p class="mb-1 text-black">Lavanya</p> -->
+                            <p class="mb-1 text-black" id="unameTopbar"></p>
+                        </div>
+                    </a>
+                
+                </li>
+                <li class="nav-item d-none d-lg-block full-screen-link">
+                    <a class="nav-link">
+                        <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
         </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
-            <div class="inner">
-              <p>Strizzes</p>
-              <span>Lorem ipsum</span>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item nav-profile">
+                    <a href="#" class="nav-link">
+                        <div class="nav-profile-image">
+                            <img src="static/images/faces/usericon.png" alt="profile">
+                            <span class="login-status online"></span>
+                            <!--change to offline or busy as needed-->
+                        </div>
+                        <div class="nav-profile-text d-flex flex-column">
+                            <!-- <span class="font-weight-bold mb-2">Lavanya. K</span> -->
+                            <span class="font-weight-bold mb-2" id="uname"></span>
+                            <span class="text-secondary text-small">User</span>
+                        </div>
+                        <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                    </a>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <span class="menu-title">Home</span>
+                        <i class="mdi mdi-home menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sparse">
+                        <span class="menu-title">Dashboard</span>
+                        <i class="mdi mdi-chart-bar menu-icon"></i>
+                    </a>
+                    <div>
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/medium">Medium cluster</a></li>
+                        </ul>
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/dense">Dense Cluster</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/dynamic">
+                        <span class="menu-title">Dynamic Graph</span>
+                        <i class="mdi mdi-contacts menu-icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+
+                <div class="purchase-popup row">
+                    <div id="restaurant-search-field" class="search-field d-none
+                        d-md-block d-flex align-items-center">
+                        <form class="d-flex align-items-center h-100" onsubmit="event.preventDefault(); onLoadHandler();">
+                            <div class="input-group">
+                                <div class="input-group-prepend" onclick="searchSubmit()">
+                                    <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                                </div>
+                                <input type="text" class="form-control border-0" id="location" placeholder="Search by location">
+                            </div>
+                        </form>
+                    </div>
+                    <form name="form2" action="#" class="row select-form">
+                        <div class="col-6 div-1">
+                            <select name="rating" class="col-12" id="selectRating" onChange="onLoadHandler()">
+                                <option value="0">Select Rating</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col-6 div-2">
+                            <select name="cuisine" id="selectCuisine" class="col-12" onChange="onLoadHandler()">
+                                <option value="0">Select Cuisine</option>
+                                <option value="Indian">Indian</option>
+                                <option value="American">American</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="Japanese">Japanese</option>
+                                <option value="Malaysian">Malaysian</option>
+                                <option value="Mexican">Mexican</option>
+                                <option value="Portuguese">Portuguese</option>
+                                <option value="Caribbean">Caribbean</option>
+                                <!-- <option value="Vietnamese">Vietnamese</option> -->
+                                <!-- <option value="Spanish"> Spanish</option> -->
+                                <option value="Italian">Italian</option>
+                                <!-- <option value="Asian"> Asian</option> -->
+                                <option value="Thai"> Thai</option>
+                                <!-- <option value="Brazilian"> Brazilian</option> -->
+                                <option value="Caribbean">Caribbean</option>
+                                <!-- <option value="Hawaiian">Hawaiian</option> -->
+                                <!-- <option value="Tapas">Tapas</option> -->
+                                <!-- <option value="German">German</option> -->
+                                <!-- <option value="Irish"> Irish</option> -->
+                                <!-- <option value="Turkish">Turkish</option> -->
+                                <option value="Mediterranean">Mediterranean</option>
+                                <!-- <option value="Southern"> Southern</option> -->
+                                <!-- <option value="Cajun"> Cajun</option> -->
+                                <!-- <option value="Soul Food"> Soul Food</option> -->
+                                <!-- <option value="Pub Food"> Pub Food</option> -->
+                                <!-- <option value="New American">New American</option>
+                                <option value="Latin American"> Latin American</option> -->
+                                <option value="Vegetarian">Vegetarian</option>
+                            </select>
+                        </div>
+                        <!-- <button id="opener" style="float: right" >Help</button>
+                        <div id="dialog" title="Directions " >
+                                <h4>Try below combinations</h4>
+                                <li>Location: “fremont” or “san jose”</li>
+                                <li>Rating: 4 or 5</li>
+                                <li>Cuisine: American, Indian, Chinese</li>
+                        </div>    -->
+                    </form>
+                </div>
+
+                <div id="map" style="height:400px" class="col-12"></div>
+
+                <div class="page-header">
+                    <h3 class="page-title">
+                        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                            <i class="mdi mdi-home"></i>
+                        </span>
+                        Restaurants
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <span></span>View
+                                <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="restaurant-list" class="row"></div>
             </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
-            <div class="inner">
-              <p>Clossyo</p>
-              <span>Lorem ipsum</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/504/504/">
-            <div class="inner">
-              <p>Rendann</p>
-              <span>Lorem ipsum</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
-            <div class="inner">
-              <p>Reflupper</p>
-              <span>Lorem ipsum</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
-            <div class="inner">
-              <p>Acirassi</p>
-              <span>Lorem ipsum</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col" ontouchstart="this.classList.toggle('hover');">
-        <div class="container">
-          <div class="front" style="background-image: url(https://unsplash.it/508/508/)">
-            <div class="inner">
-              <p>Sohanidd</p>
-              <span>Lorem ipsum</span>
-            </div>
-          </div>
-          <div class="back">
-            <div class="inner">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
- </div>
-// <script src="https://code.jquery.com/jquery-3.3.1.js"/>
-// <script type="text/javascript">
+    <div class="container">
 
-// function start(){
-// var $cell = $('.card');
+    </div>
 
-// //open and close card when clicked on card
-// $cell.find('.js-expander').click(function() {
 
-//   var $thisCell = $(this).closest('.card');
-
-//   if ($thisCell.hasClass('is-collapsed')) {
-//     $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
-//     $thisCell.removeClass('is-collapsed').addClass('is-expanded');
-    
-//     if ($cell.not($thisCell).hasClass('is-inactive')) {
-//       //do nothing
-//     } else {
-//       $cell.not($thisCell).addClass('is-inactive');
-//     }
-
-//   } else {
-//     $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-//     $cell.not($thisCell).removeClass('is-inactive');
-//   }
-// });
-
-// //close card when click on cross
-// $cell.find('.js-collapser').click(function() {
-
-//   var $thisCell = $(this).closest('.card');
-
-//   $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-//   $cell.not($thisCell).removeClass('is-inactive');
-
-// });
-// }
-// </script>
+    <script src="/static/js/off-canvas.js"></script>
+    <script src="/static/js/misc.js"></script>
+    <script src="/static/js/dashboard.js"></script>
 </body>
+
 </html>
