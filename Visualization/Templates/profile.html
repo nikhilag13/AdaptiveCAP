@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="static/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="static/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="static/vendors/css/style.css">
+
+    <script src="/static/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/static/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/static/restaurants.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/login.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/profile.css">
+    <link rel="stylesheet" href="/static/jquery-ui.css">
+    <link rel="stylesheet" href="/static/jquery-ui.theme.css">
+    <link rel="stylesheet" href="/static/widgets.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="/static/jquery-ui.js"></script>
+    <script type="text/javascript" src="/static/js/widgets.js"></script>
+
+    <script src="static/js/search.js"></script>
+</head>
+
+<body onload="getDetails()">
+
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo" href="#"><img src="static/images/logo_small.png" alt="logo" /></a>
+            <!-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="static/images/logo-mini.svg" alt="logo"/></a> -->
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+            <!-- <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+                <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                    <i class="input-group-text border-0 mdi mdi-magnify"></i>                
+                </div>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                </div>
+            </form>
+            </div> -->
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown"
+                        aria-expanded="false">
+                        <div class="nav-profile-img">
+                            <img src="static/images/faces/usericon.png" alt="image">
+                            <span class="availability-status online"></span>
+                        </div>
+                        <div class="nav-profile-text">
+                            <!-- <p class="mb-1 text-black">David Greymaax</p> -->
+                            <p class="mb-1 text-black" id="unameTopbar"></p>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                        <a class="dropdown-item" href="/profile">
+                            <i class="mdi mdi-cached mr-2 text-success"></i>
+                            Profile
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" onclick='goHome()'>
+                            <i class="mdi mdi-logout mr-2 text-primary"></i>
+                            Signout
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item d-none d-lg-block full-screen-link">
+                    <a class="nav-link">
+                        <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item nav-profile">
+                    <a href="#" class="nav-link">
+                        <div class="nav-profile-image">
+                            <img src="static/images/faces/usericon.png" alt="profile">
+                            <span class="login-status online"></span>
+                            <!--change to offline or busy as needed-->
+                        </div>
+                        <div class="nav-profile-text d-flex flex-column">
+                            <!-- <span class="font-weight-bold mb-2">David Grey. H</span> -->
+                            <span class="font-weight-bold mb-2" id="uname"></span>
+                            <span class="text-secondary text-small">User</span>
+                        </div>
+                        <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/restaurants">
+                        <span class="menu-title">Home</span>
+                        <i class="mdi mdi-home menu-icon"></i>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                    <span class="menu-title">Dashboard</span>
+                    <i class="mdi mdi-chart-bar menu-icon"></i>
+                    </a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                        <span class="menu-title">Dashboard</span>
+                        <i class="mdi mdi-chart-bar menu-icon"></i>
+
+                        <!-- <i class="mdi mdi-chart-bar menu-icon"></i> -->
+                    </a>
+                    <div>
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/dashboardCity">City based analysis</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <span class="menu-title">Profile</span>
+                        <i class="mdi mdi-contacts menu-icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h3 class="page-title">
+                        Your Profile
+                    </h3>
+                    <nav aria-label="breadcrumb" class="charts-nav">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Charts</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Chart-js</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card profile-image">
+                            <div class="profile_info">
+                                <h3 id="headingusername"></h3>
+                                <p>User</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Profile Information</h4>
+                                <p class="card-description">
+                                    You can update your details here
+                                </p>
+                                <form class="forms-sample" name=ProfileForm method="post">
+                                    <div class="form-group">
+                                        <label class="labl">Email</label>
+                                        <input type="email" name="email" id="email" class="email disabled form-control"
+                                            readonly />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="labl">Username</label>
+                                        <input type="text" name="username" id="username" class="email form-control"
+                                            required placeholder="Username" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="labl">Phone</label>
+                                        <input type="tel" name="phone" id="phone" class="email form-control" required />
+                                    </div>
+                                    <div class="btn-row">
+                                        <input type="button" class="btn btn-gradient-primary btn-rounded btn-fw" style="width: 200px;"
+                                            value="Update Account" onclick="updateAccount()" />
+                                        <input type="button" class="btn btn-gradient-danger btn-rounded btn-fw" style="width: 200px;"
+                                            value="Delete Account" onclick="deleteAccount()" />
+                                    </div>
+
+                                    <!-- <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                                    <button class="btn btn-light">Cancel</button> -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <form name=ProfileForm method="post">
+                        <div class="form-row">
+                            <label class="labl">Email</label>
+                            <input type="email" name="email" id="email" class="email disabled" readonly />
+                        </div>
+            
+                        <div class="form-row">
+                            <label class="labl">Username</label>
+                            <input type="text" name="username" id="username" class="email" required />
+                        </div>
+            
+            
+                        <div class="form-row">
+                            <label class="labl">Phone</label>
+                            <input type="tel" name="phone" id="phone" class="email" required />
+                        </div>
+            
+                        <div class="btn-row">
+                            <input type="button" class="btn btn-gradient-primary btn-rounded btn-fw" style="width: 200px;" value="Update Account"
+                                onclick="updateAccount()" />
+                            <input type="button" class="btn btn-gradient-danger btn-rounded btn-fw" style="width: 200px;" value="Delete Account"
+                                onclick="deleteAccount()" />
+                        </div>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="box">
+        <h1>Your Profile</h1> -->
+    <!-- <form id="profile_id" name=ProfileForm method="post" onsubmit="event.preventDefault();  verifyDetails()"> -->
+    <!-- <form id="profile_id" name=ProfileForm method="post">
+
+            <div class="form-row">
+                <label class="labl">Email</label>
+                <input type="email" name="email" id="email" class="email disabled" readonly />
+            </div>
+
+            <div class="form-row">
+                <label class="labl">Username</label>
+                <input type="text" name="username" id="username" class="email" required />
+            </div> -->
+
+
+    <!-- <input type="password" name="password" id="password" required class="email" /> -->
+    <!-- <div class="form-row">
+                <label class="labl">Phone</label>
+                <input type="tel" name="phone" id="phone" class="email" required />
+            </div> -->
+
+    <!-- <button type="submit" class="btn">Login</button> -->
+    <!-- <div class="btn-row">
+                <input type="button" class="btn ui-button ui-corner-all ui-widget" style="width: 200px;" value="Update Account"
+                    id="submit" onclick="updateAccount()" />
+                <input type="button" class="btn ui-button ui-corner-all ui-widget" style="width: 200px;" value="Delete Account"
+                    id="submit" onclick="deleteAccount()" />
+            </div>
+
+        </form>
+    </div> -->
+
+    <script src="/static/js/profileOps.js"></script>
+    <script src="/static/js/off-canvas.js"></script>
+    <script src="/static/js/misc.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+
+</html>

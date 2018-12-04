@@ -1,0 +1,13 @@
+{
+    "name": "Node 0",
+    "children":[{
+        "name":"Node 2",
+        "children":[{
+            "name":"Node 4",
+            "children":[],
+            "size":42
+        }],
+        "size":37
+    }],
+    "size":34
+}

@@ -1,0 +1,193 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: lightblue;
+    margin: 0px;
+}
+
+.container {
+    margin: 0px auto;
+    min-height: 100vh;
+    padding-top: 60px;
+    max-width: 1500px; 
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-container {
+    display: flex;
+    position: relative;
+    /* float: left; */
+}
+
+.form-container input{
+    display: flex;
+    position: relative;
+    float: left;
+}
+
+.form-container select {
+    right: 10px;
+    box-sizing: border-box;
+    /* width: 120px; */
+    height: 30px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /* display:inline; */
+    cursor:pointer;
+    margin-left:30px;
+}
+
+.form-container select:hover {background-color: #E5E8F1}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    float: left;
+}
+
+
+.search-container input {
+    width: 500px;
+    height: 50px;
+    padding: 0px 50px 0px 20px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    display: none;
+}
+
+.search-container div {
+    width: 50px;
+    height: 50px;
+    left: 450px; 
+    position: absolute;
+    background-image: url('/static/images/search.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 50px 50px;
+}
+
+.search-container div:hover {
+    cursor: pointer;
+}
+
+#restaurant-list {
+    margin-top: 20px;
+    font-family: "ubuntu-regular", sans-serif;
+}
+
+.restaurant {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    background-color: white;
+    flex-direction: row;
+}
+
+.img-container {
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.data-container {
+    width: 300px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.data-container > div {
+    margin-top: 10px;
+}
+
+.restaurant img {
+    min-width: 200px;
+    height: 100px;
+}
+
+.restaurant .card-body-line-1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.restaurant .card-body-line-2 {
+    font-size: 14px;
+}
+
+.restaurant .card-body-line-3 {
+    font-size: 12px;
+}
+
+#selectable .ui-selecting {
+    background-color: gray;
+}
+
+#selectable .ui-selected {
+    background-color: black;
+    color: white;
+}
+
+#map {
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.select-form {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.select-form select {
+    border: 0px;
+    height: 43px;
+    border-radius: 5px;
+    background-color: white;
+    font-family: "ubuntu-regular", sans-serif;
+    color: #495057;
+    font-size: 16px;
+}
+
+.h-100 {
+    width: 100%;
+}
+
+.purchase-popup {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    padding: 15px;
+    margin: 0px;
+}
+
+.div-1 {
+    padding-right: 0px;
+}
+.div-2 {
+    padding-left: 15px;
+}
+
+#restaurant-search-field {
+    padding-left: 0px;
+    flex-grow: 2;
+}
+
+/* .page-header {
+    margin-top: 30px;
+} */

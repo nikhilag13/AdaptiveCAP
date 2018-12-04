@@ -1,0 +1,136 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    /* background:#3498db; */
+    margin: 0 auto 0 auto;  
+    width:100%; 
+    text-align:center;
+    margin: 20px 0px 20px 0px;   
+  }
+  
+  p{
+    font-size:12px;
+    text-decoration: none;
+    color:#ffffff;
+  }
+  
+  h1{
+    font-size:1.5em;
+    color:#525252;
+  }
+
+  form {
+    margin-top: 100px;
+  }
+  
+  .box{
+    background:white;
+    width:500px;
+    height: 350px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    border: #2980b9 4px solid; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  
+  .email{
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    border-bottom: #ccc 2px solid;
+    padding: 8px;
+    width:250px;
+    color:#AAAAAA;
+    margin-top:10px;
+    font-size:1em;
+    border-radius:4px;
+  }
+  
+  .password{
+    border-radius:4px;
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    padding: 8px;
+    width:250px;
+    font-size:1em;
+  }
+  
+  .btn{
+    background:#2ecc71;
+    width:125px;
+    height: 38px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #27ae60 1px solid;
+    
+    margin-top:20px;
+    margin-bottom:20px;
+    float:left;
+    margin-left:16px;
+    font-weight:800;
+    font-size:0.8em;
+  }
+  
+  .btn:hover{
+    background:#2CC06B; 
+  }
+  
+  #btn2{
+    float:left;
+    background:#3498db;
+    width:125px;  padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #2980b9 1px solid;
+    
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:10px;
+    font-weight:800;
+    font-size:0.8em;
+  }
+  
+  #btn2:hover{ 
+  background:#3594D2; 
+  }
+
+  .form-row {
+    width: 100%;
+  }
+
+  .form-row label {
+    display: inline-block;
+    width: 100px;
+  }
+
+  canvas {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+.dragMe {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #2980b9;
+  text-align: center;
+  background-color: white;
+  font-size: small;
+  position: absolute;
+  z-index: 100;
+}
+
+#target {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #2980b9;
+  text-align: center;
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  z-index: 0;
+}

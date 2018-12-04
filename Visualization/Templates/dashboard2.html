@@ -1,0 +1,160 @@
+<html>
+<head><title>Dashboard</title>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/js/themes/grid-light.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(document).ready(function () 
+{    
+    Highcharts.chart('container', {
+    data: {
+        table: 'datatable'
+    },
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Medium Cluster Hop Count Comparison'
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Number of Hops'
+        }
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                this.point.y ;
+        }
+    }
+});});
+</script>
+</head>
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<table id="datatable" border="5" align="center">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Before Clustering</th>
+            <th>After Clustering</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Node0</th>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Node1</th>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+           <th>Node2</th>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Node3</th>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>Node4</th>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Node5</th>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Node6</th>
+            <td>3</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Node7</th>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Node8</th>
+            <td>3</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>Node9</th>
+            <td>3</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>Node10</th>
+            <td>4</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Node11</th>
+            <td>3</td>
+            <td>1</td>
+        </tr>
+                <tr>
+            <th>Node12</th>
+            <td>4</td>
+            <td>2</td>
+        </tr>
+                <tr>
+            <th>Node13</th>
+            <td>5</td>
+            <td>3</td>
+        </tr>
+                <tr>
+            <th>Node14</th>
+            <td>4</td>
+            <td>1</td>
+        </tr>
+                <tr>
+            <th>Node15</th>
+            <td>5</td>
+            <td>2</td>
+        </tr>
+                <tr>
+            <th>Node16</th>
+            <td>6</td>
+            <td>3</td>
+        </tr>
+
+                <tr>
+            <th>Node17</th>
+            <td>7</td>
+            <td>4</td>
+        </tr>
+                <tr>
+            <th>Node18</th>
+            <td>5</td>
+            <td>2</td>
+        </tr>
+                <tr>
+            <th>Node19</th>
+            <td>6</td>
+            <td>3</td>
+        </tr>
+                <tr>
+            <th>Node20</th>
+            <td>5</td>
+            <td>2</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
