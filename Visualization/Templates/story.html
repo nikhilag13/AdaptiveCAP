@@ -130,13 +130,16 @@
                     <div class="row">
                             <div class="col-lg-6 grid-margin stretch-card">
                             <div class="card">
+                                   
+                                    <!-- <h4 class="card-title">Before Clustering</h4> -->
+                                    <canvas id="barChart" style="height:230px"></canvas>
                                 
                              </div>
                             </div>
                             <div class="col-lg-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                <h4 class="card-title">Bar chart</h4>
+                                <h4 class="card-title">After Clustering</h4>
                                 <canvas id="barChart" style="height:230px"></canvas>
                                 </div>
                             </div>
@@ -144,93 +147,48 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6 grid-margin stretch-card">
-                            <div class="card">
+                            <!-- <div class="card">
                                 <div class="card-body">
-                                <h4 class="card-title">Area chart</h4>
+                                <h4 class="card-title">What happens before clustering?</h4>
+                                    <p>Hello</p>
                                 <canvas id="areaChart" style="height:250px"></canvas>
                                 </div>
-                            </div>
+                            </div> -->
+                            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                                    <div class="card-header">What happens before clustering?</div>
+                                    <div class="card-body">
+                                      <h4 class="card-title">Size bounded cluster</h4>
+                                      <p class="card-text">This cluster is formed when each node in the intial spanning tree (graph) sends 
+                                          size message to its parent. Parent checks if the sum of its
+                                          size and the node size is greater than a threshold. If it is greater, 
+                                          prune message is sent and node that sent the message becomes a new cluster head. 
+                                          If not, node gets added to the existing cluster. At the end of this, each node belongs to a cluster 
+                                          by adhering to the size constraint. 
+                                        </p> </div>
+                                  </div>
                             </div>
                             <div class="col-lg-6 grid-margin stretch-card">
-                            <div class="card">
+                            <!-- <div class="card">
                                 <div class="card-body">
-                                <h4 class="card-title">Doughnut chart</h4>
+                                <h4 class="card-title">What happens after clustering?</h4>
+                                <p>Hello</p>
                                 <canvas id="doughnutChart" style="height:250px"></canvas>
                                 </div>
-                            </div>
+                            </div> -->
+                            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                                    <div class="card-header">What happens after clustering?</div>
+                                    <div class="card-body">
+                                      <h4 class="card-title">Reduction in Energy and Latency</h4>
+                                      <p class="card-text">After intial clustering, each node sends hello messages to other neighboring 
+                                          nodes and based on the
+                                          distance from its clusterhead, nodes are moved into different clusters to reduce latency.</p>
+                                    </div>
+                                  </div>
+                            
                             </div>
                         </div>
 
-                <!-- <div class="purchase-popup row">
-                    <div id="restaurant-search-field" class="search-field d-none
-                        d-md-block d-flex align-items-center">
-                        <form class="d-flex align-items-center h-100" onsubmit="event.preventDefault(); onLoadHandler();">
-                            <div class="input-group">
-                                <div class="input-group-prepend" onclick="searchSubmit()">
-                                    <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                                </div>
-                                <input type="text" class="form-control border-0" id="location" placeholder="Search by location">
-                            </div>
-                        </form>
-                    </div>
-                    <form name="form2" action="#" class="row select-form">
-                        <div class="col-6 div-1">
-                            <select name="rating" class="col-12" id="selectRating" onChange="onLoadHandler()">
-                                <option value="0">Select Rating</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-                        <div class="col-6 div-2">
-                            <select name="cuisine" id="selectCuisine" class="col-12" onChange="onLoadHandler()">
-                                <option value="0">Select Cuisine</option>
-                                <option value="Indian">Indian</option>
-                                <option value="American">American</option>
-                                <option value="Chinese">Chinese</option>
-                                <option value="Japanese">Japanese</option>
-                                <option value="Malaysian">Malaysian</option>
-                                <option value="Mexican">Mexican</option>
-                                <option value="Portuguese">Portuguese</option>
-                                <option value="Caribbean">Caribbean</option>
-                               
-                                <option value="Italian">Italian</option>
-                               
-                                <option value="Thai"> Thai</option>
-                               
-                                <option value="Caribbean">Caribbean</option>
-                                
-                                <option value="Mediterranean">Mediterranean</option>
-                                
-                                <option value="Vegetarian">Vegetarian</option>
-                            </select>
-                        </div>
-                        
-                    </form>
-                </div> -->
-
-                <!-- <div id="map" style="height:400px" class="col-12"></div> -->
-<!-- 
-                <div class="page-header">
-                    <h3 class="page-title">
-                        <span class="page-title-icon bg-gradient-primary text-white mr-2">
-                            <i class="mdi mdi-home"></i>
-                        </span>
-                        Restaurants
-                    </h3>
-                    <nav aria-label="breadcrumb">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <span></span>View
-                                <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                            </li>
-                        </ul>
-                    </nav>
-                </div> -->
-
-                <!-- <div id="restaurant-list" class="row"></div> -->
+            
             </div>
         </div>
     </div>
