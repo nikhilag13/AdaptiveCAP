@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Restaurants</title>
+    <title>Story</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="static/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="static/vendors/css/vendor.bundle.base.css">
@@ -55,6 +55,14 @@
                             <p class="mb-1 text-black" id="unameTopbar"></p>
                         </div>
                     </a>
+                    <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                    
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/" >
+                        <i class="mdi mdi-logout mr-2 text-primary"></i>
+                        Back
+                    </a>
+                    </div>
                 
                 </li>
                 <li class="nav-item d-none d-lg-block full-screen-link">
@@ -119,8 +127,41 @@
         </nav>
         <div class="main-panel">
             <div class="content-wrapper">
+                    <div class="row">
+                            <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                                
+                             </div>
+                            </div>
+                            <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title">Bar chart</h4>
+                                <canvas id="barChart" style="height:230px"></canvas>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title">Area chart</h4>
+                                <canvas id="areaChart" style="height:250px"></canvas>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title">Doughnut chart</h4>
+                                <canvas id="doughnutChart" style="height:250px"></canvas>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
 
-                <div class="purchase-popup row">
+                <!-- <div class="purchase-popup row">
                     <div id="restaurant-search-field" class="search-field d-none
                         d-md-block d-flex align-items-center">
                         <form class="d-flex align-items-center h-100" onsubmit="event.preventDefault(); onLoadHandler();">
@@ -154,40 +195,24 @@
                                 <option value="Mexican">Mexican</option>
                                 <option value="Portuguese">Portuguese</option>
                                 <option value="Caribbean">Caribbean</option>
-                                <!-- <option value="Vietnamese">Vietnamese</option> -->
-                                <!-- <option value="Spanish"> Spanish</option> -->
+                               
                                 <option value="Italian">Italian</option>
-                                <!-- <option value="Asian"> Asian</option> -->
+                               
                                 <option value="Thai"> Thai</option>
-                                <!-- <option value="Brazilian"> Brazilian</option> -->
+                               
                                 <option value="Caribbean">Caribbean</option>
-                                <!-- <option value="Hawaiian">Hawaiian</option> -->
-                                <!-- <option value="Tapas">Tapas</option> -->
-                                <!-- <option value="German">German</option> -->
-                                <!-- <option value="Irish"> Irish</option> -->
-                                <!-- <option value="Turkish">Turkish</option> -->
+                                
                                 <option value="Mediterranean">Mediterranean</option>
-                                <!-- <option value="Southern"> Southern</option> -->
-                                <!-- <option value="Cajun"> Cajun</option> -->
-                                <!-- <option value="Soul Food"> Soul Food</option> -->
-                                <!-- <option value="Pub Food"> Pub Food</option> -->
-                                <!-- <option value="New American">New American</option>
-                                <option value="Latin American"> Latin American</option> -->
+                                
                                 <option value="Vegetarian">Vegetarian</option>
                             </select>
                         </div>
-                        <!-- <button id="opener" style="float: right" >Help</button>
-                        <div id="dialog" title="Directions " >
-                                <h4>Try below combinations</h4>
-                                <li>Location: “fremont” or “san jose”</li>
-                                <li>Rating: 4 or 5</li>
-                                <li>Cuisine: American, Indian, Chinese</li>
-                        </div>    -->
+                        
                     </form>
-                </div>
+                </div> -->
 
-                <div id="map" style="height:400px" class="col-12"></div>
-
+                <!-- <div id="map" style="height:400px" class="col-12"></div> -->
+<!-- 
                 <div class="page-header">
                     <h3 class="page-title">
                         <span class="page-title-icon bg-gradient-primary text-white mr-2">
@@ -203,9 +228,9 @@
                             </li>
                         </ul>
                     </nav>
-                </div>
+                </div> -->
 
-                <div id="restaurant-list" class="row"></div>
+                <!-- <div id="restaurant-list" class="row"></div> -->
             </div>
         </div>
     </div>
