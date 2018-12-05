@@ -20053,6 +20053,7 @@ code {
   text-transform: capitalize;
   font-family: "ubuntu-medium", sans-serif;
   font-size: 1.125rem;
+  text-align-last: center;
 }
 
 .card .card-subtitle {
@@ -20944,7 +20945,8 @@ dl li {
 .collapse:not(.show) {
   display: none;
 }
-.navbar.default-layout-navbar, .navbar.default-layout-navbar .navbar-brand-wrapper {
-  background: thistle;
-}
+/* .navbar.default-layout-navbar, .navbar.default-layout-navbar .navbar-brand-wrapper {
+  background: rgb(241, 202, 233)
+ 
+} */
 /*# sourceMappingURL=maps/style.css.map */
