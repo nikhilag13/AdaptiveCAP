@@ -90,24 +90,24 @@
 <script type="text/javascript">
 
 
-    setInterval(getD, 2000);
+    //setInterval(getD, 6000);
 
-    function getD(){
-        $.ajax({
-            type:"GET",
-            url:"/data",
-            contentType:"application/json;charset=UTF-8",
-            success: function(result){
-                    console.log(result);
-                    getData();
-                }
-        });
-    }
-
-    // function getD() {
-    //     getData();
-
+    // function getD(){
+    //     $.ajax({
+    //         type:"GET",
+    //         url:"/data",
+    //         contentType:"application/json;charset=UTF-8",
+    //         success: function(result){
+    //                 console.log(result);
+    //                 getData();
+    //             }
+    //     });
     // }
+
+    function getD() {
+        getData();
+
+    }
 
 
 
@@ -134,6 +134,8 @@
             .attr('class', 'd3-tip')
             .offset([-10, 0])
             .html(function (d) {
+                console.log(d.size);
+                console.log(d.name);
                 return "<strong>Size:</strong> <span style='color:red'>" + d.size + "</span>";
             })
 
