@@ -113,22 +113,12 @@
 
 
     function getData() {
-        // var x = data;
-        // console.log(x);
-
-        /*
-        var b = document.getElementsByTagName('body')[0];
-        b.remove();
-        var h = document.getElementsByTagName('html')[0];
-        var to_append = '<body><div id="tree-container"></div></body>';
-        h.innerHTML = to_append;
-        */
-
-        var b = document.getElementById('tree-container');
-        b.remove();
-        var h = document.getElementsByTagName('body')[0];
-        var to_append = '<div id="tree-container"></div>';
-        h.innerHTML = to_append;
+    
+        // var b = document.getElementById('tree-container');
+        // b.remove();
+        // var h = document.getElementsByTagName('body')[0];
+        // var to_append = '<div id="tree-container"></div>';
+        // h.innerHTML = to_append;
 
         var tip = d3.tip()
             .attr('class', 'd3-tip')
@@ -141,7 +131,7 @@
 
         var noCache = new Date().getTime();
         // "{{ url_for('static', filename='flare.json')}}"+"?_="+ noCache
-        treeJSON = d3.json("{{ url_for('static', filename='after.json')}}" + "?_=" + noCache, function (error, treeData) {
+        treeJSON = d3.json("{{ url_for('static', filename='before.json')}}" + "?_=" + noCache, function (error, treeData) {
             if (error) throw error;
             // Calculate total nodes, max label length
             var totalNodes = 0;
