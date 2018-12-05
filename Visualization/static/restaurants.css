@@ -191,3 +191,27 @@ body {
 /* .page-header {
     margin-top: 30px;
 } */
+
+.cluster-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 266px;
+}
+
+.cluster-image-1 {
+    /* background-size: 100% 450px; */
+    background-size: 100% 440px;
+    background-image: url(/static/images/before.png);
+    /* background-position: 100% 24%; */
+    background-position: 100% 24%;
+}
+
+.cluster-image-2 {
+    background-size: 100% 263px;
+    background-image: url(/static/images/after.png);
+    background-position: center center;
+}
+
+.card-body {
+    max-height: 366px;
+}

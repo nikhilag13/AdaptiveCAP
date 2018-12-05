@@ -20944,5 +20944,7 @@ dl li {
 .collapse:not(.show) {
   display: none;
 }
-
+.navbar.default-layout-navbar, .navbar.default-layout-navbar .navbar-brand-wrapper {
+  background: thistle;
+}
 /*# sourceMappingURL=maps/style.css.map */
