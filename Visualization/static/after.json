@@ -1,0 +1,20 @@
+{"fake": true, "name": "Node -1", "children": [{
+    "name": "Node 3","size":"42",
+    "children": [{
+        "name": "Node 12","size":"75",
+        "children": []
+    },{"name": "Node 14","size":"56",
+        "children": [{"name": "Node 18","size":"51",
+        "children": []}]
+    }]
+}, 
+{"name": "Node 5","size":"58", "children": [{"name": "Node 11","size":"32", "children": [{"name": "Node 15","size":"39", "children": []}]}]},
+{"name": "Node 4","size":"42", "children": [{"name": "Node 9","size":"27", "children": [{"name": "Node 16","size":"42", "children": []}]}]},
+{"name": "Node 0","size":"113", "children": [{"name": "Node 1","size":"147", "children": []},{"name": "Node 2","size":"79", "children": [{"name": "Node 7","size":"43", "children": []}]}]},
+ {"name": "Node 8","size":"115", "children": [{"name": "Node 10","size":"22", "children": [{
+        "name": "Node 17","size":"26",
+        "children": []
+    },{"name": "Node 19","size":"32",
+        "children": []
+    }]}]}]}
+

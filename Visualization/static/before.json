@@ -1,0 +1,76 @@
+{
+	"fake": true,
+    "name": "Node -1",
+	"children": [{
+        "name": "Node 0",
+        "size":"140",
+		"children": [{
+            "name": "Node 1",
+            "size":"147",
+			"children": [{
+                "name": "Node 3",
+                "size":"106",
+				"children": [{
+                    "name": "Node 12",
+                    "size":"65",
+					"children": []
+				}, {
+                    "name": "Node 14",
+                    "size":"82",
+					"children": [{
+                        "name": "Node 18",
+                        "size":"35",
+						"children": []
+					}]
+				}]
+			}, {
+                "name": "Node 5",
+                "size":"58",
+				"children": [{
+                    "name": "Node 11",
+                    "size":"32",
+					"children": [{
+                        "name": "Node 15",
+                        "size":"78",
+						"children": []
+					}]
+				}]
+			}]
+		}, {
+			"name": "Node 2",
+			"children": [{
+                "name": "Node 4",
+                "size":"69",
+				"children": [{
+                    "name": "Node 9",
+                    "size":"27",
+					"children": [{
+                        "name": "Node 16",
+                        "size":"78",
+						"children": []
+					}]
+				}]
+			}, {
+                "name": "Node 7",
+                "size":"43",
+				"children": [{
+                    "name": "Node 8",
+                    "size":"88",
+					"children": [{
+                        "name": "Node 10",
+                        "size":"22",
+						"children": [{
+                            "name": "Node 17",
+                            "size":"90",
+							"children": []
+						}, {
+                            "name": "Node 19",
+                            "size":"46",
+							"children": []
+						}]
+					}]
+				}]
+			}]
+		}]
+	}]
+}

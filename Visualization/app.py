@@ -16,13 +16,13 @@ from parse_logs import parse
 app = Flask(__name__)
 
 
-# @app.route("/view/6")
-# def index():
-# 	# parse()
-# 	t = Thread(target=parse, args=())
-# 	t.start()
-# 	sleep(1)
-# 	return render_template("index.html")
+@app.route("/view/6")
+def index():
+	# parse()
+	# t = Thread(target=parse, args=())
+	# t.start()
+	# sleep(1)
+	return render_template("index.html")
 
 
 # @app.route("/view")

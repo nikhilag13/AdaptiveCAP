@@ -90,24 +90,24 @@
 <script type="text/javascript">
 
 
-    setInterval(getD, 2000);
+   // setInterval(getD, 6000);
 
-    function getD(){
-        $.ajax({
-            type:"GET",
-            url:"/data",
-            contentType:"application/json;charset=UTF-8",
-            success: function(result){
-                    console.log(result);
-                    getData();
-                }
-        });
-    }
-
-    // function getD() {
-    //     getData();
-
+    // function getD(){
+    //     $.ajax({
+    //         type:"GET",
+    //         url:"/data",
+    //         contentType:"application/json;charset=UTF-8",
+    //         success: function(result){
+    //                 console.log(result);
+    //                 getData();
+    //             }
+    //     });
     // }
+
+    function getD() {
+        getData();
+
+    }
 
 
 
@@ -139,7 +139,7 @@
 
         var noCache = new Date().getTime();
         // "{{ url_for('static', filename='flare.json')}}"+"?_="+ noCache
-        treeJSON = d3.json("{{ url_for('static', filename='myflare.json')}}" + "?_=" + noCache, function (error, treeData) {
+        treeJSON = d3.json("{{ url_for('static', filename='after.json')}}" + "?_=" + noCache, function (error, treeData) {
             if (error) throw error;
             // Calculate total nodes, max label length
             var totalNodes = 0;
