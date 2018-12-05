@@ -17785,6 +17785,7 @@ input:focus {
   -moz-transition: width 0.25s ease;
   -ms-transition: width 0.25s ease;
   color: #9c9fa6;
+  background-color:#efccff;
   padding-left: 24px;
   padding-right: 24px;
   width: calc(100% - 260px);
