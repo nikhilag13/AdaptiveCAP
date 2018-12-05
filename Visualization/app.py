@@ -16,13 +16,13 @@ from parse_logs import parse
 app = Flask(__name__)
 
 
-@app.route("/view")
-def index():
+# @app.route("/view")
+# def index():
 	# parse()
 	# t = Thread(target=parse, args=())
 	# t.start()
 	# sleep(1)
-	return render_template("index.html")
+# 	return render_template("index.html")
 
 
 # @app.route("/view")
@@ -43,6 +43,13 @@ def index():
 # def demo():
 # 	return render_template("demo.html")
 
+@app.route("/dynamic")
+def dynamic():
+	t = Thread(target=parse, args=())
+	t.start()
+	sleep(1)
+	return render_template("dynamic.html")
+
 @app.route("/story")
 def story():
 	return render_template("story.html")
@@ -59,9 +66,7 @@ def dense():
 def sparse():
     return render_template("dashboardSparse.html")
 
-@app.route("/dynamic")
-def dynamic():
-    return render_template("dynamic.html")
+
 
 @app.route("/")
 def landing():
@@ -85,12 +90,12 @@ def updateTree():
 	return 'OK'
 
 
-# @app.route("/data")
-# def data():
-# 	# print "I am here"
-# 	with open("./static/myflare.json", "w+") as fb:
-# 		fb.write(tree)
-# 	return jsonify({"result":"success"})
+@app.route("/data")
+def data():
+	# print "I am here"
+	with open("static/myflare.json", "w+") as fb:
+		fb.write(tree)
+	return jsonify({"result":"success"})
 
 
 if __name__ == "__main__":
