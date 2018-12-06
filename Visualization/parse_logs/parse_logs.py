@@ -1,8 +1,8 @@
-_SPANNING_TREE_FILE_DIR = 'Visualization/parse_logs'
+_SPANNING_TREE_FILE_DIR = 'parse_logs/'
 # _LOG_FILE = '../../phase1/logs/2018-04-16-info.log'
 # _LOG_FILE = '../../phase1/logs/2018-04-18-info.log'
 # _LOG_FILE = 'phase1/logs/2018-10-15-info.log'
-_LOG_FILE = 'gRPC/infoLogFile.log'
+_LOG_FILE = 'infoLogFile.log'
 _PARSE_LOGS_DEBUG = True
 _DELAY = 2
 
@@ -31,17 +31,17 @@ pp= pprint.PrettyPrinter()
 def parse():
   tree = Tree()
   project_home = dirname(sys.path[0])
-  while project_home.split('/')[-1] != 'AdaptiveCAP':
-    project_home = dirname(project_home)
-  print ('project_home', project_home)
-  print ('Lavanya-----------------')
+  # while project_home.split('/')[-1] != 'AdaptiveCAP':
+  #   project_home = dirname(project_home)
+  # print ('project_home', project_home)
 
   log_path = os.path.join(project_home, _LOG_FILE)
   print ('log_path', log_path)
 
   with open(log_path, 'r') as fp:
     lines = fp.readlines()
-
+    print "heyhehheehheheyeyeyeyeyeyyeyeyyyyyyyyy"
+  print "file is accessed"
   interested = False
   hello_sent_from = -1  # new parent
   hello_sent_to = -1  # node which will move
@@ -53,7 +53,6 @@ def parse():
       continue
 
     last_part = line.split('-')[-1].strip()
-    print ('Lavanya----------', last_part)
     if last_part == 'Starting Server':
       node_id = line.split('-')[-2].split(':')[-1].strip()
 

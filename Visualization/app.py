@@ -5,12 +5,12 @@ from time import sleep
 
 import sys, os
 from os.path import dirname
-_PARSE_LOGS_PATH = 'AdaptiveCAP/Visualization/parse_logs'
+_PARSE_LOGS_PATH = 'parse_logs/'
 project_home = dirname(dirname(sys.path[0]))
 to_ins = os.path.join(project_home, _PARSE_LOGS_PATH)
 #print to_ins
 sys.path.insert(0, to_ins)
-from parse_logs import parse
+from parse_logs.parse_logs import parse
 
 
 app = Flask(__name__)
@@ -92,11 +92,13 @@ def updateTree():
 
 @app.route("/data")
 def data():
-	# print "I am here"
+	print "I am here"
 	with open("static/myflare.json", "w+") as fb:
 		fb.write(tree)
 	return jsonify({"result":"success"})
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	# app.run(debug=True)
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)
