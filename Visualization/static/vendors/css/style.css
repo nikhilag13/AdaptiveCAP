@@ -18540,7 +18540,7 @@ html {
 }
 
 .content-wrapper {
-  background: #690099;
+  background: #f2edf3;
   padding: 2.75rem 2.25rem;
   width: 100%;
   -webkit-flex-grow: 1;
@@ -20042,7 +20042,7 @@ code {
 
 .card .card-body {
   padding: 2.5rem 2.5rem;
-  background-color: #e4e0e0;
+  background-color: white;
 }
 
 .card .card-body + .card-body {

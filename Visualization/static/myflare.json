@@ -1,1 +1,1 @@
-{"name": "Node -1","children": [],"fake": true}
+{"fake": true, "name": "Node -1", "children": [{"name": "Node 0", "children": [{"name": "Node 1", "children": []}, {"name": "Node 2", "children": []}]}]}
