@@ -141,10 +141,10 @@
                             <div class="card">
                                 <div class="card-body">
                                 <h4 class="card-title">What happens before clustering?</h4>
-                                    <p>This cluster is formed when each node in the intial spanning tree (graph) sends 
+                                    <p>This cluster is formed when each node in the intial spanning tree sends 
                                             size message to its parent. Parent checks if the sum of its
                                             size and the node size is greater than a threshold. If it is greater, 
-                                            prune message is sent and node that sent the message becomes a new cluster head. 
+                                            prune message is sent and sender node becomes a new cluster head. 
                                             If not, node gets added to the existing cluster. At the end of this, each node belongs to a cluster 
                                             by adhering to the size constraint.</p>
                                 <canvas id="areaChart" style="height:250px"></canvas>
@@ -169,8 +169,8 @@
                                 <div class="card-body">
                                 <h4 class="card-title">What happens after clustering?</h4>
                                 <p>After intial clustering, each node sends hello messages to other neighboring 
-                                          nodes and based on the
-                                          distance from its clusterhead, nodes are moved into different clusters to reduce latency.</p>
+                                          nodes to check the clustering energy. If the final energy is less that the intial energy, then a new shift cluster request would be sent to the clusterhead. Those node would join the other clusters.
+                                          For calculating the energy hop count and size metrics are considered. The cluster is arranged in a way to optimize the energy and latency.</p>
                                     </p>
                                 <canvas id="doughnutChart" style="height:250px"></canvas>
                                 </div>
